@@ -38,8 +38,9 @@ const ContactHero = () => {
     <div className="absolute inset-0 flex items-center">
     <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
-        <p className="text-xl md:text-2xl mb-4 opacity-80 text-white">
-        Home / <span className="font-bold">Contact Us</span>
+        <p className="text-xl md:text-2xl mb-4 text-white">
+            <span className="opacity-80">Home / </span>
+            <span className="font-bold text-white">Contact Us</span>
         </p>
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight max-w-[700px]">
         Lets build something great.
