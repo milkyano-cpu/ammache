@@ -64,7 +64,16 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 rounded-[30px] overflow-hidden">
 
           {/* ================= LEFT ================= */}
-    <div className="hidden md:flex relative bg-black text-white p-10 md:p-14 flex-col justify-between min-h-[650px] overflow-hidden">
+        <div className="hidden md:flex relative bg-black text-white p-10 md:p-14 flex-col justify-between min-h-[650px] overflow-hidden">
+
+        <div className="absolute inset-0 z-0 flex items-end justify-center">
+        <Image
+            src="/logo-contact.png"
+            alt="background shape"
+            width={800}
+            height={800}
+        />
+        </div>
 
     {/* CONTENT WRAPPER (BIAR KE TENGAH) */}
     <div className="relative z-10 max-w-[420px] mx-auto w-full space-y-10">
