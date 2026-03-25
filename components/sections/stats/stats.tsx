@@ -1,0 +1,84 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+function Counter({ end, duration = 2000 }: { end: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const increment = end / (duration / 16);
+
+    const counter = setInterval(() => {
+      start += increment;
+
+      if (start >= end) {
+        setCount(end);
+        clearInterval(counter);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(counter);
+  }, [end, duration]);
+
+  return <span>{count}</span>;
+}
+
+export default function Stats() {
+  return (
+    <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-[#f5f5f5] text-center">
+      <div className="max-w-5xl mx-auto space-y-10">
+
+        {/* TITLE */}
+        <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 leading-snug">
+          Designing thoughtful architecture that shapes
+          <br className="hidden md:block" />
+          spaces and communities.
+        </h2>
+
+        {/* STATS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          
+          <div>
+            <p className="text-4xl font-semibold text-black">
+              <Counter end={27} />
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              Years of Experience
+            </p>
+          </div>
+
+          <div>
+            <p className="text-4xl font-semibold text-black">
+              <Counter end={900} />+
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              Completed Projects
+            </p>
+          </div>
+
+          <div>
+            <p className="text-4xl font-semibold text-black">
+              <Counter end={15} />+
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              Industry Awards & Recognition
+            </p>
+          </div>
+
+        </div>
+
+        {/* DIVIDER */}
+        <div className="w-full h-px bg-gray-300" />
+
+        {/* BUTTON */}
+        <button className="px-8 py-3 rounded-full border-2 border-gray-300 text-sm hover:bg-black hover:text-white transition cursor-pointer">
+          View All Projects
+        </button>
+
+      </div>
+    </section>
+  );
+}
