@@ -21,11 +21,11 @@ const Hero = () => {
         alt="Hero Mobile"
         fill
         priority
-        className="object-cover block md:hidden"
+        className="object-cover object-[center_80%] block md:hidden"
       />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-black/10 md:bg-black/10" />
 
       {/* CONTENT */}
       <div className="relative z-10 flex items-center justify-center h-full">
