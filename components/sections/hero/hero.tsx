@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-[500px] md:h-[800px] overflow-hidden">
+      <section className="relative w-full h-[420px] sm:h-[480px] md:h-[700px] overflow-hidden">
       
       {/* DESKTOP IMAGE */}
       <Image

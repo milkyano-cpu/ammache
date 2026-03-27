@@ -13,7 +13,7 @@ import {
 
 const ContactHero = () => {
   return (
-    <section className="relative w-full h-[420px] sm:h-[480px] md:h-[800px] overflow-hidden">
+    <section className="relative w-full h-[420px] sm:h-[480px] md:h-[600px] overflow-hidden">
         <Image
          src="/contact-hero.png"
               alt="Hero"

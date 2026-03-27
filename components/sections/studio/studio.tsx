@@ -35,10 +35,13 @@ export default function Studio() {
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="text-gray-900 text-s leading-relaxed max-w-md">
-            Our studio combines innovative design with a strong understanding of
-            environmental, client, and business requirements to create buildings
-            that are functional, beautiful, and built to last.
+          <p className="text-gray-900 text-base md:text-lg leading-relaxed max-w-md text-justify">
+            Beyond our studio, we’re building a curated network for architects, interior designers, builders, developers, and creative professionals.
+            <br /><br />
+            Through private events, educational sessions, industry insights, and exclusive invitations, we’re creating a space where ambitious people in design and construction can connect, learn, and stay ahead.
+            <br /><br />
+            This is our way of contributing to the industry.
+            Not just through the spaces we create, but through the community we build around them.
           </p>
 
         </div>

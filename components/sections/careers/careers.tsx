@@ -52,7 +52,7 @@ const Stat = ({
 /* ================= HERO ================= */
 const CareersHero = () => {
   return (
-   <section className="relative w-full h-[420px] sm:h-[480px] md:h-[800px] overflow-hidden">
+   <section className="relative w-full h-[420px] sm:h-[480px] md:h-[600px] overflow-hidden">
       
       {/* DESKTOP IMAGE */}
       <Image
@@ -65,7 +65,7 @@ const CareersHero = () => {
 
       {/* MOBILE IMAGE */}
       <Image
-        src="/contact-hero-mobile.png"
+        src="/careers.png"
         alt="Hero Mobile"
         fill
         priority
@@ -73,7 +73,7 @@ const CareersHero = () => {
       />
 
       {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/70 md:bg-black/80" />
+        <div className="absolute inset-0 bg-black/80 md:bg-black/80" />
 
       {/* CONTENT */}
       <div className="absolute inset-0 flex items-center">
