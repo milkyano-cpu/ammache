@@ -48,55 +48,55 @@ const VipFeatures = () => {
         </h2>
 
         {/* GRID */}
-    {/* TOP 3 */}
-<div className="grid md:grid-cols-3 gap-8 mb-8">
-  {features.slice(0, 3).map((item, i) => {
-    const Icon = item.icon
-    return (
-      <div
-        key={i}
-        className="bg-white rounded-[20px] border border-gray-200 p-6 md:p-8 hover:shadow-lg transition"
-      >
-        <div className="w-12 h-12 flex items-center justify-center border border-gray-200 rounded-lg mb-6">
-          <Icon size={20} />
+        {/* TOP 3 */}
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          {features.slice(0, 3).map((item, i) => {
+            const Icon = item.icon
+            return (
+              <div
+                key={i}
+                className="bg-white rounded-[20px] border border-gray-200 p-6 md:p-8 hover:shadow-lg transition"
+              >
+                <div className="w-12 h-12 flex items-center justify-center border border-gray-200 rounded-lg mb-6">
+                  <Icon size={20} />
+                </div>
+
+                <h3 className="text-[17px] font-semibold mb-3">
+                  {item.title}
+                </h3>
+
+                <p className="text-[14px] text-gray-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            )
+          })}
         </div>
 
-        <h3 className="text-[17px] font-semibold mb-3">
-          {item.title}
-        </h3>
+        {/* BOTTOM 2 (CENTERED) */}
+        <div className="flex justify-center gap-8 flex-wrap">
+          {features.slice(3).map((item, i) => {
+            const Icon = item.icon
+            return (
+              <div
+                key={i}
+                className="bg-white rounded-[20px] border border-gray-200 p-6 md:p-8 w-full md:w-[calc(33.333%-1rem)] hover:shadow-lg transition"
+              >
+                <div className="w-12 h-12 flex items-center justify-center border border-gray-200 rounded-lg mb-6">
+                  <Icon size={20} />
+                </div>
 
-        <p className="text-[14px] text-gray-600 leading-relaxed">
-          {item.desc}
-        </p>
-      </div>
-    )
-  })}
-</div>
+                <h3 className="text-[17px] font-semibold mb-3">
+                  {item.title}
+                </h3>
 
-{/* BOTTOM 2 (CENTERED) */}
-<div className="flex justify-center gap-8 flex-wrap">
-  {features.slice(3).map((item, i) => {
-    const Icon = item.icon
-    return (
-      <div
-        key={i}
-        className="bg-white rounded-[20px] border border-gray-200 p-6 md:p-8 w-full md:w-[calc(33.333%-1rem)] hover:shadow-lg transition"
-      >
-        <div className="w-12 h-12 flex items-center justify-center border border-gray-200 rounded-lg mb-6">
-          <Icon size={20} />
+                <p className="text-[14px] text-gray-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            )
+          })}
         </div>
-
-        <h3 className="text-[17px] font-semibold mb-3">
-          {item.title}
-        </h3>
-
-        <p className="text-[14px] text-gray-600 leading-relaxed">
-          {item.desc}
-        </p>
-      </div>
-    )
-  })}
-</div>
 
       </div>
     </section>

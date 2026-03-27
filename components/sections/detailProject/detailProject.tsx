@@ -4,6 +4,14 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 
 /* ================= STAT COMPONENT ================= */
+
+const heroImages: Record<string, string> = {
+    "Residential Projects": "/detail-project1.png",
+    "Commercial and Industrial Projects": "/detail-project2.png",
+    "Retail Projects": "/detail-project3.png",
+}
+
+
 const Stat = ({
   number,
   suffix = "",
@@ -50,13 +58,13 @@ const Stat = ({
 }
 
 /* ================= HERO ================= */
-const CareersHero = () => {
+const DetailProjectHero = ({ activeTab }: { activeTab: string }) => {
   return (
     <section className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
       
       {/* DESKTOP IMAGE */}
       <Image
-        src="/careers.png"
+        src={heroImages[activeTab]}
         alt="Hero"
         fill
         priority
@@ -65,7 +73,7 @@ const CareersHero = () => {
 
       {/* MOBILE IMAGE */}
       <Image
-        src="/careers.png"
+        src={heroImages[activeTab]}
         alt="Hero Mobile"
         fill
         priority
@@ -82,7 +90,7 @@ const CareersHero = () => {
           {/* BREADCRUMB */}
           <p className="text-xl md:text-2xl mb-4 text-white">
               <span className="opacity-80">Home / </span>
-              <span className="font-bold text-white">Join Our Team</span>
+              <span className="font-bold text-white">Projects</span>
           </p>
 
           {/* TITLE */}
@@ -93,7 +101,7 @@ const CareersHero = () => {
               max-w-[90%] md:max-w-[700px]
               mb-3
             ">
-            WINDOWS TO FUTURE.
+            Ammache Projects
           </h1>
 
           {/* DESCRIPTION */}
@@ -104,19 +112,19 @@ const CareersHero = () => {
             max-w-[95%] md:max-w-[700px]
             leading-relaxed
             ">
-            We are a second-generation architecture practice with over{" "}
+            View our extensive portofolio of{" "}
             <span className="font-semibold text-white">
-              27 years of experience
+              Ammache Architects Projects
             </span>{" "}
-            and a{" "}
+            , curated bellow. We are a leading firm in{" "}
             <span className="font-semibold text-white">
-              $700M+ portfolio
+              Melbourne Architecture
             </span>
-            . We are{" "}
+            . We Have{" "}
             <span className="font-semibold text-white">
-              selective about who joins us
+              27 years experience
             </span>{" "}
-            and that is precisely why you should want to.
+            and utillise this in delivering the highest quality designs possible.
           </p>
 
           {/* STATS */}
@@ -145,6 +153,15 @@ const CareersHero = () => {
               suffix="+"
               label="Industry Awards & Recognitions"
             />
+            
+            <div className="hidden md:block">
+            <Stat
+                number={700}
+                prefix="$"
+                suffix="M+"
+                label="Construction value"
+            />
+            </div>
 
           </div>
 
@@ -154,4 +171,4 @@ const CareersHero = () => {
   )
 }
 
-export default CareersHero
+export default DetailProjectHero

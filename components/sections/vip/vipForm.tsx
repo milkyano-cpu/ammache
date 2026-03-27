@@ -4,17 +4,29 @@ const VipForm = () => {
   return (
     <section className="bg-white md:bg-[#f5f5f5] py-16 md:py-18">
 
-      {/* HEADER */}
-      <div className="max-w-[1200px] mx-auto px-5 md:px-6 mb-10 md:mb-16">
-        <h2 className="text-2xl md:text-5xl font-semibold mb-4 leading-tight">
-          Join Ammache VIP today.
-        </h2>
+  <div className="max-w-[1200px] mx-auto px-5 md:px-6 mb-10 md:mb-16">
 
-        <p className="text-gray-600 text-sm md:text-[17px] leading-relaxed max-w-[700px]">
-          Ammache VIP is open to architects, developers, and designers who want direct access to
-          our projects and thinking. Membership is complimentary and there is no obligation.
-        </p>
-      </div>
+    <h2 className="
+      text-[32px] leading-[1.15]
+      md:text-5xl
+      font-semibold
+      mb-4
+    ">
+      Join Ammache VIP today.
+    </h2>
+
+    <p className="
+      text-[15px]
+      md:text-[17px]
+      text-gray-600
+      leading-[1.7]
+      max-w-[700px]
+    ">
+      Ammache VIP is open to architects, developers, and designers who want direct access to
+      our projects and thinking. Membership is complimentary and there is no obligation.
+    </p>
+
+  </div>
 
       {/* CARD */}
       <div className="max-w-[700px] mx-auto px-4">

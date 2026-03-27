@@ -19,7 +19,7 @@ import {
 const navLinks = [
   { href: '/', label: 'Main' },
   { href: '/team', label: 'Team' },
-  { href: '/projects', label: 'Projects' },
+  { href: '/detailProject', label: 'Projects' },
   { href: '/careers', label: 'Join Our Team' },
   { href: '/contact', label: 'Contact Us' },
   { href: '/vip', label: 'Ammache VIP' },

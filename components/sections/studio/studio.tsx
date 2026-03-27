@@ -28,10 +28,16 @@ export default function Studio() {
           </div>
 
           {/* TITLE */}
-          <h2 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
-            Built on Experience,
-            <br />
-            Driven by Design
+          <h2 className="
+            text-[26px] leading-[1.25]
+            md:text-4xl 
+            font-semibold 
+            text-black 
+            leading-tight
+          ">
+            A Private Network For The{" "}
+            <br className="hidden md:block" />
+            Built World
           </h2>
 
           {/* DESCRIPTION */}

@@ -11,23 +11,23 @@ const CareersForm = () => {
   }
 
   return (
-    <section className="bg-white md:bg-[#f5f5f5]  py-24 md:py-32">
+    <section className="bg-white md:bg-[#f5f5f5] py-16 md:py-32">
 
       {/* HEADER */}
-      <div className="max-w-[1200px] mx-auto px-6 mb-16">
-        <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-left">
+      <div className="max-w-[1200px] mx-auto px-6 mb-6 md:mb-16">
+        <h2 className="text-[28px] leading-[1.2] md:text-5xl font-semibold mb-3 text-left">
           Submit your application.
         </h2>
-        <p className="text-gray-700 max-w-[600px] text-[16px] md:text-[18px]">
+        <p className="text-gray-700 max-w-[600px] text-[14px] md:text-[18px] leading-relaxed">
           Reviewed personally by the Ammache leadership team. We aim to respond within five business days.
         </p>
       </div>
 
       {/* CARD */}
       <div className="max-w-[800px] mx-auto px-4">
-        <div className="bg-white rounded-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.08)] p-8 md:p-10">
+        <div className="bg-white rounded-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.08)] p-5 md:p-10">
 
-          <p className="text-[18px] text-gray-600 mb-8">
+          <p className="text-[14px] md:text-[18px] text-gray-600 mb-6 md:mb-8 leading-relaxed">
             If you would like to contact Ammache about our services and product please don’t hesitate to reach out.
           </p>
 
@@ -35,7 +35,7 @@ const CareersForm = () => {
 
             {/* FIRST NAME */}
             <div>
-              <label className="text-[16px] md:text-[17px] text-gray-700 block mb-2">
+              <label className="text-[14px] md:text-[17px] text-gray-700 block mb-1.5 md:mb-2">
                 First Name*
               </label>
               <input

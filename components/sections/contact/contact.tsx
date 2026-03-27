@@ -55,15 +55,22 @@ const ContactHero = () => {
 
 const ContactSection = () => {
   return (
-     <section className="bg-white md:bg-[#f5f5f5] py-20">
+     <section className="bg-white md:bg-[#f5f5f5] py-12 md:py-20">
 
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-10">
 
         {/* GRID LANGSUNG TANPA CARD */}
-        <div className="grid grid-cols-1 md:grid-cols-2 rounded-[30px] overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 rounded-[20px] overflow-hidden">
 
           {/* ================= LEFT ================= */}
-        <div className="hidden md:flex relative bg-black text-white p-10 md:p-14 flex-col justify-between min-h-[650px] overflow-hidden">
+        <div className="
+          relative bg-black text-white
+          p-6 md:px-16 md:py-16
+          flex flex-col justify-between
+          rounded-[20px] md:rounded-l-[20px]
+          min-h-[500px] md:min-h-[650px]
+          overflow-hidden
+        ">
 
         <div className="absolute inset-0 z-0 flex items-end justify-end pointer-events-none">
             <Image
@@ -71,12 +78,22 @@ const ContactSection = () => {
             alt="background shape"
             width={1000}
             height={1000}
-            className="scale-[2.0] translate-x-30 translate-y-0"
+            className="
+              scale-[1.5] translate-x-50 translate-y-5  
+              md:scale-[1.9] md:translate-x-30 md:translate-y-0
+            "
           />
         </div>
 
     {/* CONTENT WRAPPER (BIAR KE TENGAH) */}
-    <div className="relative z-10 max-w-[420px] mx-auto w-full space-y-10">
+      <div className="
+          relative z-10 
+          max-w-[420px] 
+          w-full 
+          space-y-5 md:space-y-12
+          mx-auto md:mx-0
+          md:pl-10
+        ">
 
         {/* ADDRESS */}
         <div className="flex gap-4">
@@ -84,7 +101,7 @@ const ContactSection = () => {
           href="https://maps.google.com/?q=11+Meaden+St+Southbank+VIC+3006"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex gap-4 items-start"
+          className="group flex gap-4 items-center"
         >
           <MapPin size={22} className="group-hover:translate-x-1 transition" />
           <p className="leading-relaxed text-[15px] group-hover:translate-x-1 transition">
@@ -94,7 +111,7 @@ const ContactSection = () => {
         </div>
 
         {/* DIVIDER */}
-        <div className="border-b border-white/20 w-[80%]" />
+        <div className="border-b border-white/20 w-full" />
 
         {/* PHONE */}
         <div className="flex gap-4">
@@ -110,7 +127,7 @@ const ContactSection = () => {
         </div>
 
         {/* DIVIDER */}
-        <div className="border-b border-white/20 w-[80%]" />
+        <div className="border-b border-white/20 w-full" />
 
         {/* EMAIL */}
         <div className="flex gap-4">
@@ -126,12 +143,12 @@ const ContactSection = () => {
         </div>
 
         {/* DIVIDER (TOTAL 3 SESUAI DESIGN) */}
-        <div className="border-b border-white/20 w-[80%]" />
+        <div className="border-b border-white/20 w-full" />
 
     </div>
 
     {/* BOTTOM */}
-    <div className="relative z-10 max-w-[420px] mx-auto w-full mt-12">
+    <div className="relative z-10 max-w-[420px] mx-auto w-full mt-16 md:mt-24">
 
         <Image
         src="/logo-ammache.png"

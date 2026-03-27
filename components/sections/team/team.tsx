@@ -77,7 +77,7 @@ const TeamHero = () => {
 
       {/* CONTENT */}
       <div className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">
-      <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
+        <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
           {/* BREADCRUMB */}
         <p className="text-xl md:text-2xl mb-4 text-white">
