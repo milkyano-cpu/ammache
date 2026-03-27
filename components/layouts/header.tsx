@@ -40,13 +40,22 @@ const Header = () => {
           onClick={() => setOpen(false)}
           className="flex items-center cursor-pointer"
         >
-          <Image
-            src="/logo-ammache.png"
-            alt="Ammache"
-            width={140}
-            height={40}
-            priority
-          />
+          {!open ? (
+            <Image
+              src="/ammache.png"
+              alt="Ammache"
+              width={140}
+              height={40}
+              priority
+            />
+          ) : (
+            <Image
+              src="/logo-ammache.png"
+              alt="Ammache"
+              width={140}
+              height={40}
+            />
+          )}
         </Link>
 
         {/* BURGER */}
