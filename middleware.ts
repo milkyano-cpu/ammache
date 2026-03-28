@@ -5,8 +5,8 @@ import { verifyRequestToken } from "@/lib/auth"
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Dashboard routes — require authentication
-  if (pathname.startsWith("/dashboard")) {
+  // Admin routes — require authentication
+  if (pathname.startsWith("/admin")) {
     const user = await verifyRequestToken(request)
     if (!user) {
       const loginUrl = new URL("/login", request.url)
@@ -15,11 +15,11 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // Login page — redirect to dashboard if already authenticated
+  // Login page — redirect to admin if already authenticated
   if (pathname === "/login") {
     const user = await verifyRequestToken(request)
     if (user) {
-      return NextResponse.redirect(new URL("/dashboard", request.url))
+      return NextResponse.redirect(new URL("/admin", request.url))
     }
   }
 
@@ -27,5 +27,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/login"],
+  matcher: ["/admin/:path*", "/login"],
 }
