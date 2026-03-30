@@ -3,19 +3,51 @@
 import Image from "next/image";
 
 const projects = [
-  "/project1.png",
-  "/project2.png",
-  "/project3.png",
-  "/project4.png",
-  "/project5.png",
-  "/project6.png",
-  "/project7.png",
-  "/project8.png",
+  {
+    src: "/project1.png",
+    title: "Project Name",
+    type: "Residential",
+  },
+  {
+    src: "/project2.png",
+    title: "Project Name",
+    type: "Residential",
+  },
+  {
+    src: "/project3.png",
+    title: "Project Name",
+    type: "Commercial",
+  },
+  {
+    src: "/project4.png",
+    title: "Project Name",
+    type: "Industrial",
+  },
+  {
+    src: "/project5.png",
+    title: "Project Name",
+    type: "Residential",
+  },
+  {
+    src: "/project6.png",
+    title: "Project Name",
+    type: "Retail",
+  },
+  {
+    src: "/project7.png",
+    title: "Project Name",
+    type: "Residential",
+  },
+  {
+    src: "/project8.png",
+    title: "Project Name",
+    type: "Commercial",
+  },
 ];
 
 export default function Projects() {
   return (
-    <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white md:bg-[#f5f5f5] ">
+    <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white md:bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto space-y-16">
 
         {/* TITLE */}
@@ -39,42 +71,63 @@ export default function Projects() {
 
         {/* GRID */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
-            {projects.map((src, index) => (
-                <div
-                key={index}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
-                >
-                {/* IMAGE */}
+          {projects.map((item, index) => (
+            <div
+              key={index}
+              className="group relative rounded-2xl overflow-hidden cursor-pointer"
+            >
+
+              {/* IMAGE */}
+              <Image
+                src={item.src}
+                alt={`Project ${index + 1}`}
+                width={400}
+                height={500}
+                className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+              />
+
+              {/* DARK OVERLAY */}
+              <div
+                className="
+                  absolute inset-0
+                  bg-black/47 backdrop-blur-sm
+                  opacity-0 group-hover:opacity-100
+                  transition duration-300
+                  flex flex-col items-center justify-center text-center px-4 gap-1
+                "
+              >
+                {/* LOGO */}
                 <Image
-                    src={src}
-                    alt={`Project ${index + 1}`}
-                    width={400}
-                    height={500}
-                    className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                  src="/logo-hover.png"
+                  alt="Logo"
+                  width={50}
+                  height={50}
+                  className="mb-3 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition duration-300"
                 />
 
-                {/* GLASS OVERLAY */}
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    
-                    {/* LOGO CENTER */}
-                    <Image
-                    src="/logo-hover.png"
-                    alt="Logo"
-                    width={60}
-                    height={60}
-                    className="opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition duration-300"
-                    />
+                {/* TITLE */}
+                <p className="text-white text-s font-semibold">
+                  {item.title}
+                </p>
+
+                {/* TYPE */}
+                <p className="text-white/70 text-s">
+                  {item.type}
+                </p>
+              </div>
+
+              {/* VIEW DEVELOPMENT */}
+              <div className="
+                  absolute bottom-4 left-1/2 -translate-x-1/2
+                  text-white text-s
+                  opacity-0 group-hover:opacity-100
+                  transition duration-300
+                ">
+                  View Development →
                 </div>
 
-                {/* BOTTOM WHITE BAR */}
-                <div className="absolute bottom-0 left-0 w-full h-14 bg-white flex items-center justify-center translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-out">
-                <p className="text-sm text-gray-800 flex items-center gap-2">
-                    View Development
-                    <span>→</span>
-                </p>
-                </div>
-                </div>
-            ))}
+            </div>
+          ))}
         </div>
 
         {/* BUTTON */}

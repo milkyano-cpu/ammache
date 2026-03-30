@@ -164,7 +164,7 @@ const DetailProjectsSection = ({
               {/* HOVER OVERLAY (LEBIH GELAP) */}
               <div className="
                 absolute inset-0
-                bg-black/60 backdrop-blur-md
+                bg-black/45 backdrop-blur-sm
                 opacity-0 group-hover:opacity-100
                 transition duration-300
                 flex flex-col items-center justify-center text-center px-4
