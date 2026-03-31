@@ -1,207 +1,129 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { useSidebar } from "@/components/ui/sidebar"
 
-import { NavDocuments } from "@/components/nav-documents"
-import { NavMain } from "@/components/nav-main"
-import { NavSecondary } from "@/components/nav-secondary"
-import { NavUser } from "@/components/nav-user"
+import {
+  LayoutDashboard,
+  Tags,
+  Package,
+  FileText,
+} from "lucide-react"
+
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { LayoutDashboardIcon, ListIcon, ChartBarIcon, FolderIcon, UsersIcon, CameraIcon, FileTextIcon, Settings2Icon, CircleHelpIcon, SearchIcon, DatabaseIcon, FileChartColumnIcon, FileIcon, CommandIcon } from "lucide-react"
 
-const data = {
-  user: {
-    name: "Admin",
-    email: "admin@ammache.com",
-    avatar: "",
+import { NavUser } from "@/components/nav-user"
+
+const menuItems = [
+  {
+    title: "Dashboard",
+    url: "/admin",
+    icon: LayoutDashboard,
+    desc: "View overview",
   },
-  navMain: [
-    {
-      title: "Dashboard",
-      url: "/admin",
-      icon: (
-        <LayoutDashboardIcon
-        />
-      ),
-    },
-    {
-      title: "Lifecycle",
-      url: "#",
-      icon: (
-        <ListIcon
-        />
-      ),
-    },
-    {
-      title: "Analytics",
-      url: "#",
-      icon: (
-        <ChartBarIcon
-        />
-      ),
-    },
-    {
-      title: "Projects",
-      url: "#",
-      icon: (
-        <FolderIcon
-        />
-      ),
-    },
-    {
-      title: "Team",
-      url: "#",
-      icon: (
-        <UsersIcon
-        />
-      ),
-    },
-  ],
-  navClouds: [
-    {
-      title: "Capture",
-      icon: (
-        <CameraIcon
-        />
-      ),
-      isActive: true,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Proposal",
-      icon: (
-        <FileTextIcon
-        />
-      ),
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: (
-        <FileTextIcon
-        />
-      ),
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  navSecondary: [
-    {
-      title: "Settings",
-      url: "#",
-      icon: (
-        <Settings2Icon
-        />
-      ),
-    },
-    {
-      title: "Get Help",
-      url: "#",
-      icon: (
-        <CircleHelpIcon
-        />
-      ),
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: (
-        <SearchIcon
-        />
-      ),
-    },
-  ],
-  documents: [
-    {
-      name: "Data Library",
-      url: "#",
-      icon: (
-        <DatabaseIcon
-        />
-      ),
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: (
-        <FileChartColumnIcon
-        />
-      ),
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: (
-        <FileIcon
-        />
-      ),
-    },
-  ],
-}
+  {
+    title: "Categories",
+    url: "/admin/categories",
+    icon: Tags,
+    desc: "Manage categories",
+  },
+  {
+    title: "Projects",
+    url: "/admin/projects",
+    icon: Package,
+    desc: "Manage projects",
+  },
+  {
+    title: "Team",
+    url: "/admin/team",
+    icon: FileText,
+    desc: "Manage team",
+  },
+]
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname()
+  const { setOpen, setOpenMobile } = useSidebar()
+
   return (
     <Sidebar collapsible="offcanvas" {...props}>
-      <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:p-1.5!"
-            >
-              <a href="#">
-                <CommandIcon className="size-5!" />
-                <span className="text-base font-semibold">Acme Inc.</span>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+
+      <SidebarHeader className="pb-8 border-b px-5 pt-4">
+        <Link href="/admin" className="flex items-center gap-3">
+
+          {/* LOGO */}
+          <div className="bg-black text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold">
+            amc.
+          </div>
+
+          {/* TEXT */}
+          <div className="flex flex-col">
+            <span className="text-lg font-bold">
+              Ammache Team
+            </span>
+            <span className="text-xs text-gray-500">
+                Architecture Management
+            </span>
+          </div>
+
+        </Link>
       </SidebarHeader>
-      <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+
+      <SidebarContent className="pt-6 px-3 space-y-2">
+
+        {menuItems.map((item) => {
+          const isActive = item.url === "/admin"
+            ? pathname === "/admin"
+            : pathname.startsWith(item.url)
+
+          const Icon = item.icon
+
+          return (
+          <Link
+            key={item.title}
+            href={item.url}
+            onClick={() => {
+              setOpenMobile(false)
+            }}
+            className={`flex items-center gap-3 p-3 rounded-xl transition
+              ${isActive ? "bg-black text-white" : "hover:bg-gray-100"}
+            `}
+          >
+
+              {/* ICON */}
+              <div className={`${isActive ? "text-white" : "text-gray-600"}`}>
+                <Icon size={20} />
+              </div>
+
+              {/* TEXT */}
+              <div className="flex flex-col leading-tight">
+                <span className="font-medium">{item.title}</span>
+                <span
+                  className={`text-xs ${
+                    isActive ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  {item.desc}
+                </span>
+              </div>
+
+            </Link>
+          )
+        })}
+
       </SidebarContent>
-      <SidebarFooter>
-        <NavUser user={data.user} />
+
+      <SidebarFooter className="px-4 pb-6 pt-4 border-t mt-4">
+        <NavUser />
       </SidebarFooter>
+
     </Sidebar>
   )
 }
