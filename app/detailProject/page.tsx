@@ -1,28 +1,28 @@
-"use client"
+import { prisma } from "@/lib/prisma"
+import DetailProjectClient from "./detail-project-client"
 
-import { useState } from "react"
-import Header from "@/components/layouts/header"
-import ProjectHero from "@/components/sections/detailProject/detailProject"
-import ListProject from "@/components/sections/detailProject/listProject"
-import CTA from "@/components/sections/cta/cta"
-import Footer from "@/components/layouts/footer"
+export default async function DetailProjectPage() {
+  const categories = await prisma.category.findMany({
+    include: {
+      projects: {
+        where: { published: true },
+        orderBy: { createdAt: "desc" },
+      },
+    },
+  })
 
-export default function About() {
-  const [activeTab, setActiveTab] = useState("Residential Projects")
+  const serialized = categories.map((cat) => ({
+    id: cat.id,
+    name: cat.name,
+    projects: cat.projects.map((p) => ({
+      id: p.id,
+      slug: p.slug,
+      name: p.name,
+      images: p.images,
+      shortDescription: p.shortDescription,
+      categoryName: cat.name,
+    })),
+  }))
 
-  return (
-    <main>
-      <Header />
-
-      <ProjectHero activeTab={activeTab} />
-
-      <ListProject
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-      />
-
-      <CTA />
-      <Footer />
-    </main>
-  )
+  return <DetailProjectClient categories={serialized} />
 }

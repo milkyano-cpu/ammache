@@ -2,50 +2,16 @@
 
 import Image from "next/image";
 
-const projects = [
-  {
-    src: "/project1.png",
-    title: "Project Name",
-    type: "Residential",
-  },
-  {
-    src: "/project2.png",
-    title: "Project Name",
-    type: "Residential",
-  },
-  {
-    src: "/project3.png",
-    title: "Project Name",
-    type: "Commercial",
-  },
-  {
-    src: "/project4.png",
-    title: "Project Name",
-    type: "Industrial",
-  },
-  {
-    src: "/project5.png",
-    title: "Project Name",
-    type: "Residential",
-  },
-  {
-    src: "/project6.png",
-    title: "Project Name",
-    type: "Retail",
-  },
-  {
-    src: "/project7.png",
-    title: "Project Name",
-    type: "Residential",
-  },
-  {
-    src: "/project8.png",
-    title: "Project Name",
-    type: "Commercial",
-  },
-];
+export interface ProjectCardData {
+  id: number
+  name: string
+  images: string[]
+  category: { name: string }
+}
 
-export default function Projects() {
+export default function Projects({ projects }: { projects?: ProjectCardData[] }) {
+  const items = projects ?? []
+
   return (
     <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white md:bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto space-y-16">
@@ -71,16 +37,16 @@ export default function Projects() {
 
         {/* GRID */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
-          {projects.map((item, index) => (
+          {items.map((item) => (
             <div
-              key={index}
+              key={item.id}
               className="group relative rounded-2xl overflow-hidden cursor-pointer"
             >
 
               {/* IMAGE */}
               <Image
-                src={item.src}
-                alt={`Project ${index + 1}`}
+                src={item.images[0] || "/project1.png"}
+                alt={item.name}
                 width={400}
                 height={500}
                 className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
@@ -107,12 +73,12 @@ export default function Projects() {
 
                 {/* TITLE */}
                 <p className="typo-h6 text-white">
-                  {item.title}
+                  {item.name}
                 </p>
 
                 {/* TYPE */}
                 <p className="typo-caption text-white/70">
-                  {item.type}
+                  {item.category.name}
                 </p>
               </div>
 

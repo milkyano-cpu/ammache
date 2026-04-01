@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import type { CategoryWithProjects } from "@/app/detailProject/detail-project-client"
 
 /* ================= COUNT ANIMATION ================= */
 const AnimatedCount = ({ value }: { value: number }) => {
@@ -9,7 +10,6 @@ const AnimatedCount = ({ value }: { value: number }) => {
 
   useEffect(() => {
     let start = 0
-    const duration = 800
 
     const counter = setInterval(() => {
       start += (value - start) * 0.15 // smooth easing
@@ -27,48 +27,26 @@ const AnimatedCount = ({ value }: { value: number }) => {
   return <>{count}</>
 }
 
-/* ================= DATA ================= */
-const allProjects: Record<string, { image: string; title: string; location: string; type: string }[]> = {
-  "Residential Projects": [
-    { image: "/project1.png", title: "Project Name", location: "Location", type: "APARTEMENT BUILDING" },
-    { image: "/project2.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project3.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project4.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project5.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project6.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project7.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project8.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project9.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project10.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project11.png", title: "Project Name", location: "Location", type: "Residential" },
-    { image: "/project12.png", title: "Project Name", location: "Location", type: "Residential" },
-  ],
-  "Commercial and Industrial Projects": [
-    { image: "/project3.png", title: "Project Name", location: "Location", type: "Commercial" },
-    { image: "/project4.png", title: "Project Name", location: "Location", type: "Industrial" },
-  ],
-  "Retail Projects": [
-    { image: "/project6.png", title: "Project Name", location: "Location", type: "Retail" },
-  ],
-}
-
 /* ================= COMPONENT ================= */
 const DetailProjectsSection = ({
     activeTab,
     setActiveTab,
+    categories,
     }: {
     activeTab: string
     setActiveTab: (value: string) => void
+    categories: CategoryWithProjects[]
     }) => {
 
     const [open, setOpen] = useState(false)
 
-  const tabs = Object.keys(allProjects).map((key) => ({
-    label: key,
-    count: allProjects[key].length,
+  const tabs = categories.map((cat) => ({
+    label: cat.name,
+    count: cat.projects.length,
   }))
 
-  const projects = allProjects[activeTab]
+  const activeCategory = categories.find((cat) => cat.name === activeTab)
+  const projects = activeCategory?.projects ?? []
 
   return (
     <section className="bg-white md:bg-[#f5f5f5] py-16 md:py-24">
@@ -146,16 +124,16 @@ const DetailProjectsSection = ({
         {/* ================= GRID ================= */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
 
-          {projects.map((item, i) => (
+          {projects.map((item) => (
             <div
-              key={i}
+              key={item.id}
               className="group relative rounded-2xl overflow-hidden cursor-pointer"
             >
 
               {/* IMAGE */}
               <Image
-                src={item.image}
-                alt="project"
+                src={item.images[0] || "/project1.png"}
+                alt={item.name}
                 width={400}
                 height={500}
                 className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
@@ -178,11 +156,11 @@ const DetailProjectsSection = ({
                 />
 
                 <p className="typo-h6 text-white">
-                  {item.title}
+                  {item.name}
                 </p>
 
                 <p className="typo-fine text-white/80 mt-1">
-                  {item.type}
+                  {item.categoryName}
                 </p>
               </div>
 

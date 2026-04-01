@@ -2,16 +2,16 @@
 
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import type { CategoryWithProjects } from "@/app/detailProject/detail-project-client"
 
-/* ================= STAT COMPONENT ================= */
-
+/* ================= HERO IMAGE MAPPING ================= */
 const heroImages: Record<string, string> = {
     "Residential Projects": "/detail-project1.png",
     "Commercial and Industrial Projects": "/detail-project2.png",
     "Retail Projects": "/detail-project3.png",
 }
 
-
+/* ================= STAT COMPONENT ================= */
 const Stat = ({
   number,
   suffix = "",
@@ -58,13 +58,24 @@ const Stat = ({
 }
 
 /* ================= HERO ================= */
-const DetailProjectHero = ({ activeTab }: { activeTab: string }) => {
+const DetailProjectHero = ({
+  activeTab,
+  categories,
+}: {
+  activeTab: string
+  categories: CategoryWithProjects[]
+}) => {
+  const heroSrc =
+    heroImages[activeTab] ??
+    heroImages[categories[0]?.name] ??
+    "/detail-project1.png"
+
   return (
     <section className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
-      
+
       {/* DESKTOP IMAGE */}
       <Image
-        src={heroImages[activeTab]}
+        src={heroSrc}
         alt="Hero"
         fill
         priority
@@ -73,7 +84,7 @@ const DetailProjectHero = ({ activeTab }: { activeTab: string }) => {
 
       {/* MOBILE IMAGE */}
       <Image
-        src={heroImages[activeTab]}
+        src={heroSrc}
         alt="Hero Mobile"
         fill
         priority
@@ -141,7 +152,7 @@ const DetailProjectHero = ({ activeTab }: { activeTab: string }) => {
               suffix="+"
               label="Industry Awards & Recognitions"
             />
-            
+
             <div className="hidden md:block">
             <Stat
                 number={700}
