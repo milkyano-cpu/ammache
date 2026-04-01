@@ -8,8 +8,8 @@ import { useSidebar } from "@/components/ui/sidebar"
 import {
   LayoutDashboard,
   Tags,
-  Package,
-  FileText,
+  FolderKanban,
+  Users,
 } from "lucide-react"
 
 import {
@@ -37,13 +37,13 @@ const menuItems = [
   {
     title: "Projects",
     url: "/admin/projects",
-    icon: Package,
+    icon: FolderKanban,
     desc: "Manage projects",
   },
   {
     title: "Team",
     url: "/admin/team",
-    icon: FileText,
+    icon: Users,
     desc: "Manage team",
   },
 ]
