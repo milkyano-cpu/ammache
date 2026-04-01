@@ -211,7 +211,7 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select category" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent position="popper">
                   {categories.map((cat) => (
                     <SelectItem key={cat.id} value={cat.id.toString()}>
                       {cat.name}
@@ -227,7 +227,7 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
                 <SelectTrigger className="w-full">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent position="popper">
                   <SelectItem value="AMMACHE">Ammache</SelectItem>
                   <SelectItem value="COLLABORATION">Collaboration</SelectItem>
                   <SelectItem value="COMMISSION">Commission</SelectItem>
