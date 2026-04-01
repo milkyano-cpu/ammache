@@ -40,6 +40,7 @@ export default async function EditProjectPage({ params }: Props) {
           description: project.description,
           images: project.images,
           specifications: (project.specifications as unknown as Specification[]) || [],
+          scopeStatus: (project.scopeStatus as unknown as Specification[]) || [],
           projectType: project.projectType,
           categoryId: project.categoryId,
           published: project.published,

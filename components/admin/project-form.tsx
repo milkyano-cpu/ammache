@@ -17,7 +17,7 @@ import {
 import { TipTapEditor } from "@/components/admin/tiptap-editor"
 import { MultiImageUploader } from "@/components/admin/multi-image-uploader"
 import { SpecificationEditor } from "@/components/admin/specification-editor"
-import { COMMON_SPECIFICATION_KEYS } from "@/lib/constants/project-specifications"
+import { COMMON_SPECIFICATION_KEYS, COMMON_SCOPE_STATUS_KEYS } from "@/lib/constants/project-specifications"
 import { toast } from "sonner"
 import { Loader2 } from "lucide-react"
 import type { ProjectType } from "@prisma/client"
@@ -43,6 +43,7 @@ interface ProjectFormProps {
     description?: string | null
     images: string[]
     specifications: Specification[]
+    scopeStatus: Specification[]
     categoryId: number
     published: boolean
     projectType?: ProjectType
@@ -72,6 +73,10 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
   const [specifications, setSpecifications] = useState<Specification[]>(
     initialData?.specifications ||
     (mode === "create" ? COMMON_SPECIFICATION_KEYS.map(key => ({ key, value: "" })) : [])
+  )
+  const [scopeStatus, setScopeStatus] = useState<Specification[]>(
+    initialData?.scopeStatus ||
+    (mode === "create" ? COMMON_SCOPE_STATUS_KEYS.map(key => ({ key, value: "" })) : [])
   )
   const [projectType, setProjectType] = useState<ProjectType>(
     initialData?.projectType || "OTHER"
@@ -111,6 +116,7 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
         description: description || undefined,
         images,
         specifications: specifications.filter(s => s.value.trim()),
+        scopeStatus: scopeStatus.filter(s => s.value.trim()),
         projectType,
         categoryId: Number(categoryId),
         published,
@@ -153,10 +159,10 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <Tabs defaultValue="content">
+      <Tabs defaultValue="specifications">
         <TabsList className="h-11">
-          <TabsTrigger value="content" className="text-base px-6 py-2">Content</TabsTrigger>
           <TabsTrigger value="specifications" className="text-base px-6 py-2">Specifications</TabsTrigger>
+          <TabsTrigger value="content" className="text-base px-6 py-2">Content</TabsTrigger>
           <TabsTrigger value="media" className="text-base px-6 py-2">Media</TabsTrigger>
           <TabsTrigger value="description" className="text-base px-6 py-2">Description</TabsTrigger>
           <TabsTrigger value="seo" className="text-base px-6 py-2">SEO</TabsTrigger>
@@ -251,7 +257,7 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
         </TabsContent>
 
         {/* SPECIFICATIONS TAB */}
-        <TabsContent value="specifications" className="space-y-4 mt-4">
+        <TabsContent value="specifications" className="space-y-8 mt-4">
           <div className="space-y-2">
             <Label>Project Specifications</Label>
             <p className="text-sm text-gray-500">
@@ -260,6 +266,17 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
             <SpecificationEditor
               specifications={specifications}
               onChange={setSpecifications}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label>Scope & Status</Label>
+            <p className="text-sm text-gray-500">
+              Add key-value pairs for project scope and status
+            </p>
+            <SpecificationEditor
+              specifications={scopeStatus}
+              onChange={setScopeStatus}
             />
           </div>
         </TabsContent>

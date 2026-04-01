@@ -18,6 +18,7 @@ export interface CreateProjectInput {
   description?: string
   images: string[]
   specifications: Specification[]
+  scopeStatus: Specification[]
   projectType: ProjectType
   categoryId: number
   published: boolean
@@ -32,6 +33,7 @@ export interface UpdateProjectInput {
   description?: string | null
   images?: string[]
   specifications?: Specification[]
+  scopeStatus?: Specification[]
   projectType?: ProjectType
   categoryId?: number
   published?: boolean

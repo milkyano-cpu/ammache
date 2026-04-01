@@ -39,6 +39,7 @@ model Project {
   description      String?      @db.Text
   images           String[]     @default([])
   specifications   Json?        @default("[]")
+  scopeStatus      Json?        @default("[]") @map("scope_status")
   published        Boolean      @default(false)
   projectType      ProjectType  @default(OTHER) @map("project_type")
   metaTitle        String?      @map("meta_title")

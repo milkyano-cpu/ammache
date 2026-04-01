@@ -27,10 +27,60 @@ const retailProjects = [
   { name: "Highpoint Retail Plaza", image: "/project6.png", desc: "Premium retail destination with contemporary architecture" },
 ];
 
+const residentialSpecs = [
+  { key: "Building Type", value: "Residential Apartment" },
+  { key: "Storeys", value: "12" },
+  { key: "Net Lettable Area", value: "8,500 sqm" },
+  { key: "Set Area", value: "1,200 sqm" },
+  { key: "Construction Cost", value: "$45M" },
+];
+
+const commercialSpecs = [
+  { key: "Building Type", value: "Commercial Office" },
+  { key: "Storeys", value: "24" },
+  { key: "Net Lettable Area", value: "18,000 sqm" },
+  { key: "Set Area", value: "3,500 sqm" },
+  { key: "Construction Cost", value: "$120M" },
+];
+
+const retailSpecs = [
+  { key: "Building Type", value: "Retail Complex" },
+  { key: "Storeys", value: "3" },
+  { key: "Net Lettable Area", value: "12,000 sqm" },
+  { key: "Set Area", value: "4,000 sqm" },
+  { key: "Construction Cost", value: "$65M" },
+];
+
+const residentialScopeStatus = [
+  { key: "Amenities", value: "Pool, Gym, Rooftop Garden" },
+  { key: "Sustainability", value: "6 Star Energy Rating" },
+  { key: "Approval", value: "City of Melbourne — Approved" },
+  { key: "Role", value: "Sketch · Design Dev · Construction" },
+  { key: "Status", value: "Completed" },
+];
+
+const commercialScopeStatus = [
+  { key: "Amenities", value: "Lobby, Conference Center, Parking" },
+  { key: "Sustainability", value: "5 Star Green Star" },
+  { key: "Approval", value: "City of Melbourne — Approved" },
+  { key: "Role", value: "Design Dev · Documentation" },
+  { key: "Status", value: "Under Construction" },
+];
+
+const retailScopeStatus = [
+  { key: "Amenities", value: "Food Court, Parking, Play Area" },
+  { key: "Sustainability", value: "4 Star Green Star" },
+  { key: "Approval", value: "City of Melbourne — Approved" },
+  { key: "Role", value: "Sketch · Design Dev" },
+  { key: "Status", value: "In Design" },
+];
+
 async function upsertProjects(
   prisma: PrismaClient,
   projects: { name: string; image: string; desc: string }[],
-  categoryId: number
+  categoryId: number,
+  specifications: { key: string; value: string }[],
+  scopeStatus: { key: string; value: string }[]
 ) {
   for (const p of projects) {
     const slug = slugify(p.name);
@@ -40,6 +90,8 @@ async function upsertProjects(
         name: p.name,
         images: [p.image],
         shortDescription: p.desc,
+        specifications,
+        scopeStatus,
         categoryId,
         published: true,
         projectType: "AMMACHE",
@@ -49,6 +101,8 @@ async function upsertProjects(
         name: p.name,
         images: [p.image],
         shortDescription: p.desc,
+        specifications,
+        scopeStatus,
         categoryId,
         published: true,
         projectType: "AMMACHE",
@@ -78,9 +132,9 @@ export async function seedProjects(prisma: PrismaClient) {
 
   console.log("✅ Categories seeded");
 
-  await upsertProjects(prisma, residentialProjects, residentialCat.id);
-  await upsertProjects(prisma, commercialProjects, commercialCat.id);
-  await upsertProjects(prisma, retailProjects, retailCat.id);
+  await upsertProjects(prisma, residentialProjects, residentialCat.id, residentialSpecs, residentialScopeStatus);
+  await upsertProjects(prisma, commercialProjects, commercialCat.id, commercialSpecs, commercialScopeStatus);
+  await upsertProjects(prisma, retailProjects, retailCat.id, retailSpecs, retailScopeStatus);
 
   console.log("✅ Projects seeded (15 total)");
 }

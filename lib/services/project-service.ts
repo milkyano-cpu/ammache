@@ -123,6 +123,7 @@ export async function createProject(
       description: data.description || null,
       images: data.images,
       specifications: data.specifications as unknown as Prisma.InputJsonValue,
+      scopeStatus: data.scopeStatus as unknown as Prisma.InputJsonValue,
       projectType: data.projectType || "OTHER",
       categoryId: data.categoryId,
       published: data.published,
@@ -143,6 +144,10 @@ export async function updateProject(
 
   if (data.specifications) {
     updateData.specifications = data.specifications as unknown as Prisma.InputJsonValue
+  }
+
+  if (data.scopeStatus) {
+    updateData.scopeStatus = data.scopeStatus as unknown as Prisma.InputJsonValue
   }
 
   if (data.name && !data.slug) {
