@@ -84,13 +84,16 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
 
               {/* VIEW DEVELOPMENT */}
               <div className="
-                  absolute bottom-4 left-1/2 -translate-x-1/2
-                  text-white typo-caption
-                  opacity-0 group-hover:opacity-100
-                  transition duration-300
-                ">
-                  View Development →
-                </div>
+                absolute bottom-4 left-1/2 -translate-x-1/2
+                text-white typo-caption
+                opacity-0 group-hover:opacity-100
+                transition duration-300
+              ">
+                <span className="inline-flex items-center">
+                  <span>View Development</span>
+                  <span className="ml-2">❯</span>
+                </span>
+              </div>
 
             </div>
           ))}

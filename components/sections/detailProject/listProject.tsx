@@ -171,7 +171,10 @@ const DetailProjectsSection = ({
                 opacity-0 group-hover:opacity-100
                 transition duration-300
               ">
-                View Development →
+                <span className="inline-flex items-center">
+                  <span>View Development</span>
+                  <span className="ml-2">❯</span>
+                </span>
               </div>
 
             </div>
@@ -190,7 +193,7 @@ const DetailProjectsSection = ({
             transition
             cursor-pointer
           ">
-            View More →
+            View More
           </button>
         </div>
 
