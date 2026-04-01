@@ -7,7 +7,7 @@ export default async function Page() {
   const categories = await prisma.category.findMany({
     include: {
       _count: {
-        select: { products: true },
+        select: { projects: true },
       },
     },
     orderBy: {

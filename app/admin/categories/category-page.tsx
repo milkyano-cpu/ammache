@@ -8,7 +8,7 @@ type Category = {
   name: string
   createdAt: string
   _count: {
-    products: number
+    projects: number
   }
 }
 
@@ -88,7 +88,7 @@ export default function CategoryClient({ initialData }: { initialData: Category[
         }
         const created = await res.json()
         setCategories((prev) => [
-          { ...created, createdAt: created.createdAt ?? new Date().toISOString(), _count: { products: 0 } },
+          { ...created, createdAt: created.createdAt ?? new Date().toISOString(), _count: { projects: 0 } },
           ...prev,
         ])
         setToast({ message: "Category created!", type: "success" })
@@ -100,9 +100,9 @@ export default function CategoryClient({ initialData }: { initialData: Category[
   }
 
   async function handleDelete(cat: Category) {
-    if (cat._count.products > 0) {
+    if (cat._count.projects > 0) {
       setToast({
-        message: `Cannot delete: ${cat._count.products} product(s) still use this category`,
+        message: `Cannot delete: ${cat._count.projects} project(s) still use this category`,
         type: "error",
       })
       return
@@ -210,7 +210,7 @@ export default function CategoryClient({ initialData }: { initialData: Category[
         <div>
           <h1 className="text-xl font-bold">List Categories</h1>
           <p className="text-sm text-gray-500">
-            Manage your product categories
+            Manage your project categories
           </p>
         </div>
 
@@ -242,7 +242,7 @@ export default function CategoryClient({ initialData }: { initialData: Category[
           <thead className="bg-gray-100">
             <tr>
               <th className="p-3 text-left">Name</th>
-              <th className="p-3 text-left">Products</th>
+              <th className="p-3 text-left">Projects</th>
               <th className="p-3 text-left">Created</th>
               <th className="p-3 text-right">Action</th>
             </tr>
@@ -253,7 +253,7 @@ export default function CategoryClient({ initialData }: { initialData: Category[
                 <td className="p-3 font-medium">{item.name}</td>
                 <td className="p-3">
                   <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600">
-                    {item._count.products} product{item._count.products !== 1 ? "s" : ""}
+                    {item._count.projects} project{item._count.projects !== 1 ? "s" : ""}
                   </span>
                 </td>
                 <td className="p-3">
@@ -302,7 +302,7 @@ export default function CategoryClient({ initialData }: { initialData: Category[
             <div className="flex-1 min-w-0">
               <p className="font-semibold truncate">{item.name}</p>
               <p className="text-sm text-gray-500">
-                {item._count.products} product{item._count.products !== 1 ? "s" : ""}
+                {item._count.projects} project{item._count.projects !== 1 ? "s" : ""}
               </p>
             </div>
             <div className="flex gap-2 items-start">
