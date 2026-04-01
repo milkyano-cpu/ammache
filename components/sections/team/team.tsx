@@ -37,12 +37,12 @@ const Stat = ({
 
   return (
     <div className="text-center w-1/3 md:w-auto">
-    <p className="text-2xl md:text-5xl font-semibold text-white">
+    <p className="typo-stat text-white">
         {prefix}
         {count}
         {suffix}
     </p>
-    <p className="text-[10px] md:text-sm text-white/80 mt-1 leading-tight">
+    <p className="typo-caption text-white/80 mt-1">
         {label}
     </p>
     </div>
@@ -80,30 +80,18 @@ const TeamHero = () => {
         <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
           {/* BREADCRUMB */}
-        <p className="text-xl md:text-2xl mb-4 text-white">
+        <p className="typo-body-lg mb-4 text-white">
               <span className="opacity-80">Home / </span>
               <span className="font-bold text-white">Team</span>
           </p>
 
           {/* TITLE */}
-           <h1 className="
-            text-[30px] leading-[1.15]
-            md:text-5xl lg:text-6xl
-            font-semibold
-            max-w-[90%] md:max-w-[700px]
-            mb-3
-            ">
+           <h1 className="typo-h1 max-w-[90%] md:max-w-[700px] mb-3">
             The Team Behind Ammache
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="
-            text-[13px]
-            md:text-base
-            text-white/80
-            max-w-[95%] md:max-w-[700px]
-            leading-relaxed
-            ">
+          <p className="typo-body text-white/80 max-w-[95%] md:max-w-[700px]">
             Ammache is built on a carefully selected team of architects, designers, and professionals dedicated to delivering thoughtful and enduring architecture.
           </p>
 

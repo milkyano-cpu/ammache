@@ -65,10 +65,10 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
 
           {/* TEXT */}
           <div className="flex flex-col">
-            <span className="text-lg font-bold">
+            <span className="typo-h5">
               Ammache Team
             </span>
-            <span className="text-xs text-gray-500">
+            <span className="typo-fine text-gray-500">
                 Architecture Management
             </span>
           </div>
@@ -104,9 +104,9 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
 
               {/* TEXT */}
               <div className="flex flex-col leading-tight">
-                <span className="font-medium">{item.title}</span>
+                <span className="typo-caption">{item.title}</span>
                 <span
-                  className={`text-xs ${
+                  className={`typo-fine ${
                     isActive ? "text-gray-300" : "text-gray-500"
                   }`}
                 >

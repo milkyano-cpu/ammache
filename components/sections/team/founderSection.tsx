@@ -9,7 +9,7 @@ const FounderSection = () => {
       <div className="max-w-[1200px] mx-auto px-6">
 
         {/* TITLE */}
-        <h2 className="text-2xl md:text-3xl font-semibold mb-10 relative inline-block">
+        <h2 className="typo-h3 mb-10 relative inline-block">
           Founders
           <span className="block w-16 h-[2px] bg-gray-400 mt-2"></span>
         </h2>
@@ -58,17 +58,17 @@ const FounderSection = () => {
                 </div>
 
               {/* NAME */}
-              <h3 className="text-2xl md:text-4xl font-semibold mb-2">
+              <h3 className="typo-h2 mb-2">
                 Nidal Ammache
               </h3>
 
               {/* ROLE */}
-              <p className="text-lg md:text-xl text-white mb-6">
+              <p className="typo-body-lg text-white mb-6">
                 Founder
               </p>
 
               {/* DESC */}
-              <p className="text-sm md:text-[15px] text-white leading-relaxed mb-8">
+              <p className="typo-body-sm text-white mb-8">
                 Nidal possesses over three decades of extensive experience in architectural
                 and building technology, successfully delivering projects to clients. He
                 consistently maintains a hands-on approach, ensuring a high level of responsibility
@@ -77,14 +77,14 @@ const FounderSection = () => {
 
               {/* BUTTON */}
               <button className="
-                px-6 py-3 
-                rounded-full 
-                border border-white/40 
-                text-sm 
-                hover:bg-white 
-                hover:text-black 
-                transition-all 
-                duration-300 
+                px-6 py-3
+                rounded-full
+                border border-white/40
+                typo-button
+                hover:bg-white
+                hover:text-black
+                transition-all
+                duration-300
                 cursor-pointer
               ">
                 Read More

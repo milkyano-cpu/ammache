@@ -109,7 +109,7 @@ const Header = () => {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    'text-3xl md:text-5xl font-light tracking-wide transition cursor-pointer',
+                    'typo-nav transition cursor-pointer',
                     isActive
                       ? 'text-gray-500'
                       : 'text-white hover:opacity-70'
@@ -128,11 +128,11 @@ const Header = () => {
           {/* MOBILE VERSION */}
           <div className="md:hidden px-6">
 
-            <p className="text-white font-medium mb-2">
+            <p className="typo-h5 text-white mb-2">
               Join Our Mailing List
             </p>
 
-            <p className="text-white text-sm mb-6 leading-relaxed">
+            <p className="typo-body-sm text-white mb-6">
               Stay updated with new developments, projects, and announcements from Ammache.
             </p>
 
@@ -143,12 +143,12 @@ const Header = () => {
                 placeholder="Email"
                 className="flex-1 px-4 py-3 text-black outline-none text-sm"
               />
-              <button className="bg-black text-white px-4 py-2 m-1 rounded-full text-xs">
+              <button className="bg-black text-white px-4 py-2 m-1 rounded-full typo-fine">
                 Subscribe
               </button>
             </div>
 
-            <div className="flex items-start gap-2 mt-4 text-xs text-gray-500">
+            <div className="flex items-start gap-2 mt-4 typo-fine text-gray-500">
               <input type="checkbox" className="mt-1 cursor-pointer" />
               <span>
                 I agree to receive communications from Ammache.
@@ -171,12 +171,12 @@ const Header = () => {
                     className="mb-8"
                   />
 
-                  <p className="text-white mb-8 max-w-md leading-relaxed text-[15px]">
+                  <p className="typo-body-sm text-white mb-8 max-w-md">
                     Founded in Melbourne in 1998, Ammache Architects creates
                     thoughtful, innovative architecture designed to endure.
                   </p>
 
-                <div className="space-y-4 text-white text-sm">
+                <div className="space-y-4 text-white typo-body-sm">
 
                   <a
                     href="https://maps.google.com/?q=11+Meaden+St+Southbank+VIC+3006"
@@ -246,11 +246,11 @@ const Header = () => {
 
                 {/* RIGHT */}
                 <div className="max-w-md ml-auto">
-                  <p className="text-white font-bold mb-2 text-lg">
+                  <p className="typo-h5 text-white mb-2">
                     Join Ammache Exclusive VIP
                   </p>
 
-                  <p className="text-white text-sm mb-6 leading-relaxed max-w-sm">
+                  <p className="typo-body-sm text-white mb-6 max-w-sm">
                     First access to new projects before they go public. This isn't a newsletter, it's a seat at the table.
                   </p>
 
@@ -260,11 +260,11 @@ const Header = () => {
                       placeholder="Email"
                       className="flex-1 px-5 py-3 text-black outline-none text-sm"
                     />
-                    <button className="bg-black text-white px-5 py-2 m-1 rounded-full text-sm whitespace-nowrap hover:opacity-80 transition cursor-pointer">
+                    <button className="bg-black text-white px-5 py-2 m-1 rounded-full typo-button whitespace-nowrap hover:opacity-80 transition cursor-pointer">
                       Join The List
                     </button>
                   </div>
-                  <div className="flex items-start gap-2 mt-5 text-xs text-white">
+                  <div className="flex items-start gap-2 mt-5 typo-fine text-white">
                     <input type="checkbox" className="mt-1 cursor-pointer" />
                     <span>
                       I agree to receive updates from Ammache. Unsubscribe anytime.
@@ -276,7 +276,7 @@ const Header = () => {
           </div>
 
           {/* COPYRIGHT */}
-          <div className="text-center text-white text-xs mt-10 px-6">
+          <div className="text-center text-white typo-fine mt-10 px-6">
             Copyright © 2026 Ammache Architects. All rights reserved.
           </div>
         </div>

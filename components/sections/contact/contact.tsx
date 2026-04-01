@@ -38,11 +38,11 @@ const ContactHero = () => {
       <div className="absolute inset-0 flex items-center">
       <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
-          <p className="text-xl md:text-2xl mb-4 text-white">
+          <p className="typo-body-lg mb-4 text-white">
               <span className="opacity-80">Home / </span>
               <span className="font-bold text-white">Contact Us</span>
           </p>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight max-w-[700px]">
+          <h1 className="typo-h1 max-w-[700px]">
           Lets build something great.
           </h1>
 
@@ -104,7 +104,7 @@ const ContactSection = () => {
           className="group flex gap-4 items-center"
         >
           <MapPin size={22} className="group-hover:translate-x-1 transition" />
-          <p className="leading-relaxed text-[15px] group-hover:translate-x-1 transition">
+          <p className="typo-body-sm group-hover:translate-x-1 transition">
             11 Meaden St, Southbank <br /> VIC 3006
           </p>
         </a>
@@ -120,7 +120,7 @@ const ContactSection = () => {
           className="group flex gap-4 items-center"
         >
           <Phone size={22} className="group-hover:translate-x-1 transition" />
-          <p className="text-[15px] group-hover:translate-x-1 transition">
+          <p className="typo-body-sm group-hover:translate-x-1 transition">
             03 9957 1818
           </p>
         </a>
@@ -136,7 +136,7 @@ const ContactSection = () => {
           className="group flex gap-4 items-center"
         >
           <Mail size={22} className="group-hover:translate-x-1 transition" />
-          <p className="text-[15px] break-words group-hover:translate-x-1 transition">
+          <p className="typo-body-sm break-words group-hover:translate-x-1 transition">
             enquiries@ammachearchitects.com.au
           </p>
         </a>
@@ -158,7 +158,7 @@ const ContactSection = () => {
         className="mb-5"
         />
 
-        <p className="text-sm text-white/70 leading-relaxed">
+        <p className="typo-body-sm text-white/70">
         Founded in Melbourne in 1998, Ammache Architects creates thoughtful,
         innovative architecture designed to endure.
         </p>
@@ -197,7 +197,7 @@ const ContactSection = () => {
         {/* ================= RIGHT ================= */}
           <div className="bg-white md:bg-[white] p-6 md:p-10 md:p-14 rounded-[20px] md:rounded-none shadow-sm md:shadow-none">
 
-              <p className="text-[15px] text-gray-600 mb-8 leading-relaxed">
+              <p className="typo-body-sm text-gray-600 mb-8">
                   If you would like to contact Ammache about our services and product
                   please don’t hesitate to reach out.
               </p>
@@ -210,7 +210,7 @@ const ContactSection = () => {
                   { label: "Last Name*", placeholder: "Last Name*" },
                   ].map((item, i) => (
                   <div key={i}>
-                      <label className="text-sm text-gray-700 block mb-2">
+                      <label className="typo-caption text-gray-700 block mb-2">
                       {item.label}
                       </label>
                       <input
@@ -223,7 +223,7 @@ const ContactSection = () => {
 
                   {/* PHONE */}
                   <div>
-                  <label className="text-sm text-gray-700 block mb-2">
+                  <label className="typo-caption text-gray-700 block mb-2">
                       Phone number
                   </label>
 
@@ -245,7 +245,7 @@ const ContactSection = () => {
 
                   {/* EMAIL */}
                   <div>
-                  <label className="text-sm text-gray-700 block mb-2">
+                  <label className="typo-caption text-gray-700 block mb-2">
                       Email Address*
                   </label>
                   <input
@@ -257,7 +257,7 @@ const ContactSection = () => {
 
                   {/* PROJECT TYPE */}
                   <div>
-                  <label className="text-sm text-gray-700 block mb-2">
+                  <label className="typo-caption text-gray-700 block mb-2">
                       Project Type*
                   </label>
                   <input
@@ -269,7 +269,7 @@ const ContactSection = () => {
 
                   {/* PROJECT LOCATION */}
                   <div>
-                  <label className="text-sm text-gray-700 block mb-2">
+                  <label className="typo-caption text-gray-700 block mb-2">
                       Project Location*
                   </label>
                   <input
@@ -281,7 +281,7 @@ const ContactSection = () => {
 
                   {/* TEXTAREA */}
                   <div>
-                  <label className="text-sm text-gray-700 block mb-2">
+                  <label className="typo-caption text-gray-700 block mb-2">
                       How can we help?
                   </label>
                   <textarea
@@ -292,7 +292,7 @@ const ContactSection = () => {
                   </div>
 
                   {/* CHECKBOX */}
-                  <div className="flex items-start gap-2 mt-5 text-xs text-black">
+                  <div className="flex items-start gap-2 mt-5 typo-fine text-black">
                     <input type="checkbox" className="mt-1 cursor-pointer" />
                     <span>
                         I agree to receive communications from Ammache Architechs. Unsubscribe anytime.
@@ -300,7 +300,7 @@ const ContactSection = () => {
                   </div>
 
                   {/* BUTTON */}
-                  <button className="w-full mt-6 py-4 rounded-lg bg-black text-white text-sm font-medium hover:bg-gray-800 transition cursor-pointer">
+                  <button className="w-full mt-6 py-4 rounded-lg bg-black text-white typo-button hover:bg-gray-800 transition cursor-pointer">
                   Submit Enquiry
                   </button>
 
@@ -325,17 +325,17 @@ const ContactMapSection = () => {
         <div className="max-w-[420px] mx-auto md:mx-0 text-center md:text-left">
 
           {/* FIND */}
-          <p className="text-s tracking-[0.2em] text-black font-bold mb-6">
+          <p className="typo-overline text-black mb-6">
             FIND THE STUDIO
           </p>
 
           {/* TITLE */}
-          <h2 className="text-[32px] md:text-[56px] font-semibold leading-[1.15] mb-8">
+          <h2 className="typo-h1 mb-8">
             Southbank, <br /> Melbourne.
           </h2>
 
           {/* OPEN IN MAPS */}
-          <p className="text-xs text-gray-500 tracking-wide mb-4 md:ml-10">
+          <p className="typo-fine text-gray-500 mb-4 md:ml-10">
             OPEN IN MAPS
           </p>
 
@@ -350,7 +350,7 @@ const ContactMapSection = () => {
                 px-10 py-3
                 rounded-full
                 border-2 border-gray-300
-                text-sm font-medium
+                typo-button
                 hover:bg-black hover:text-white
                 transition-all
               "

@@ -43,7 +43,7 @@ const TeamSection = () => {
       <div className="max-w-[1200px] mx-auto px-6">
 
         {/* TITLE */}
-       <h2 className="text-2xl md:text-3xl font-semibold mb-10 md:mb-16 relative inline-block">
+       <h2 className="typo-h3 mb-10 md:mb-16 relative inline-block">
           Meet Our Team
           <span className="block w-20 h-[2px] bg-gray-400 mt-2"></span>
         </h2>
@@ -96,12 +96,12 @@ const TeamSection = () => {
               </div>
 
               {/* NAME */}
-              <h3 className="mt-4 md:mt-6 text-[15px] md:text-lg font-semibold">
+              <h3 className="mt-4 md:mt-6 typo-h6">
                 {item.name}
               </h3>
 
               {/* ROLE */}
-              <p className="text-[12px] md:text-sm text-gray-600 mt-1">
+              <p className="typo-caption text-gray-600 mt-1">
                 {item.role}
               </p>
 

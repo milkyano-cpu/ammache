@@ -32,7 +32,7 @@ export default function Stats() {
       <div className="max-w-5xl mx-auto space-y-10">
 
         {/* TITLE */}
-        <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 leading-snug">
+        <h2 className="typo-h2 text-gray-900">
           Designing thoughtful architecture that shapes
           <br className="hidden md:block" />
           spaces and communities.
@@ -42,28 +42,28 @@ export default function Stats() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           
           <div>
-            <p className="text-4xl font-semibold text-black">
+            <p className="typo-stat text-black">
               <Counter end={27} />
             </p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="typo-caption text-gray-500 mt-2">
               Years of Experience
             </p>
           </div>
 
           <div>
-            <p className="text-4xl font-semibold text-black">
+            <p className="typo-stat text-black">
               <Counter end={900} />+
             </p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="typo-caption text-gray-500 mt-2">
               Completed Projects
             </p>
           </div>
 
           <div>
-            <p className="text-4xl font-semibold text-black">
+            <p className="typo-stat text-black">
               <Counter end={15} />+
             </p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="typo-caption text-gray-500 mt-2">
               Industry Awards & Recognition
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function Stats() {
         <div className="w-full h-px bg-gray-300" />
 
         {/* BUTTON */}
-        <button className="px-8 py-3 rounded-full border-2 border-gray-300 text-sm hover:bg-black hover:text-white transition cursor-pointer">
+        <button className="px-8 py-3 rounded-full border-2 border-gray-300 typo-button hover:bg-black hover:text-white transition cursor-pointer">
           View All Projects
         </button>
 

@@ -53,17 +53,17 @@ export default function Projects() {
         {/* TITLE */}
         <div className="text-left md:text-center space-y-4 pb-0 md:pb-10">
           <div className="flex justify-start md:justify-center items-center gap-3">
-            <p className="text-s tracking-widest text-gray-800">
+            <p className="typo-overline text-gray-800">
               OUR PROJECTS
             </p>
             <div className="w-10 h-[1px] bg-gray-400" />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-black">
+          <h2 className="typo-h2 text-black">
             Selected Developments
           </h2>
 
-          <p className="text-gray-800 text-sm max-w-xl md:mx-auto">
+          <p className="typo-body-sm text-gray-800 max-w-xl md:mx-auto">
             Our encompasses projects with a cumulative construction
             value exceeding <span className="font-semibold">$700+</span> million.
           </p>
@@ -106,12 +106,12 @@ export default function Projects() {
                 />
 
                 {/* TITLE */}
-                <p className="text-white text-s font-semibold">
+                <p className="typo-h6 text-white">
                   {item.title}
                 </p>
 
                 {/* TYPE */}
-                <p className="text-white/70 text-s">
+                <p className="typo-caption text-white/70">
                   {item.type}
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function Projects() {
               {/* VIEW DEVELOPMENT */}
               <div className="
                   absolute bottom-4 left-1/2 -translate-x-1/2
-                  text-white text-s
+                  text-white typo-caption
                   opacity-0 group-hover:opacity-100
                   transition duration-300
                 ">
@@ -132,7 +132,7 @@ export default function Projects() {
 
         {/* BUTTON */}
         <div className="flex justify-center pt-6">
-          <button className="px-8 py-3 rounded-full border-2 border-gray-300 text-sm hover:bg-black hover:text-white transition cursor-pointer">
+          <button className="px-8 py-3 rounded-full border-2 border-gray-300 typo-button hover:bg-black hover:text-white transition cursor-pointer">
             View All Projects
           </button>
         </div>

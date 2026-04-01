@@ -4,12 +4,12 @@ export default function CTA() {
       <div className="max-w-2xl mx-auto space-y-6">
 
         {/* TITLE */}
-        <h2 className="text-3xl md:text-4xl font-semibold text-black">
+        <h2 className="typo-h2 text-black">
           Have a Project in Mind?
         </h2>
 
         {/* DESCRIPTION */}
-        <p className="text-gray-800 text-s md:text-base leading-relaxed">
+        <p className="typo-body text-gray-800">
           Tell us about your vision and our team
           <br />
           will get in touch.
@@ -17,7 +17,7 @@ export default function CTA() {
 
         {/* BUTTON */}
         <div className="pt-4">
-          <button className="px-10 py-3 rounded-full border-2 border-gray-300 text-sm hover:bg-black hover:text-white transition cursor-pointer">
+          <button className="px-10 py-3 rounded-full border-2 border-gray-300 typo-button hover:bg-black hover:text-white transition cursor-pointer">
             Enquire
           </button>
         </div>

@@ -29,7 +29,7 @@ const Hero = () => {
 
       {/* CONTENT */}
       <div className="relative z-10 flex items-center justify-center h-full">
-        <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-light tracking-widest">
+        <h1 className="text-white typo-display">
           AMMACHE
         </h1>
       </div>

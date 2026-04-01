@@ -21,27 +21,21 @@ export default function Studio() {
 
           {/* LABEL */}
           <div className="flex items-center gap-3">
-            <p className="text-s tracking-widest">
+            <p className="typo-overline">
               OUR STUDIO
             </p>
             <div className="w-10 h-[1px] bg-gray-400" />
           </div>
 
           {/* TITLE */}
-          <h2 className="
-            text-[26px] leading-[1.25]
-            md:text-4xl 
-            font-semibold 
-            text-black 
-            leading-tight
-          ">
+          <h2 className="typo-h2 text-black">
             A Private Network For The{" "}
             <br className="hidden md:block" />
             Built World
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="text-gray-900 text-base md:text-lg leading-relaxed max-w-md text-justify">
+          <p className="typo-body-lg text-gray-900 max-w-md text-justify">
             Beyond our studio, we’re building a curated network for architects, interior designers, builders, developers, and creative professionals.
             <br /><br />
             Through private events, educational sessions, industry insights, and exclusive invitations, we’re creating a space where ambitious people in design and construction can connect, learn, and stay ahead.

@@ -8,21 +8,21 @@ export default function About() {
         {/* TOP TITLE */}
         <div className="flex flex-col items-center text-center md:text-left md:items-start md:flex-row md:justify-between gap-6 pb-10">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold text-black">
+            <h2 className="typo-h2 text-black">
               Innovative Architecture Built on Experience.
             </h2>
-            <p className="text-gray-800 mt-2 text-s">
+            <p className="typo-body-sm text-gray-800 mt-2">
               From concept design to planning, compliance, and post-construction support.
             </p>
           </div>
 
           {/* FIX BUTTON SIZE */}
           <div className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
-            <button className="w-[170px] px-5 py-2.5 rounded-full border-2 border-gray-400 text-sm text-center hover:bg-black hover:text-white transition cursor-pointer">
+            <button className="w-[170px] px-5 py-2.5 rounded-full border-2 border-gray-400 typo-button text-center hover:bg-black hover:text-white transition cursor-pointer">
               View Our Projects
             </button>
 
-            <button className="w-[170px] px-5 py-2.5 rounded-full bg-black text-white text-sm text-center hover:opacity-80 transition cursor-pointer">
+            <button className="w-[170px] px-5 py-2.5 rounded-full bg-black text-white typo-button text-center hover:opacity-80 transition cursor-pointer">
               Enquire
             </button>
           </div>
@@ -37,19 +37,19 @@ export default function About() {
 
               {/* ABOUT US + LINE */}
               <div className="flex items-center gap-3">
-                <p className="text-s tracking-widest text-white">
+                <p className="typo-overline text-white">
                   ABOUT US
                 </p>
                 <div className="w-10 h-[1px] bg-white opacity-60"></div>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-semibold leading-tight">
+              <h3 className="typo-h2">
                 Experience in Every Detail.
                 <br />
                 Design in Every Structure.
               </h3>
 
-              <p className="text-gray-200 text-s leading-relaxed">
+              <p className="typo-body-sm text-gray-200">
                 Founded in 1998 in Melbourne, Australia, Ammache Architects is a
                 registered architectural firm comprising a carefully selected team
                 of professionals, including registered architects and draftsmen.
@@ -58,7 +58,7 @@ export default function About() {
                 post-construction support.
               </p>
 
-              <p className="text-gray-200 text-s leading-relaxed">
+              <p className="typo-body-sm text-gray-200">
                 Ammache Architects combines innovative design with a strong
                 understanding of environmental, client, and business requirements.
                 This approach results in buildings defined by beauty, quality, and
@@ -67,7 +67,7 @@ export default function About() {
               </p>
 
               {/* BIGGER BUTTON */}
-              <button className="mt-4 px-8 py-3.5 border border-white rounded-full text-sm hover:bg-white hover:text-black transition cursor-pointer">
+              <button className="mt-4 px-8 py-3.5 border border-white rounded-full typo-button hover:bg-white hover:text-black transition cursor-pointer">
                 Read Our Story
               </button>
 

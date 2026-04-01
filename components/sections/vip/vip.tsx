@@ -31,18 +31,18 @@ const VipHero = () => {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-white">
 
         {/* BREADCRUMB */}
-        <p className="text-xl md:text-2xl mb-4 text-white">
+        <p className="typo-body-lg mb-4 text-white">
               <span className="opacity-80">Home / </span>
               <span className="font-bold text-white">Ammache VIP </span>
         </p>
 
         {/* TITLE */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-wide mb-6">
+        <h1 className="typo-display mb-6">
           AMMACHE VIP
         </h1>
 
         {/* DESCRIPTION */}
-        <p className="text-s md:text-base text-white/80 max-w-[700px] leading-relaxed">
+        <p className="typo-body text-white/80 max-w-[700px]">
           Get first access to new developments, design insights, and exclusive opportunities
           from a firm with over <span className="font-semibold text-white">$700 million</span> in delivered projects — before they go public.
         </p>

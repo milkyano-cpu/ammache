@@ -9,7 +9,7 @@ export function SiteHeader() {
     <header className="flex h-20 items-center justify-between border-b px-4 bg-white">
 
       <Link href="/admin">
-        <div className="bg-black text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm hover:opacity-80 transition cursor-pointer">
+        <div className="bg-black text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold typo-button hover:opacity-80 transition cursor-pointer">
           amc.
         </div>
       </Link>

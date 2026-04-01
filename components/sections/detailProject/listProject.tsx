@@ -177,11 +177,11 @@ const DetailProjectsSection = ({
                   className="mb-4 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition"
                 />
 
-                <p className="text-white text-sm font-semibold">
+                <p className="typo-h6 text-white">
                   {item.title}
                 </p>
 
-                <p className="text-white/80 text-xs mt-1">
+                <p className="typo-fine text-white/80 mt-1">
                   {item.type}
                 </p>
               </div>
@@ -189,7 +189,7 @@ const DetailProjectsSection = ({
               {/* VIEW DEVELOPMENT */}
               <div className="
                 absolute bottom-4 left-1/2 -translate-x-1/2
-                text-white text-sm
+                text-white typo-caption
                 opacity-0 group-hover:opacity-100
                 transition duration-300
               ">
@@ -204,12 +204,12 @@ const DetailProjectsSection = ({
         {/* ================= BUTTON ================= */}
         <div className="flex justify-center mt-20">
           <button className="
-            px-11 py-3 
-            rounded-full 
-            border-2 border-gray-300 
-            text-sm 
-            hover:bg-black hover:text-white 
-            transition 
+            px-11 py-3
+            rounded-full
+            border-2 border-gray-300
+            typo-button
+            hover:bg-black hover:text-white
+            transition
             cursor-pointer
           ">
             View More →

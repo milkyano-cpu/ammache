@@ -43,7 +43,7 @@ const VipFeatures = () => {
       <div className="max-w-[1200px] mx-auto px-6">
 
         {/* TITLE */}
-        <h2 className="text-3xl md:text-5xl font-semibold mb-16 max-w-[500px]">
+        <h2 className="typo-h2 mb-16 max-w-[500px]">
           Everything included in your membership.
         </h2>
 
@@ -61,11 +61,11 @@ const VipFeatures = () => {
                   <Icon size={20} />
                 </div>
 
-                <h3 className="text-[17px] font-semibold mb-3">
+                <h3 className="typo-h5 mb-3">
                   {item.title}
                 </h3>
 
-                <p className="text-[14px] text-gray-600 leading-relaxed">
+                <p className="typo-caption text-gray-600">
                   {item.desc}
                 </p>
               </div>
@@ -86,11 +86,11 @@ const VipFeatures = () => {
                   <Icon size={20} />
                 </div>
 
-                <h3 className="text-[17px] font-semibold mb-3">
+                <h3 className="typo-h5 mb-3">
                   {item.title}
                 </h3>
 
-                <p className="text-[14px] text-gray-600 leading-relaxed">
+                <p className="typo-caption text-gray-600">
                   {item.desc}
                 </p>
               </div>
