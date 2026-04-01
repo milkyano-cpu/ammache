@@ -92,7 +92,7 @@ const DetailProjectsSection = ({
               {tab.label}
 
               {/* ANIMATED COUNT */}
-              <span className="text-yellow-500 ml-2 font-semibold">
+              <span className="text-gold-500 ml-2 font-semibold">
                 <AnimatedCount value={tab.count} />
               </span>
 
@@ -110,10 +110,10 @@ const DetailProjectsSection = ({
         {/* BUTTON */}
         <button
             onClick={() => setOpen(!open)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm flex justify-between items-center"
+            className="w-full border border-gold rounded-lg px-4 py-3 text-sm flex justify-between items-center"
         >
             <span>{activeTab}</span>
-            <span className="text-yellow-500 font-semibold ml-2">
+            <span className="text-gold-500 font-semibold ml-2">
             {tabs.find(t => t.label === activeTab)?.count}
             </span>
         </button>
@@ -132,7 +132,7 @@ const DetailProjectsSection = ({
                 className="px-4 py-3 flex justify-between items-center text-sm hover:bg-gray-100 cursor-pointer"
                 >
                 <span>{tab.label}</span>
-                <span className="text-yellow-500 font-semibold">
+                <span className="text-gold-500 font-semibold">
                     {tab.count}
                 </span>
                 </div>

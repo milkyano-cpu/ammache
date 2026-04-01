@@ -51,6 +51,7 @@
 @theme {
   --color-primary: #113163;
   --color-blue: #1674D3;
+  --color-gold: #CAAB85;
 
   /* ── Typography Scale ── */
   --text-display: 4.5rem;     /* 72px — Hero titles */
