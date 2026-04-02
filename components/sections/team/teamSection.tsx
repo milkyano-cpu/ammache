@@ -26,12 +26,12 @@ const teamData = [
   },
   {
     name: "Lolyta",
-    role: "Architects",
+    role: "Architect",
     image: "/team5.png",
   },
   {
     name: "Lara",
-    role: "Architects",
+    role: "Architect",
     image: "/team6.png",
   },
 ]

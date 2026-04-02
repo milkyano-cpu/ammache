@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 
 const FounderSection = () => {
   return (
@@ -75,7 +76,8 @@ const FounderSection = () => {
                 to his clients, while adeptly overcoming a diverse range of project issues....
               </p>
 
-              {/* BUTTON */}
+             {/* BUTTON */}
+            <Link href="/team/nidal-ammache">
               <button className="
                 px-6 py-3
                 rounded-full
@@ -89,6 +91,7 @@ const FounderSection = () => {
               ">
                 Read More
               </button>
+            </Link>
 
             </div>
 
