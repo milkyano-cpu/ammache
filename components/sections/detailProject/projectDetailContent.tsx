@@ -45,10 +45,14 @@ const AnimatedStat = ({
   }, [value])
 
   return (
-    <div>
-      <p className="typo-stat text-white">{display}</p>
-      <p className="typo-caption text-white/70 mt-2">{label}</p>
-    </div>
+<div className="text-center">
+  <p className="text-xl md:text-5xl font-bold text-white">
+    {display}
+  </p>
+  <p className="text-[10px] md:text-base text-white/70 mt-1 md:mt-2">
+    {label}
+  </p>
+</div>
   )
 }
 
@@ -113,7 +117,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
       </section>
 
       {/* ================= CONTENT ================= */}
-      <section className="bg-[#f5f5f5] py-20">
+      <section className="bg-white md:bg-[#f5f5f5] py-20">
         <div className="max-w-[1200px] mx-auto px-6">
 
           <h2 className="typo-h5 mb-10 font-bold">
@@ -155,9 +159,9 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
             <div className="flex flex-col justify-between h-full">
 
               <div>
-                <h2 className="typo-h4 mb-4 font-bold">
-                  PROJECT SPECIFICATIONS
-                </h2>
+              <h2 className="typo-h4 font-bold border-b-2 pb-4 mb-6">
+                PROJECT SPECIFICATIONS
+              </h2>
 
                 <div className="space-y-4 mb-10">
                   {specs.map((s: any, i: number) => (
@@ -168,7 +172,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
                   ))}
                 </div>
 
-                <h2 className="typo-h4 mb-4 font-bold">
+                  <h2 className="typo-h4 font-bold border-b-2 pb-4 mb-6">
                   SCOPE & STATUS
                 </h2>
 
@@ -183,7 +187,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
               </div>
 
               {/* ✅ NEXT PROJECT BUTTON */}
-                <div className="mt-12 flex justify-end">
+                <div className="mt-12 flex justify-center md:justify-end">
                   <button
                     onClick={() => {
                       if (nextProject?.slug) {
