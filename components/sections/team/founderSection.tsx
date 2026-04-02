@@ -72,7 +72,7 @@ const FounderSection = () => {
                 Nidal possesses over three decades of extensive experience in architectural
                 and building technology, successfully delivering projects to clients. He
                 consistently maintains a hands-on approach, ensuring a high level of responsibility
-                to his clients, while adeptly overcoming a diverse range of project issues.
+                to his clients, while adeptly overcoming a diverse range of project issues....
               </p>
 
               {/* BUTTON */}

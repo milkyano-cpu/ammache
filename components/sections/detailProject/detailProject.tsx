@@ -113,9 +113,9 @@ const DetailProjectHero = ({
           <p className="typo-body text-white/80 max-w-[95%] md:max-w-[700px]">
             View our extensive portofolio of{" "}
             <span className="font-semibold text-white">
-              Ammache Architects Projects
+              Ammache Architects Projects,
             </span>{" "}
-            , curated bellow. We are a leading firm in{" "}
+            curated bellow. We are a leading firm in{" "}
             <span className="font-semibold text-white">
               Melbourne Architecture
             </span>

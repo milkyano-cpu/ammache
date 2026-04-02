@@ -12,7 +12,7 @@ export default function About() {
               Innovative Architecture Built on Experience.
             </h2>
             <p className="typo-body-sm text-gray-800 mt-2">
-              From concept design to planning, compliance, and post-construction support.
+              From concept design to planning, construction, and post-completion support, we deliver.
             </p>
           </div>
 
@@ -50,20 +50,11 @@ export default function About() {
               </h3>
 
               <p className="typo-body-sm text-gray-200">
-                Founded in 1998 in Melbourne, Australia, Ammache Architects is a
-                registered architectural firm comprising a carefully selected team
-                of professionals, including registered architects and draftsmen.
-                The studio offers a comprehensive range of architectural services,
-                from initial schematic design through planning, compliance, and
-                post-construction support.
+                Founded in 1998 in Melbourne, Australia, Ammache Architects is a registered architectural firm comprising a carefully selected team of professionals, including registered architects and draftsmen. The studio offers a comprehensive range of architectural services, from initial schematic design through planning, compliance, and post-construction support.
               </p>
 
               <p className="typo-body-sm text-gray-200">
-                Ammache Architects combines innovative design with a strong
-                understanding of environmental, client, and business requirements.
-                This approach results in buildings defined by beauty, quality, and
-                functionality while remaining sustainable within the competitive
-                property market.
+                Ammache Architects combines innovative design with a strong understanding of environmental, client, and business requirements. This approach results in buildings defined by beauty, quality, and functionality while remaining sustainable within the competitive property market.
               </p>
 
               {/* BIGGER BUTTON */}

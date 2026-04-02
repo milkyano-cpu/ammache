@@ -28,7 +28,7 @@ const CareersForm = () => {
         <div className="bg-white rounded-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.08)] p-5 md:p-10">
 
           <p className="typo-body text-gray-600 mb-6 md:mb-8">
-            If you would like to contact Ammache about our services and product please don’t hesitate to reach out.
+            If you would like to contact Ammache about our services, please don’t hesitate to reach out.
           </p>
 
           <div className="space-y-6">

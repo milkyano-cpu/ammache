@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useState, useEffect } from "react"
 import type { CategoryWithProjects } from "@/app/detailProject/detail-project-client"
 
@@ -125,6 +126,7 @@ const DetailProjectsSection = ({
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
 
           {projects.map((item) => (
+            <Link key={item.id} href={`/detailProject/${item.slug}`}>
             <div
               key={item.id}
               className="group relative rounded-2xl overflow-hidden cursor-pointer"
@@ -178,6 +180,7 @@ const DetailProjectsSection = ({
               </div>
 
             </div>
+            </Link>
           ))}
 
         </div>

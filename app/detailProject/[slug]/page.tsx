@@ -1,52 +1,39 @@
 import Header from "@/components/layouts/header"
 import Footer from "@/components/layouts/footer"
+import CTA from "@/components/sections/cta/cta"
 import { notFound } from "next/navigation"
-import { getProjectBySlug, getRelatedProjects } from "@/lib/services/project-service"
-import { generateProductMetadata, generateProductJsonLd } from "@/lib/utils/seo"
-// import ProjectDetailContent from "@/components/sections/detailProject/projectDetailContent"
-import type { Metadata } from "next"
+import { getProjectBySlug, getNextProject } from "@/lib/services/project-service"
+import ProjectDetailContent from "@/components/sections/detailProject/projectDetailContent"
 
 type Props = {
   params: Promise<{ slug: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export default async function ProjectDetail({ params }: Props) {
   const { slug } = await params
-  const product = await getProjectBySlug(slug)
 
-  if (!product) {
-    return { title: "Product Not Found" }
-  }
+  const project = await getProjectBySlug(slug)
 
-  return generateProductMetadata(product)
-}
+  if (!project || !project.published) return notFound()
 
-export default async function ProductDetail({ params }: Props) {
-  const { slug } = await params
-  const product = await getProjectBySlug(slug)
-
-  if (!product || !product.published) return notFound()
-
-  const jsonLd = generateProductJsonLd(product)
-  const relatedProducts = await getRelatedProjects(product.id, product.categoryId, 4)
+  // ✅ INI DIA TEMPATNYA
+  const nextProject = await getNextProject(
+    project.id,
+    project.categoryId
+  )
 
   return (
-    <main className="bg-[#F7F9FC] min-h-screen pb-20 md:pb-20">
+    <main className="bg-[#F7F9FC] min-h-screen">
       <Header />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      {/* ✅ kirim ke component */}
+      <ProjectDetailContent 
+        project={project}
+        nextProject={nextProject}
       />
 
-      {/* <ProjectDetailContent
-        product={product}
-        relatedProducts={relatedProducts}
-        breadcrumbBase={{ href: "/product", label: "Product" }}
-        detailBasePath="/product"
-      /> */}
+      <CTA />
 
-      {/* FOOTER */}
       <div className="mt-16 md:mt-24">
         <Footer />
       </div>

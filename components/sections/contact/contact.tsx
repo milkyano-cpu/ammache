@@ -42,7 +42,7 @@ const ContactHero = () => {
               <span className="opacity-80">Home / </span>
               <span className="font-bold text-white">Contact Us</span>
           </p>
-          <h1 className="typo-h1 max-w-[700px]">
+          <h1 className="typo-h1 max-w-[790px]">
           Lets build something great.
           </h1>
 
@@ -198,7 +198,7 @@ const ContactSection = () => {
           <div className="bg-white md:bg-[white] p-6 md:p-10 md:p-14 rounded-[20px] md:rounded-none shadow-sm md:shadow-none">
 
               <p className="typo-body-sm text-gray-600 mb-8">
-                  If you would like to contact Ammache about our services and product
+                  If you would like to contact Ammache about our services,
                   please don’t hesitate to reach out.
               </p>
 

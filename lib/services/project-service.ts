@@ -101,13 +101,18 @@ export async function getProjectById(
 
 export async function getProjectBySlug(
   slug: string
-): Promise<ProjectWithCategory | null> {
+): Promise<(ProjectWithCategory & { categoryName: string }) | null> {
   const project = await prisma.project.findUnique({
     where: { slug },
     include: { category: { select: categorySelect } },
   })
 
-  return project as ProjectWithCategory | null
+  if (!project) return null
+
+  return {
+    ...project,
+    categoryName: project.category?.name || "",
+  }
 }
 
 export async function createProject(
@@ -208,4 +213,38 @@ export async function getPublishedProjects(
   })
 
   return projects as ProjectWithCategory[]
+}
+
+export async function getNextProject(
+  currentId: number,
+  categoryId: number
+): Promise<{ id: number; slug: string; name: string } | null> {
+  const projects = await prisma.project.findMany({
+    where: {
+      categoryId,
+      published: true,
+    },
+    orderBy: {
+      createdAt: "asc",
+    },
+    select: {
+      id: true,
+      slug: true,
+      name: true, // ✅ tambahin ini
+    },
+  })
+
+  if (!projects.length) return null
+
+  const currentIndex = projects.findIndex(p => p.id === currentId)
+
+  // ✅ fallback kalau gak ketemu (harusnya jarang)
+  if (currentIndex === -1) {
+    return projects[0]
+  }
+
+  // ✅ looping aman
+  const nextIndex = (currentIndex + 1) % projects.length
+
+  return projects[nextIndex]
 }

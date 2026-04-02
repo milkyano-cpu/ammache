@@ -15,9 +15,9 @@ const JoinTeamCTA = () => {
 
         {/* DESC */}
             <p className="typo-body text-gray-700 mb-10 md:mb-12">
-            Let’s embody your beautiful ideas together, simplify
+            Let’s bring your beautiful ideas to life together and 
             <br className="hidden md:block" />
-            the way you visualize your next big things.
+            simplify the way you visualize your next big thing.
             </p>
 
         {/* BUTTON */}

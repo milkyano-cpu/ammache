@@ -45,7 +45,7 @@ export default function Stats() {
             <p className="typo-stat text-black">
               <Counter end={27} />
             </p>
-            <p className="typo-caption text-gray-500 mt-2">
+            <p className="typo-caption text-black mt-2">
               Years of Experience
             </p>
           </div>
@@ -54,7 +54,7 @@ export default function Stats() {
             <p className="typo-stat text-black">
               <Counter end={900} />+
             </p>
-            <p className="typo-caption text-gray-500 mt-2">
+            <p className="typo-caption text-black mt-2">
               Completed Projects
             </p>
           </div>
@@ -63,8 +63,8 @@ export default function Stats() {
             <p className="typo-stat text-black">
               <Counter end={15} />+
             </p>
-            <p className="typo-caption text-gray-500 mt-2">
-              Industry Awards & Recognition
+            <p className="typo-caption text-black mt-2">
+              Awards 
             </p>
           </div>
 
