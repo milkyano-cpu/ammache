@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useRef } from "react"
 import Image from "next/image"
 import {
   MapPin,
@@ -7,9 +8,19 @@ import {
   Mail,
   Instagram,
   Facebook,
-  Linkedin
+  Linkedin,
+  Loader2,
 } from "lucide-react"
+import { z } from "zod"
+import { toast } from "sonner"
 
+const contactSchema = z.object({
+  firstName: z.string().min(1, "First Name is required"),
+  lastName: z.string().min(1, "Last Name is required"),
+  email: z.string().min(1, "Email is required").email("Invalid email format"),
+  projectType: z.string().min(1, "Project Type is required"),
+  projectLocation: z.string().min(1, "Project Location is required"),
+})
 
 const ContactHero = () => {
   return (
@@ -54,6 +65,97 @@ const ContactHero = () => {
 }
 
 const ContactSection = () => {
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [phone, setPhone] = useState("")
+  const [phoneCountry, setPhoneCountry] = useState("US")
+  const [email, setEmail] = useState("")
+  const [projectType, setProjectType] = useState("")
+  const [projectLocation, setProjectLocation] = useState("")
+  const [message, setMessage] = useState("")
+  const [agreed, setAgreed] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const initialized = useRef(false)
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+
+    const result = contactSchema.safeParse({ firstName, lastName, email, projectType, projectLocation })
+    if (!result.success) {
+      result.error.issues.forEach((err) => toast.error(err.message))
+      return
+    }
+
+    setLoading(true)
+    try {
+      if (!initialized.current) {
+        try {
+          const initRes = await fetch(
+            `${process.env.NEXT_PUBLIC_EXTERNAL_API_URL}/api/form-submissions/init-spreadsheet`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                spreadsheetUrl: process.env.NEXT_PUBLIC_SPREADSHEET_URL,
+                sampleFormData: {
+                  firstName: "Sample",
+                  lastName: "Sample",
+                  phone: "000",
+                  email: "sample@example.com",
+                  projectType: "Sample",
+                  projectLocation: "Sample",
+                  message: "Sample",
+                },
+              }),
+            }
+          )
+          if (initRes.ok) {
+            initialized.current = true
+          }
+        } catch {
+          // Spreadsheet may already be initialized — continue with submission
+        }
+      }
+
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_EXTERNAL_API_URL}/api/form-submissions`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            formData: { firstName, lastName, phone, email, projectType, projectLocation, message },
+            spreadsheetUrl: process.env.NEXT_PUBLIC_SPREADSHEET_URL,
+            emailReceiver: process.env.NEXT_PUBLIC_FORM_EMAIL_RECEIVER,
+            metadata: {
+              formType: "contact-form",
+              subject: "New Contact Form - Ammache Architects",
+            },
+          }),
+        }
+      )
+
+      if (res.status === 201) {
+        toast.success("Your enquiry has been submitted successfully!")
+        setFirstName("")
+        setLastName("")
+        setPhone("")
+        setPhoneCountry("US")
+        setEmail("")
+        setProjectType("")
+        setProjectLocation("")
+        setMessage("")
+        setAgreed(false)
+      } else {
+        const data = await res.json().catch(() => null)
+        toast.error(data?.message || "Failed to submit. Please try again.")
+      }
+    } catch {
+      toast.error("A network error occurred. Please try again.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
      <section className="bg-white md:bg-[#f5f5f5] py-12 md:py-20">
 
@@ -79,7 +181,7 @@ const ContactSection = () => {
             width={1000}
             height={1000}
             className="
-              scale-[1.5] translate-x-50 translate-y-5  
+              scale-[1.5] translate-x-50 translate-y-5
               md:scale-[1.9] md:translate-x-30 md:translate-y-0
             "
           />
@@ -87,9 +189,9 @@ const ContactSection = () => {
 
     {/* CONTENT WRAPPER (BIAR KE TENGAH) */}
       <div className="
-          relative z-10 
-          max-w-[420px] 
-          w-full 
+          relative z-10
+          max-w-[420px]
+          w-full
           space-y-5 md:space-y-12
           mx-auto md:mx-0
           md:pl-10
@@ -199,27 +301,38 @@ const ContactSection = () => {
 
               <p className="typo-body-sm text-gray-600 mb-8">
                   If you would like to contact Ammache about our services,
-                  please don’t hesitate to reach out.
+                  please don't hesitate to reach out.
               </p>
 
-              <div className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
 
-                  {/* INPUT TEMPLATE */}
-                  {[
-                  { label: "First Name*", placeholder: "First Name*" },
-                  { label: "Last Name*", placeholder: "Last Name*" },
-                  ].map((item, i) => (
-                  <div key={i}>
+                  {/* FIRST NAME */}
+                  <div>
                       <label className="typo-caption text-gray-700 block mb-2">
-                      {item.label}
+                      First Name*
                       </label>
                       <input
                       type="text"
-                      placeholder={item.placeholder}
+                      placeholder="First Name*"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
                       className="w-full px-4 py-3.5 rounded-lg border border-gray-300 bg-white placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black"
                       />
                   </div>
-                  ))}
+
+                  {/* LAST NAME */}
+                  <div>
+                      <label className="typo-caption text-gray-700 block mb-2">
+                      Last Name*
+                      </label>
+                      <input
+                      type="text"
+                      placeholder="Last Name*"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      className="w-full px-4 py-3.5 rounded-lg border border-gray-300 bg-white placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black"
+                      />
+                  </div>
 
                   {/* PHONE */}
                   <div>
@@ -229,7 +342,11 @@ const ContactSection = () => {
 
                   <div className="flex border border-gray-300 rounded-lg overflow-hidden bg-white">
 
-                      <select className="px-3 text-sm bg-white outline-none border-r border-gray-300">
+                      <select
+                      value={phoneCountry}
+                      onChange={(e) => setPhoneCountry(e.target.value)}
+                      className="px-3 text-sm bg-white outline-none border-r border-gray-300"
+                      >
                       <option>US</option>
                       <option>ID</option>
                       <option>AU</option>
@@ -238,6 +355,8 @@ const ContactSection = () => {
                       <input
                       type="text"
                       placeholder="+1 (555) 000-0000"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       className="flex-1 px-4 py-3.5 outline-none placeholder:text-gray-400"
                       />
                   </div>
@@ -251,6 +370,8 @@ const ContactSection = () => {
                   <input
                       type="email"
                       placeholder="Email Address*"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="w-full px-4 py-3.5 rounded-lg border border-gray-300 bg-white placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black"
                   />
                   </div>
@@ -263,6 +384,8 @@ const ContactSection = () => {
                   <input
                       type="text"
                       placeholder="Project Type*"
+                      value={projectType}
+                      onChange={(e) => setProjectType(e.target.value)}
                       className="w-full px-4 py-3.5 rounded-lg border border-gray-300 bg-white placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black"
                   />
                   </div>
@@ -275,6 +398,8 @@ const ContactSection = () => {
                   <input
                       type="text"
                       placeholder="Project Location*"
+                      value={projectLocation}
+                      onChange={(e) => setProjectLocation(e.target.value)}
                       className="w-full px-4 py-3.5 rounded-lg border border-gray-300 bg-white placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black"
                   />
                   </div>
@@ -287,24 +412,36 @@ const ContactSection = () => {
                   <textarea
                       rows={4}
                       placeholder="Tell us a little about the project..."
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       className="w-full px-4 py-3.5 rounded-lg border border-gray-300 bg-white resize-none placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black"
                   />
                   </div>
 
                   {/* CHECKBOX */}
                   <div className="flex items-start gap-2 mt-5 typo-fine text-black">
-                    <input type="checkbox" className="mt-1 cursor-pointer" />
+                    <input
+                      type="checkbox"
+                      checked={agreed}
+                      onChange={(e) => setAgreed(e.target.checked)}
+                      className="mt-1 cursor-pointer"
+                    />
                     <span>
                         I agree to receive communications from Ammache Architechs. Unsubscribe anytime.
                     </span>
                   </div>
 
                   {/* BUTTON */}
-                  <button className="w-full mt-6 py-4 rounded-lg bg-black text-white typo-button hover:bg-gray-800 transition cursor-pointer">
-                  Submit Enquiry
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full mt-6 py-4 rounded-lg bg-black text-white typo-button hover:bg-gray-800 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    {loading && <Loader2 className="animate-spin" size={18} />}
+                    {loading ? "Submitting..." : "Submit Enquiry"}
                   </button>
 
-              </div>
+              </form>
           </div>
 
         </div>
