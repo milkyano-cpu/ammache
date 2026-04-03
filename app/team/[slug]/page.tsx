@@ -28,9 +28,8 @@ export default async function TeamFounderDetail({ params }: Props) {
         <JoinTeamCTA />
       </div>
 
-      <div className="mt-16 md:mt-24">
         <Footer />
-      </div>
+      
     </main>
   )
 }

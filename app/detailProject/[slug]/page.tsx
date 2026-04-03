@@ -33,10 +33,7 @@ export default async function ProjectDetail({ params }: Props) {
       />
 
       <CTA />
-
-      <div className="mt-16 md:mt-24">
-        <Footer />
-      </div>
+      <Footer />
     </main>
   )
 }
