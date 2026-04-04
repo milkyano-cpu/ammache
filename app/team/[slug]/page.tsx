@@ -18,16 +18,7 @@ export default async function TeamFounderDetail({ params }: Props) {
 
       <DetailFounder />
 
-      {/* CTA DESKTOP */}
-      <div className="hidden md:block">
         <CTA />
-      </div>
-
-      {/* CTA MOBILE */}
-      <div className="block md:hidden">
-        <JoinTeamCTA />
-      </div>
-
         <Footer />
       
     </main>
