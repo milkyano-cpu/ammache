@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link"
+
 export default function CTA() {
   return (
     <section className="w-full py-28 px-6 md:px-12 lg:px-20 bg-white md:bg-[#f5f5f5]  text-center">
@@ -17,9 +21,21 @@ export default function CTA() {
 
         {/* BUTTON */}
         <div className="pt-4">
-          <button className="px-10 py-3 rounded-full border-2 border-gray-300 typo-button hover:bg-black hover:text-white transition cursor-pointer">
+        <Link
+            href="/contact"
+            className="
+              px-10 py-3
+              rounded-full
+              border-2 border-gray-300
+              typo-button
+              hover:bg-black hover:text-white
+              transition
+              cursor-pointer
+              inline-block
+            "
+          >
             Enquire
-          </button>
+          </Link>
         </div>
 
       </div>

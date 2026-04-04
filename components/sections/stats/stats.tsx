@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link"
 
 function Counter({ end, duration = 2000 }: { end: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -74,9 +75,21 @@ export default function Stats() {
         <div className="w-full h-px bg-gray-300" />
 
         {/* BUTTON */}
-        <button className="px-8 py-3 rounded-full border-2 border-gray-300 typo-button hover:bg-black hover:text-white transition cursor-pointer">
+        <Link
+          href="/detailProject"
+          className="
+            px-8 py-3
+            rounded-full
+            border-2 border-gray-300
+            typo-button
+            hover:bg-black hover:text-white
+            transition
+            cursor-pointer
+            inline-block
+          "
+        >
           View All Projects
-        </button>
+        </Link>
 
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link"
 
 export interface ProjectCardData {
   id: number
@@ -101,9 +102,21 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
 
         {/* BUTTON */}
         <div className="flex justify-center pt-6">
-          <button className="px-8 py-3 rounded-full border-2 border-gray-300 typo-button hover:bg-black hover:text-white transition cursor-pointer">
-            View All Projects
-          </button>
+        <Link
+          href="/detailProject"
+          className="
+            px-8 py-3
+            rounded-full
+            border-2 border-gray-300
+            typo-button
+            hover:bg-black hover:text-white
+            transition
+            cursor-pointer
+            inline-block
+          "
+        >
+          View All Projects
+        </Link>
         </div>
 
       </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -18,13 +19,41 @@ export default function About() {
 
           {/* FIX BUTTON SIZE */}
           <div className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
-            <button className="w-[170px] px-5 py-2.5 rounded-full border-2 border-gray-400 typo-button text-center hover:bg-black hover:text-white transition cursor-pointer">
-              View Our Projects
-            </button>
+          <Link
+            href="/detailProject"
+            className="
+              w-[170px]
+              px-5 py-2.5
+              rounded-full
+              border-2 border-gray-400
+              typo-button
+              text-center
+              hover:bg-black hover:text-white
+              transition
+              cursor-pointer
+              inline-block
+            "
+          >
+            View Our Projects
+          </Link>
 
-            <button className="w-[170px] px-5 py-2.5 rounded-full bg-black text-white typo-button text-center hover:opacity-80 transition cursor-pointer">
-              Enquire
-            </button>
+          <Link
+            href="/contact"
+            className="
+              w-[170px]
+              px-5 py-2.5
+              rounded-full
+              bg-black text-white
+              typo-button
+              text-center
+              hover:opacity-80
+              transition
+              cursor-pointer
+              inline-block
+            "
+          >
+            Enquire
+          </Link>
           </div>
         </div>
 
@@ -58,9 +87,22 @@ export default function About() {
               </p>
 
               {/* BIGGER BUTTON */}
-              <button className="mt-4 px-8 py-3.5 border border-white rounded-full typo-button hover:bg-white hover:text-black transition cursor-pointer">
+              <Link
+                href="/team"
+                className="
+                  mt-4
+                  px-8 py-3.5
+                  border border-white
+                  rounded-full
+                  typo-button
+                  hover:bg-white hover:text-black
+                  transition
+                  cursor-pointer
+                  inline-block
+                "
+              >
                 Read Our Story
-              </button>
+              </Link>
 
               {/* SHAPE */}
               <div className="absolute inset-0 opacity-10 bg-[linear-gradient(120deg,#ffffff22_25%,transparent_25%)] pointer-events-none" />
