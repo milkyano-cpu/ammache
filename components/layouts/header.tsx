@@ -138,8 +138,8 @@ const Header = () => {
         </div>
 
         {/* MENU */}
-        <div className="flex-1 flex items-center justify-center text-center">
-          <div className="flex flex-col gap-5">
+        <div className="flex-1 flex items-center justify-center text-center pb-0 md:pb-10">
+          <div className="flex flex-col gap-4">
             {navLinks.map((item, i) => {
               const isActive = pathname === item.href
 
@@ -163,17 +163,17 @@ const Header = () => {
         </div>
 
         {/* FOOTER */}
-        <div className="border-t border-gray-800 py-12">
+        <div className="border-t border-gray-400 py-12">
 
           {/* MOBILE VERSION */}
           <div className="md:hidden px-6">
 
             <p className="typo-h5 text-white mb-2">
-              Join Our Mailing List
+              Join Ammache’s Exclusive VIP
             </p>
 
             <p className="typo-body-sm text-white mb-6">
-              Stay updated with new developments, projects, and announcements from Ammache.
+              First access to new projects before they go public. This isn't a newsletter, it's a seat at the table.
             </p>
 
             {/* INPUT */}
@@ -188,7 +188,7 @@ const Header = () => {
               </button>
             </div>
 
-            <div className="flex items-start gap-2 mt-4 typo-fine text-gray-500">
+            <div className="flex items-start gap-2 mt-4 typo-fine text-gray-300">
               <input type="checkbox" className="mt-1 cursor-pointer" />
               <span>
                 I agree to receive communications from Ammache.
