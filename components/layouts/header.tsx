@@ -28,22 +28,52 @@ const navLinks = [
 const Header = () => {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isReady, setIsReady] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => {
-      const about = document.getElementById("about")
+      const t = setTimeout(() => {
+        setIsReady(true)
+      }, 2600) // ⏱️ samakan dengan splash duration
 
-      if (!about) return
+      return () => clearTimeout(t)
+    }, [])
 
-      const aboutTop = about.offsetTop
+    // 🔥 2. SCROLL DETECTION (AMAN)
+    useEffect(() => {
+      if (!isReady) return
 
-      setScrolled(window.scrollY >= aboutTop - 100)
-    }
+      let ticking = false
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      const handleScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const about = document.getElementById("about")
+            if (!about) return
+
+            const aboutTop = about.offsetTop
+            const shouldBeScrolled =
+              window.scrollY >= aboutTop - 100
+
+            setScrolled(prev => {
+              if (prev === shouldBeScrolled) return prev
+              return shouldBeScrolled
+            })
+
+            ticking = false
+          })
+
+          ticking = true
+        }
+      }
+
+      window.addEventListener("scroll", handleScroll)
+
+      // 🔥 trigger awal setelah splash
+      setTimeout(handleScroll, 100)
+
+      return () => window.removeEventListener("scroll", handleScroll)
+    }, [isReady])
 
   return (
     <>

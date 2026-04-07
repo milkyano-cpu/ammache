@@ -495,17 +495,25 @@
   @keyframes splashEnter {
     0% {
       opacity: 0;
-      transform: translate(-50%, -42%) scale(0.96);
+      transform: translate(-50%, 20%) scale(0.92); /* 🔥 dari bawah */
+    }
+
+    40% {
+      opacity: 1;
+      transform: translate(-50%, -55%) scale(1.04); /* 🔥 overshoot */
+    }
+
+    70% {
+      transform: translate(-50%, -48%) scale(0.99); /* 🔥 settle */
     }
 
     100% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
+      transform: translate(-50%, -50%) scale(1); /* 🔥 final */
     }
   }
 
   .splash-enter {
-    animation: splashEnter 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: splashEnter 2.2s cubic-bezier(0.22, 1, 0.36, 1);
     animation-fill-mode: both;
   }
   
