@@ -77,29 +77,35 @@ const Header = () => {
 
   // 🔥 3. DETECT FOOTER (HIDE HEADER)
   useEffect(() => {
-    const footer = document.getElementById("footer")
-    if (!footer) return
+    const handleScroll = () => {
+      const footer = document.getElementById("footer")
+      if (!footer) return
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setHideHeader(entry.isIntersecting)
-      },
-      {
-        root: null,
-        threshold: 0.1,
-      }
-    )
+      const rect = footer.getBoundingClientRect()
 
-    observer.observe(footer)
+      const isInFooter = rect.top <= 200
 
-    return () => observer.disconnect()
+      setHideHeader(isInFooter)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll()
+
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
     <>
       {/* HEADER */}
-      <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-6 text-white">
-        
+      <header
+        className={cn(
+          "fixed top-0 left-0 w-full z-40 flex items-center justify-between px-8 py-6 transition-all duration-500",
+          hideHeader
+            ? "opacity-0 -translate-y-10 pointer-events-none"
+            : "opacity-100 translate-y-0"
+        )}
+      >
+            
         {/* LOGO */}
         <Link
           href="/"
