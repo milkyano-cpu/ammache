@@ -12,12 +12,9 @@ interface Props {
 }
 
 export default async function TeamDetailPage({ params }: Props) {
-  const { slug } = await params   // 🔥 WAJIB pakai await
+  const { slug } = await params   
 
   const data = teamData[slug]
-
-  console.log("slug:", slug)       // debug
-  console.log("data:", data)
 
   if (!data) return <div>Not Found</div>
 

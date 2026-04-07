@@ -54,7 +54,7 @@ const Header = () => {
 
           const aboutTop = about.offsetTop
           const shouldBeScrolled =
-            window.scrollY >= aboutTop - 100
+            window.scrollY > 50 && window.scrollY >= aboutTop - 100
 
           setScrolled(prev => {
             if (prev === shouldBeScrolled) return prev

@@ -52,7 +52,7 @@ const Stat = ({
 /* ================= HERO ================= */
 const TeamHero = () => {
   return (
-   <section className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
+   <section className="relative w-full h-[550px] md:h-[600px] overflow-hidden">
       
       {/* DESKTOP IMAGE */}
       <Image
@@ -76,7 +76,7 @@ const TeamHero = () => {
         <div className="absolute inset-0 bg-black/55 md:bg-black/55" />
 
       {/* CONTENT */}
-      <div className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">
+      <div id="about" className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">
         <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
           {/* BREADCRUMB */}

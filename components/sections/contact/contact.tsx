@@ -24,7 +24,7 @@ const contactSchema = z.object({
 
 const ContactHero = () => {
   return (
-    <section className="relative w-full h-[420px] sm:h-[480px] md:h-[600px] overflow-hidden">
+    <section id="about" className="relative w-full h-[450px] sm:h-[480px] md:h-[600px] overflow-hidden">
         <Image
          src="/contact-hero.png"
               alt="Hero"
@@ -521,8 +521,19 @@ export default function ContactPage() {
   return (
     <>
       <ContactHero />
+        <div
+        className="
+          relative 
+          z-20 
+          -mt-10 md:-mt-12
+          bg-white md:bg-[#f5f5f5]
+          rounded-t-[20px] md:rounded-t-[30px]
+          overflow-hidden
+        "
+      >
       <ContactSection />
       <ContactMapSection />
+      </div>
     </>
   )
 }

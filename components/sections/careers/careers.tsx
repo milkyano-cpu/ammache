@@ -52,7 +52,7 @@ const Stat = ({
 /* ================= HERO ================= */
 const CareersHero = () => {
   return (
-    <section className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
+    <section className="relative w-full h-[550px] md:h-[600px] overflow-hidden">
       
       {/* DESKTOP IMAGE */}
       <Image
