@@ -15,20 +15,22 @@ const Hero = () => {
         className="object-cover hidden md:block"
       />
 
-      {/* MOBILE IMAGE */}
-      <Image
-        src="/hero-image-mobile.png"
-        alt="Hero Mobile"
-        fill
-        priority
-        className="object-cover object-[center_80%] block md:hidden"
+
+      {/* ✅ MOBILE VIDEO */}
+      <video
+        src="/hero-video-mobile.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover block md:hidden"
       />
 
       {/* OVERLAY */}
         <div className="absolute inset-0 bg-black/10 md:bg-black/10" />
 
       {/* CONTENT */}
-      <div className="relative z-10 flex items-center justify-center h-full">
+      {/* <div className="relative z-10 flex items-center justify-center h-full">
       <Image
           src="/ammache-hero.png"
           alt="Ammache"
@@ -37,7 +39,7 @@ const Hero = () => {
           className="hero-logo w-[200px] sm:w-[260px] md:w-[320px] lg:w-[400px] h-auto object-contain"
           priority
         />
-      </div>
+      </div> */}
 
     </section>
   )

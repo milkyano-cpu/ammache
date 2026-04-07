@@ -1,16 +1,13 @@
-import Image from "next/image"
-
 export default function Loading() {
   return (
-    <div className="w-full min-h-screen flex items-center justify-center">
-      <Image
-        src="/logo.png"
+    <div className="w-full min-h-screen flex items-center justify-center bg-white">
+      
+      <img
+        src="/logo-loading.png"
         alt="Loading..."
-        width={64}
-        height={64}
-        className="animate-pulse"
-        priority
+        className="w-10 h-10 animate-spin"
       />
+
     </div>
   )
 }

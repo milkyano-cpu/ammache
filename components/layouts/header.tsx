@@ -126,7 +126,7 @@ const Header = () => {
           onClick={() => setOpen(true)}
           className={cn(
             "cursor-pointer hover:opacity-70 transition",
-            scrolled ? "text-black" : "text-white" // 🔥 CHANGE
+            scrolled ? "text-black" : "text-white" 
           )}
         >
           <Menu size={26} />

@@ -34,8 +34,33 @@ const helveticaNeue = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ammache Architecture",
-  description: "Innovative Architecture Built on Experience.",
+  title: "Ammache Architects | Innovative Architecture Melbourne",
+  description:
+    "Ammache Architects is a Melbourne-based architecture studio founded in 1998, delivering thoughtful, innovative, and enduring design across residential, commercial, and industrial sectors.",
+
+  openGraph: {
+    title: "Ammache Architects | Innovative Architecture Melbourne",
+    description:
+      "Founded in 1998, Ammache Architects delivers thoughtful architecture shaped by people, place, and purpose across diverse sectors.",
+    url: "https://ammachearchitects.com.au",
+    siteName: "Ammache Architects",
+    images: [
+      {
+        url: "https://ammachearchitects.com.au/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Ammache Architects | Innovative Architecture Melbourne",
+    description:
+      "Melbourne-based architecture studio delivering thoughtful, enduring design since 1998.",
+    images: ["https://ammachearchitects.com.au/og-image.png"],
+  },
 };
 
 export default function RootLayout({

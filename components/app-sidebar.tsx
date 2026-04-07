@@ -40,12 +40,6 @@ const menuItems = [
     icon: FolderKanban,
     desc: "Manage projects",
   },
-  {
-    title: "Team",
-    url: "/admin/team",
-    icon: Users,
-    desc: "Manage team",
-  },
 ]
 
 export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
