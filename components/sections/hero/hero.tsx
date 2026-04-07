@@ -34,7 +34,7 @@ const Hero = () => {
           alt="Ammache"
           width={320}
           height={100}
-          className="w-[200px] sm:w-[260px] md:w-[320px] lg:w-[400px] h-auto object-contain"
+          className="hero-logo w-[200px] sm:w-[260px] md:w-[320px] lg:w-[400px] h-auto object-contain"
           priority
         />
       </div>

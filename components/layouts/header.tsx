@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from "react"
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import {
@@ -27,7 +27,17 @@ const navLinks = [
 
 const Header = () => {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <>
@@ -41,7 +51,7 @@ const Header = () => {
           className="flex items-center cursor-pointer"
         >
           <Image
-            src="/ammache.png"
+            src={scrolled ? "/ammache-black.png" : "/ammache.png"} // 🔥 CHANGE
             alt="Ammache"
             width={140}
             height={40}
@@ -52,7 +62,10 @@ const Header = () => {
         {/* BURGER */}
         <button
           onClick={() => setOpen(true)}
-          className="cursor-pointer hover:opacity-70 transition"
+          className={cn(
+            "cursor-pointer hover:opacity-70 transition",
+            scrolled ? "text-black" : "text-white" // 🔥 CHANGE
+          )}
         >
           <Menu size={26} />
         </button>

@@ -4,11 +4,11 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 
 export default function SplashScreen() {
-  const [phase, setPhase] = useState("enter") 
+  const [phase, setPhase] = useState("enter")
 
   useEffect(() => {
-    const t1 = setTimeout(() => setPhase("exit"), 1400)
-    const t2 = setTimeout(() => setPhase("hide"), 2200)
+    const t1 = setTimeout(() => setPhase("move"), 1200)
+    const t2 = setTimeout(() => setPhase("hide"), 2000)
 
     return () => {
       clearTimeout(t1)
@@ -19,8 +19,19 @@ export default function SplashScreen() {
   if (phase === "hide") return null
 
   return (
-    <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black overflow-hidden">
-      <div className={`logo ${phase === "exit" ? "logo-exit" : "logo-enter"}`}>
+    <div
+      className={`
+        splash-wrapper
+        ${phase === "move" ? "splash-wrapper-exit" : ""}
+      `}
+    >
+      <div
+        className={`
+          splash-logo
+          ${phase === "enter" ? "splash-enter" : ""}
+          ${phase === "move" ? "splash-move" : ""}
+        `}
+      >
         <Image
           src="/logo.png"
           alt="Logo"

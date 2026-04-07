@@ -47,7 +47,9 @@ export default function RootLayout({
     <html lang="en" className={`${aktivGrotesk.variable} ${helveticaNeue.variable}`}>
       <body className="antialiased">
          <SplashScreen />
-        {children}
+         <div className="page-wrapper">
+          {children}
+        </div>
         <Toaster richColors position="top-right" />
       </body>
     </html>

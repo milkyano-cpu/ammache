@@ -414,6 +414,40 @@
     }
   }
 
+  @keyframes pageEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .page-wrapper {
+    opacity: 0;
+    animation: pageEnter 1s ease forwards;
+    animation-delay: 1.1s; 
+  }
+
+  @keyframes heroLogoEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .hero-logo {
+    opacity: 0;
+    animation: heroLogoEnter 0.8s ease forwards;
+    animation-delay: 1.4s; /* 🔥 sync sama splash move */
+  }
+
   /* ===== ANIMATION GLOBAL (JANGAN DI DALAM @layer) ===== */
 
 @keyframes logoEnter {
@@ -448,5 +482,76 @@
 
   .logo-exit {
     animation: logoExit 0.8s ease forwards;
+  }
+
+  /* posisi awal: tengah */
+  .splash-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+@keyframes splashEnter {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 180vh) rotate(-180deg) scale(0.8);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -60%) rotate(-40deg) scale(1.05);
+  }
+
+  80% {
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.01);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+
+.splash-enter {
+  animation: splashEnter 2s ease-out;
+}
+
+  /* 🔥 ikut naik + fade */
+  @keyframes splashMove {
+    0% {
+      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(-50%, -140%) scale(0.6) rotate(8deg);
+      opacity: 0;
+    }
+  }
+
+  .splash-move {
+    animation: splashMove 0.8s ease forwards;
+  }
+
+  /* WRAPPER FULLSCREEN */
+  .splash-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: black;
+    overflow: hidden;
+  }
+
+  /* 🔥 ANIMASI BACKGROUND NAIK */
+  @keyframes splashBgExit {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  .splash-wrapper-exit {
+    animation: splashBgExit 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 }
