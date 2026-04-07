@@ -29,9 +29,14 @@ const Hero = () => {
 
       {/* CONTENT */}
       <div className="relative z-10 flex items-center justify-center h-full">
-        <h1 className="text-white typo-display">
-          AMMACHE
-        </h1>
+      <Image
+          src="/ammache-hero.png"
+          alt="Ammache"
+          width={320}
+          height={100}
+          className="w-[200px] sm:w-[260px] md:w-[320px] lg:w-[400px] h-auto object-contain"
+          priority
+        />
       </div>
 
     </section>
