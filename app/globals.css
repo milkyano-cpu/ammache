@@ -445,7 +445,7 @@
   .hero-logo {
     opacity: 0;
     animation: heroLogoEnter 0.8s ease forwards;
-    animation-delay: 1.4s; /* 🔥 sync sama splash move */
+    animation-delay: 1.4s;
   }
 
   /* ===== ANIMATION GLOBAL (JANGAN DI DALAM @layer) ===== */
@@ -492,29 +492,23 @@
     transform: translate(-50%, -50%);
   }
 
-@keyframes splashEnter {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 180vh) rotate(-180deg) scale(0.8);
+  @keyframes splashEnter {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -42%) scale(0.96);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
   }
 
-  30% {
-    opacity: 1;
-    transform: translate(-50%, -60%) rotate(-40deg) scale(1.05);
+  .splash-enter {
+    animation: splashEnter 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: both;
   }
-
-  80% {
-    transform: translate(-50%, -50%) rotate(-5deg) scale(1.01);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  }
-}
-
-.splash-enter {
-  animation: splashEnter 2s ease-out;
-}
+  
 
   /* 🔥 ikut naik + fade */
   @keyframes splashMove {
