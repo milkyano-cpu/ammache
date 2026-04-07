@@ -49,7 +49,7 @@ export default function HomeClient({ projects }: { projects: ProjectCardData[] }
         className="
           relative 
           z-20 
-          -mt-10 md:-mt-10
+          -mt-[12vh] md:-mt-[18vh]
           bg-white md:bg-[#f5f5f5]
           rounded-t-[20px] md:rounded-t-[30px]
           pt-12 md:pt-16

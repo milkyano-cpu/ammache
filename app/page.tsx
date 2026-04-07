@@ -11,6 +11,7 @@ export default async function Home() {
 
   const serialized = projects.map((p) => ({
     id: p.id,
+    slug: p.slug, 
     name: p.name,
     images: p.images,
     category: { name: p.category.name },

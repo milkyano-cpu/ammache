@@ -7,7 +7,10 @@ export default function About() {
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* TOP TITLE */}
-        <div className="flex flex-col items-center text-center md:text-left md:items-start md:flex-row md:justify-between gap-6 pb-10">
+          <div className="
+            flex flex-col items-center text-center md:text-left md:items-start md:flex-row md:justify-between gap-6 pb-10
+            -mt-15 sm:-mt-12 md:-mt-10 lg:-mt-15
+          ">
           <div>
             <h2 className="typo-h2 text-black">
               Innovative Architecture Built on Experience.
