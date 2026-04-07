@@ -13,8 +13,10 @@ import {
   Mail,
   Instagram,
   Linkedin,
-  Facebook
+  Facebook,
+  Loader2
 } from 'lucide-react'
+import { useNewsletterSubscribe } from '@/hooks/use-newsletter-subscribe'
 
 const navLinks = [
   { href: '/', label: 'Main' },
@@ -31,6 +33,7 @@ const Header = () => {
   const [isReady, setIsReady] = useState(false)
   const [hideHeader, setHideHeader] = useState(false)
   const pathname = usePathname()
+  const newsletter = useNewsletterSubscribe()
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -105,7 +108,7 @@ const Header = () => {
             : "opacity-100 translate-y-0"
         )}
       >
-            
+
         {/* LOGO */}
         <Link
           href="/"
@@ -113,7 +116,7 @@ const Header = () => {
           className="flex items-center cursor-pointer"
         >
           <Image
-            src={scrolled ? "/ammache-black.png" : "/ammache.png"} 
+            src={scrolled ? "/ammache-black.png" : "/ammache.png"}
             alt="Ammache"
             width={140}
             height={40}
@@ -126,7 +129,7 @@ const Header = () => {
           onClick={() => setOpen(true)}
           className={cn(
             "cursor-pointer hover:opacity-70 transition",
-            scrolled ? "text-black" : "text-white" 
+            scrolled ? "text-black" : "text-white"
           )}
         >
           <Menu size={26} />
@@ -142,7 +145,7 @@ const Header = () => {
       >
         {/* TOP BAR */}
         <div className="flex items-center justify-between px-8 py-6">
-          
+
           {/* LOGO */}
           <Link href="/" onClick={() => setOpen(false)}>
             <Image
@@ -195,7 +198,7 @@ const Header = () => {
           <div className="md:hidden px-6">
 
             <p className="typo-h5 text-white mb-2">
-              Join Ammache’s Exclusive VIP
+              Join Ammache's Exclusive VIP
             </p>
 
             <p className="typo-body-sm text-white mb-6">
@@ -203,30 +206,52 @@ const Header = () => {
             </p>
 
             {/* INPUT */}
-            <div className="flex items-center bg-white rounded-full overflow-hidden">
-              <input
-                type="email"
-                placeholder="Email"
-                className="flex-1 px-4 py-3 text-black outline-none text-sm"
-              />
-              <button className="bg-black text-white px-4 py-2 m-1 rounded-full typo-fine">
-                Subscribe
-              </button>
-            </div>
+            <form onSubmit={newsletter.handleSubmit}>
+              <div className="flex items-center bg-white rounded-full overflow-hidden">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={newsletter.email}
+                  onChange={(e) => newsletter.setEmail(e.target.value)}
+                  disabled={newsletter.loading}
+                  className="flex-1 px-4 py-3 text-black outline-none text-sm"
+                />
+                <button
+                  type="submit"
+                  disabled={newsletter.loading}
+                  className="bg-black text-white px-4 py-2 m-1 rounded-full typo-fine disabled:opacity-50 flex items-center gap-2"
+                >
+                  {newsletter.loading && <Loader2 size={14} className="animate-spin" />}
+                  Subscribe
+                </button>
+              </div>
+            </form>
 
             <div className="flex items-start gap-2 mt-4 typo-fine text-gray-300">
-              <input type="checkbox" className="mt-1 cursor-pointer" />
+              <input
+                type="checkbox"
+                checked={newsletter.consent}
+                onChange={(e) => newsletter.setConsent(e.target.checked)}
+                disabled={newsletter.loading}
+                className="mt-1 cursor-pointer"
+              />
               <span>
                 I agree to receive communications from Ammache.
               </span>
             </div>
+
+            {newsletter.message && (
+              <p className={`typo-fine mt-3 ${newsletter.message.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                {newsletter.message.text}
+              </p>
+            )}
           </div>
 
           {/* DESKTOP VERSION */}
           <div className="hidden md:block">
             <div className="px-6 md:px-12 xl:px-24">
               <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-24">
-                
+
                 {/* LEFT */}
                 <div>
                   <Image
@@ -279,7 +304,7 @@ const Header = () => {
                 </div>
 
                 <div className="flex items-center gap-4 mt-8">
-  
+
                   <a
                     href="https://instagram.com"
                     target="_blank"
@@ -320,22 +345,45 @@ const Header = () => {
                     First access to new projects before they go public. This isn't a newsletter, it's a seat at the table.
                   </p>
 
-                  <div className="flex items-center bg-white rounded-full overflow-hidden max-w-sm">
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      className="flex-1 px-5 py-3 text-black outline-none text-sm"
-                    />
-                    <button className="bg-black text-white px-5 py-2 m-1 rounded-full typo-button whitespace-nowrap hover:opacity-80 transition cursor-pointer">
-                      Join The List
-                    </button>
-                  </div>
+                  <form onSubmit={newsletter.handleSubmit}>
+                    <div className="flex items-center bg-white rounded-full overflow-hidden max-w-sm">
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        value={newsletter.email}
+                        onChange={(e) => newsletter.setEmail(e.target.value)}
+                        disabled={newsletter.loading}
+                        className="flex-1 px-5 py-3 text-black outline-none text-sm"
+                      />
+                      <button
+                        type="submit"
+                        disabled={newsletter.loading}
+                        className="bg-black text-white px-5 py-2 m-1 rounded-full typo-button whitespace-nowrap hover:opacity-80 transition cursor-pointer disabled:opacity-50 flex items-center gap-2"
+                      >
+                        {newsletter.loading && <Loader2 size={14} className="animate-spin" />}
+                        Join The List
+                      </button>
+                    </div>
+                  </form>
+
                   <div className="flex items-start gap-2 mt-5 typo-fine text-white">
-                    <input type="checkbox" className="mt-1 cursor-pointer" />
+                    <input
+                      type="checkbox"
+                      checked={newsletter.consent}
+                      onChange={(e) => newsletter.setConsent(e.target.checked)}
+                      disabled={newsletter.loading}
+                      className="mt-1 cursor-pointer"
+                    />
                     <span>
                       I agree to receive updates from Ammache. Unsubscribe anytime.
                     </span>
                   </div>
+
+                  {newsletter.message && (
+                    <p className={`typo-fine mt-3 ${newsletter.message.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                      {newsletter.message.text}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>

@@ -7,13 +7,18 @@ import {
   Mail,
   Instagram,
   Facebook,
-  Linkedin
+  Linkedin,
+  Loader2
 } from 'lucide-react'
+import { useNewsletterSubscribe } from '@/hooks/use-newsletter-subscribe'
 
 const Footer = () => {
+  const mobile = useNewsletterSubscribe()
+  const desktop = useNewsletterSubscribe()
+
   return (
     <footer id="footer" className="bg-black text-white pt-10 pb-10">
-      
+
       <div className="px-6 md:px-12 xl:px-24">
         <div className="max-w-[1400px] mx-auto">
 
@@ -30,23 +35,45 @@ const Footer = () => {
                 First access to new projects before they go public. This isn't a newsletter, it's a seat at the table.
               </p>
 
-              <div className="flex items-center bg-white rounded-full overflow-hidden">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="flex-1 px-4 py-3 text-black outline-none text-sm"
-                />
-                <button className="bg-black text-white px-4 py-2 m-1 rounded-full typo-fine">
-                  Join the list
-                </button>
-              </div>
+              <form onSubmit={mobile.handleSubmit}>
+                <div className="flex items-center bg-white rounded-full overflow-hidden">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={mobile.email}
+                    onChange={(e) => mobile.setEmail(e.target.value)}
+                    disabled={mobile.loading}
+                    className="flex-1 px-4 py-3 text-black outline-none text-sm"
+                  />
+                  <button
+                    type="submit"
+                    disabled={mobile.loading}
+                    className="bg-black text-white px-4 py-2 m-1 rounded-full typo-fine disabled:opacity-50 flex items-center gap-2"
+                  >
+                    {mobile.loading && <Loader2 size={14} className="animate-spin" />}
+                    Join the list
+                  </button>
+                </div>
+              </form>
 
               <div className="flex items-start gap-2 mt-4 typo-fine text-gray-400">
-                <input type="checkbox" className="mt-1 cursor-pointer" />
+                <input
+                  type="checkbox"
+                  checked={mobile.consent}
+                  onChange={(e) => mobile.setConsent(e.target.checked)}
+                  disabled={mobile.loading}
+                  className="mt-1 cursor-pointer"
+                />
                 <span>
                   I agree to receive updates from Ammache. Unsubscribe anytime.
                 </span>
               </div>
+
+              {mobile.message && (
+                <p className={`typo-fine mt-3 ${mobile.message.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                  {mobile.message.text}
+                </p>
+              )}
             </div>
 
             <div className="border-t border-gray-700 my-8 -mx-6" />
@@ -190,23 +217,45 @@ const Footer = () => {
                 First access to new projects before they go public. This isn't a newsletter, it's a seat at the table.
               </p>
 
-              <div className="flex items-center bg-white rounded-full overflow-hidden max-w-sm">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="flex-1 px-5 py-3 text-black outline-none text-sm"
-                />
-                <button className="bg-black text-white px-5 py-2 m-1 rounded-full typo-button whitespace-nowrap hover:opacity-80 transition cursor-pointer">
-                  Join the list
-                </button>
-              </div>
+              <form onSubmit={desktop.handleSubmit}>
+                <div className="flex items-center bg-white rounded-full overflow-hidden max-w-sm">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={desktop.email}
+                    onChange={(e) => desktop.setEmail(e.target.value)}
+                    disabled={desktop.loading}
+                    className="flex-1 px-5 py-3 text-black outline-none text-sm"
+                  />
+                  <button
+                    type="submit"
+                    disabled={desktop.loading}
+                    className="bg-black text-white px-5 py-2 m-1 rounded-full typo-button whitespace-nowrap hover:opacity-80 transition cursor-pointer disabled:opacity-50 flex items-center gap-2"
+                  >
+                    {desktop.loading && <Loader2 size={14} className="animate-spin" />}
+                    Join the list
+                  </button>
+                </div>
+              </form>
 
               <div className="flex items-start gap-2 mt-5 typo-fine text-white">
-                <input type="checkbox" className="mt-1 cursor-pointer" />
+                <input
+                  type="checkbox"
+                  checked={desktop.consent}
+                  onChange={(e) => desktop.setConsent(e.target.checked)}
+                  disabled={desktop.loading}
+                  className="mt-1 cursor-pointer"
+                />
                 <span>
                     I agree to receive updates from Ammache. Unsubscribe anytime.
                 </span>
-                </div>
+              </div>
+
+              {desktop.message && (
+                <p className={`typo-fine mt-3 ${desktop.message.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                  {desktop.message.text}
+                </p>
+              )}
             </div>
 
           </div>
