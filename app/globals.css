@@ -511,20 +511,21 @@
   
 
   /* 🔥 ikut naik + fade */
-  @keyframes splashMove {
-    0% {
-      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    @keyframes splashMove {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-50%, -70%) scale(0.95); /* jangan -140% */
+        opacity: 0;
+      }
     }
 
-    100% {
-      transform: translate(-50%, -140%) scale(0.6) rotate(8deg);
-      opacity: 0;
+    .splash-move {
+      animation: splashMove 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
-  }
-
-  .splash-move {
-    animation: splashMove 0.8s ease forwards;
-  }
 
   /* WRAPPER FULLSCREEN */
   .splash-wrapper {
@@ -540,12 +541,13 @@
     0% {
       transform: translateY(0);
     }
+
     100% {
       transform: translateY(-100%);
     }
   }
 
   .splash-wrapper-exit {
-    animation: splashBgExit 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: splashBgExit 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 }

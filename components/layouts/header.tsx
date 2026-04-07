@@ -32,7 +32,13 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const about = document.getElementById("about")
+
+      if (!about) return
+
+      const aboutTop = about.offsetTop
+
+      setScrolled(window.scrollY >= aboutTop - 100)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -51,7 +57,7 @@ const Header = () => {
           className="flex items-center cursor-pointer"
         >
           <Image
-            src={scrolled ? "/ammache-black.png" : "/ammache.png"} // 🔥 CHANGE
+            src={scrolled ? "/ammache-black.png" : "/ammache.png"} 
             alt="Ammache"
             width={140}
             height={40}
