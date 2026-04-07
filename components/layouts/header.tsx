@@ -29,51 +29,71 @@ const Header = () => {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isReady, setIsReady] = useState(false)
+  const [hideHeader, setHideHeader] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
-      const t = setTimeout(() => {
-        setIsReady(true)
-      }, 2600) // ⏱️ samakan dengan splash duration
+    const t = setTimeout(() => {
+      setIsReady(true)
+    }, 2600)
 
-      return () => clearTimeout(t)
-    }, [])
+    return () => clearTimeout(t)
+  }, [])
 
-    // 🔥 2. SCROLL DETECTION (AMAN)
-    useEffect(() => {
-      if (!isReady) return
+  // 🔥 2. SCROLL → CHANGE COLOR (ABOUT)
+  useEffect(() => {
+    if (!isReady) return
 
-      let ticking = false
+    let ticking = false
 
-      const handleScroll = () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            const about = document.getElementById("about")
-            if (!about) return
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const about = document.getElementById("about")
+          if (!about) return
 
-            const aboutTop = about.offsetTop
-            const shouldBeScrolled =
-              window.scrollY >= aboutTop - 100
+          const aboutTop = about.offsetTop
+          const shouldBeScrolled =
+            window.scrollY >= aboutTop - 100
 
-            setScrolled(prev => {
-              if (prev === shouldBeScrolled) return prev
-              return shouldBeScrolled
-            })
-
-            ticking = false
+          setScrolled(prev => {
+            if (prev === shouldBeScrolled) return prev
+            return shouldBeScrolled
           })
 
-          ticking = true
-        }
+          ticking = false
+        })
+
+        ticking = true
       }
+    }
 
-      window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll)
 
-      // 🔥 trigger awal setelah splash
-      setTimeout(handleScroll, 100)
+    setTimeout(handleScroll, 100)
 
-      return () => window.removeEventListener("scroll", handleScroll)
-    }, [isReady])
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [isReady])
+
+  // 🔥 3. DETECT FOOTER (HIDE HEADER)
+  useEffect(() => {
+    const footer = document.getElementById("footer")
+    if (!footer) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHideHeader(entry.isIntersecting)
+      },
+      {
+        root: null,
+        threshold: 0.1,
+      }
+    )
+
+    observer.observe(footer)
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <>
