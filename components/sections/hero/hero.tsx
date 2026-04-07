@@ -4,15 +4,16 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-      <section className="relative w-full h-[420px] sm:h-[480px] md:h-[700px] overflow-hidden">
+      <section className="relative w-full h-[700px] sm:h-[500px] md:h-[800px] overflow-hidden">
       
-      {/* DESKTOP IMAGE */}
-      <Image
-        src="/hero-image.png"
-        alt="Hero"
-        fill
-        priority
-        className="object-cover hidden md:block"
+      {/* ✅ DESKTOP VIDEO */}
+      <video
+        src="/hero-video.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
       />
 
 

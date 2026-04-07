@@ -117,7 +117,17 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
       </section>
 
       {/* ================= CONTENT ================= */}
-      <section className="bg-white md:bg-[#f5f5f5] py-20">
+      <section id="about" 
+        className=" 
+          relative 
+          z-20
+          -mt-14 md:-mt-16
+          bg-white md:bg-[#f5f5f5]
+          rounded-t-[25px] md:rounded-t-[32px]
+          pt-16 md:pt-20
+          pb-20
+        "
+      >
         <div className="max-w-[1200px] mx-auto px-6">
 
           <h2 className="typo-h5 mb-10 font-bold">

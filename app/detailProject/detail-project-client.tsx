@@ -35,6 +35,16 @@ export default function DetailProjectClient({
 
       <ProjectHero activeTab={activeTab} categories={categories} />
 
+      <div
+        className="
+          relative 
+          z-20 
+          -mt-10 md:-mt-12
+          bg-white md:bg-[#f5f5f5]
+          rounded-t-[20px] md:rounded-t-[30px]
+          pt-12 md:pt-16
+        "
+      >
       <ListProject
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -42,6 +52,7 @@ export default function DetailProjectClient({
       />
 
       <CTA />
+      </div>
       <Footer />
     </main>
   )

@@ -33,7 +33,7 @@ export default function DetailTeam({
   return (
     <>
       {/* HERO */}
-      <section className="w-full bg-black text-white py-20 md:py-24">
+      <section className="w-full bg-black text-white py-25 md:py-30">
         <div className="max-w-[1200px] mx-auto px-6">
           <p className="text-sm mb-4 opacity-80">
             Home / Team / <span className="font-semibold">{data.role}</span>
@@ -46,7 +46,17 @@ export default function DetailTeam({
       </section>
 
       {/* CONTENT */}
-      <section className="bg-white md:bg-[#f5f5f5] py-20">
+      <section id="about" 
+            className="
+              relative 
+              z-20
+              -mt-14 md:-mt-16
+              bg-white md:bg-[#f5f5f5]
+              rounded-t-[24px] md:rounded-t-[32px]
+              pt-16 md:pt-20
+              pb-20
+            "
+          >
         <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
           
           {/* IMAGE */}

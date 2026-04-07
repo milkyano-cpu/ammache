@@ -17,9 +17,20 @@ export default function About() {
 
       <Header />
       <CareersHero />
-      <CareersForm />
-      <Studio />
-      <CTA />
+      <div
+        className="
+          relative 
+          z-20 
+          -mt-10 md:-mt-12
+          bg-white md:bg-[#f5f5f5]
+          rounded-t-[20px] md:rounded-t-[30px]
+          pt-12 md:pt-16
+        "
+      >
+        <CareersForm />
+        <Studio />
+        <CTA />
+      </div>
       <Footer />
 
     </main>

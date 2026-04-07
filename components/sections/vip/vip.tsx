@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const VipHero = () => {
   return (
-     <section className="relative w-full h-[420px] sm:h-[480px] md:h-[600px] overflow-hidden">
+     <section className="relative w-full h-[450px] sm:h-[480px] md:h-[600px] overflow-hidden">
 
       {/* IMAGE */}
       <Image

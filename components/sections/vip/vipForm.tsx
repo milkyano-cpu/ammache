@@ -104,7 +104,7 @@ const VipForm = () => {
   }
 
   return (
-    <section className="bg-white md:bg-[#f5f5f5] py-16 md:py-18">
+    <section id="about" className="bg-white md:bg-[#f5f5f5] py-16 md:py-18">
 
   <div className="max-w-[1200px] mx-auto px-5 md:px-6 mb-10 md:mb-16">
 
