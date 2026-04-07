@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { Loader2, UploadCloud, X } from "lucide-react"
+import { Loader2, UploadCloud, X, ChevronDown } from "lucide-react"
 import { z } from "zod"
 import { toast } from "sonner"
 
@@ -259,19 +259,37 @@ const CareersForm = () => {
                 Phone number
               </label>
               <div className="flex border border-gray-200 rounded-lg overflow-hidden">
-                <select
-                  value={phoneCountry}
-                  onChange={(e) => setPhoneCountry(e.target.value)}
-                  className="px-4 typo-body border-r border-gray-200"
-                >
-                  <option>US</option>
-                  <option>ID</option>
-                  <option>AU</option>
-                </select>
+
+                {/* COUNTRY SELECT */}
+                <div className="relative">
+                  <select
+                    value={phoneCountry}
+                    onChange={(e) => setPhoneCountry(e.target.value)}
+                    className="
+                      px-4 py-4 pr-10
+                      typo-body
+                      border-r border-gray-200
+                      appearance-none
+                      bg-white
+                      focus:outline-none
+                    "
+                  >
+                    <option>US</option>
+                    <option>ID</option>
+                    <option>AU</option>
+                  </select>
+
+                  {/* ARROW */}
+                  <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                    <ChevronDown size={16} className="text-gray-500" />
+                  </div>
+                </div>
+
+                {/* INPUT */}
                 <input
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="flex-1 px-6 py-4 typo-body"
+                  className="flex-1 px-6 py-4 typo-body focus:outline-none"
                   placeholder="+1 (555) 000-0000"
                 />
               </div>
@@ -290,21 +308,28 @@ const CareersForm = () => {
               />
             </div>
 
-            {/* POSITION */}
+              {/* POSITION */}
             <div>
               <label className="typo-caption text-gray-700 block mb-2">
                 Position Applying For*
               </label>
-              <select
-                value={position}
-                onChange={(e) => setPosition(e.target.value)}
-                className="w-full px-6 py-4 typo-body rounded-lg border border-gray-200"
-              >
-                <option value="">Select a role*</option>
-                {POSITION_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
+
+              <div className="relative">
+                <select
+                  value={position}
+                  onChange={(e) => setPosition(e.target.value)}
+                  className="w-full px-6 py-4 pr-12 typo-body rounded-lg border border-gray-200 appearance-none bg-white focus:outline-none focus:ring-1 focus:ring-black/20"
+                >
+                  <option value="">Select a role*</option>
+                  {POSITION_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-5 flex items-center">
+                  <ChevronDown size={18} className="text-gray-500" />
+                </div>
+              </div>
             </div>
 
             {/* EXPERIENCE */}
@@ -312,16 +337,23 @@ const CareersForm = () => {
               <label className="typo-caption text-gray-700 block mb-2">
                 Years of Experience
               </label>
-              <select
-                value={experience}
-                onChange={(e) => setExperience(e.target.value)}
-                className="w-full px-6 py-4 typo-body rounded-lg border border-gray-200"
-              >
-                <option value="">Select range</option>
-                {EXPERIENCE_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
+
+              <div className="relative">
+                <select
+                  value={experience}
+                  onChange={(e) => setExperience(e.target.value)}
+                  className="w-full px-6 py-4 pr-12 typo-body rounded-lg border border-gray-200 appearance-none bg-white focus:outline-none focus:ring-1 focus:ring-black/20"
+                >
+                  <option value="">Select range</option>
+                  {EXPERIENCE_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-5 flex items-center">
+                  <ChevronDown size={18} className="text-gray-500" />
+                </div>
+              </div>
             </div>
 
             {/* SOFTWARE */}

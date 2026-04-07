@@ -181,8 +181,8 @@ const ContactSection = () => {
             width={1000}
             height={1000}
             className="
-              scale-[1.5] translate-x-50 translate-y-5
-              md:scale-[1.9] md:translate-x-30 md:translate-y-0
+              scale-[1.5] translate-x-60 translate-y-5
+              md:scale-[2.8] md:translate-x-105 md:translate-y-0
             "
           />
         </div>

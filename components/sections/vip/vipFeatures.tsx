@@ -21,8 +21,8 @@ const features = [
   },
   {
     icon: Calendar,
-    title: "Events & Webinars",
-    desc: "Exclusive invitations to Ammache-hosted events, industry webinars, and project launch evenings. Designed for professionals who want to engage with Melbourne’s most active architecture practice.",
+    title: "Events",
+    desc: "Exclusive access to Ammache-hosted events and project launch evenings. Designed for professionals who want to connect, exchange ideas, and be part of Melbourne’s most active architecture community.",
   },
   {
     icon: Mail,

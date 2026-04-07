@@ -1,6 +1,7 @@
 import Header from "@/components/layouts/header"
 import TeamHero from "@/components/sections/team/team"
 import FounderSection from "@/components/sections/team/founderSection"
+import StorySection from "@/components/sections/team/story"
 import TeamSection from "@/components/sections/team/teamSection"
 import JoinTeamCTA from "@/components/sections/team/joinTeamCTA"
 import Footer from "@/components/layouts/footer"
@@ -18,6 +19,7 @@ export default function About() {
       <Header />
       <TeamHero />
       <FounderSection />
+      <StorySection />
       <TeamSection />
       <JoinTeamCTA />
       <Footer />

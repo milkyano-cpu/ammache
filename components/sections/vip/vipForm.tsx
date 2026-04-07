@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { Loader2 } from "lucide-react"
+import { Loader2, ChevronDown } from "lucide-react"
 import { z } from "zod"
 import { toast } from "sonner"
 
@@ -195,40 +195,50 @@ const VipForm = () => {
               <label className="typo-caption text-gray-700 block mb-2">
                 My Profession
               </label>
-              <select
-                value={profession}
-                onChange={(e) => setProfession(e.target.value)}
-                className="w-full px-4 md:px-6 py-3.5 md:py-4 typo-body rounded-lg border border-gray-200"
-              >
-                <option value="">Select your profession*</option>
-                <option value="Architect">Architect</option>
-                <option value="Developer / Builder">Developer / Builder</option>
-                <option value="Interior Designer">Interior Designer</option>
-                <option value="Project Manager">Project Manager</option>
-                <option value="Real Estate Agent">Real Estate Agent</option>
-                <option value="Engineer">Engineer</option>
-                <option value="Investor">Investor</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
+              <div className="relative">
+                <select
+                  value={profession}
+                  onChange={(e) => setProfession(e.target.value)}
+                  className="w-full px-4 md:px-6 py-3.5 md:py-4 typo-body rounded-lg border border-gray-200 appearance-none bg-white" 
+                >
+                  <option value="">Select your profession*</option>
+                  <option value="Architect">Architect</option>
+                  <option value="Developer / Builder">Developer / Builder</option>
+                  <option value="Interior Designer">Interior Designer</option>
+                  <option value="Project Manager">Project Manager</option>
+                  <option value="Real Estate Agent">Real Estate Agent</option>
+                  <option value="Engineer">Engineer</option>
+                  <option value="Investor">Investor</option>
+                  <option value="Other">Other</option>
+                </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                    <ChevronDown size={18} className="text-gray-500" />
+                  </div>
+                </div>
+              </div>
 
             {/* INTEREST */}
             <div>
               <label className="typo-caption text-gray-700 block mb-2">
                 Most Interested in
               </label>
-              <select
-                value={interest}
-                onChange={(e) => setInterest(e.target.value)}
-                className="w-full px-4 md:px-6 py-3.5 md:py-4 typo-body rounded-lg border border-gray-200"
-              >
-                <option value="">Select your primary interest</option>
-                <option value="Residential Development">Residential Development</option>
-                <option value="Commercial & Industrial Projects">Commercial & Industrial Projects</option>
-                <option value="Off-Market Opportunities">Off-Market Opportunities</option>
-                <option value="Design Insights & Studio Content">Design Insights & Studio Content</option>
-                <option value="General — All Updates">General — All Updates</option>
-              </select>
+              <div className="relative">
+                <select
+                  value={interest}
+                  onChange={(e) => setInterest(e.target.value)}
+                  className="w-full px-4 md:px-6 py-3.5 md:py-4 typo-body rounded-lg border border-gray-200 appearance-none bg-white"
+                >
+                  <option value="">Select your primary interest</option>
+                  <option value="Residential Development">Residential Development</option>
+                  <option value="Commercial & Industrial Projects">Commercial & Industrial Projects</option>
+                  <option value="Off-Market Opportunities">Off-Market Opportunities</option>
+                  <option value="Design Insights & Studio Content">Design Insights & Studio Content</option>
+                  <option value="General — All Updates">General — All Updates</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <ChevronDown size={18} className="text-gray-500" />
+                </div>
+              </div>
             </div>
 
             {/* SOURCE */}
@@ -236,10 +246,11 @@ const VipForm = () => {
               <label className="typo-caption text-gray-700 block mb-2">
                 How Did You Hear About Us
               </label>
+              <div className="relative">
               <select
                 value={source}
                 onChange={(e) => setSource(e.target.value)}
-                className="w-full px-4 md:px-6 py-3.5 md:py-4 typo-body rounded-lg border border-gray-200"
+                className="w-full px-4 md:px-6 py-3.5 md:py-4 typo-body rounded-lg border border-gray-200 appearance-none bg-white"
               >
                 <option value="">Select an option</option>
                 <option value="Referral — Existing VIP Member">Referral — Existing VIP Member</option>
@@ -249,6 +260,10 @@ const VipForm = () => {
                 <option value="Ammache Website">Ammache Website</option>
                 <option value="Other">Other</option>
               </select>
+              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                <ChevronDown size={18} className="text-gray-500" />
+              </div>
+            </div>
             </div>
 
             {/* CHECKBOX */}

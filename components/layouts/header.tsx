@@ -40,22 +40,13 @@ const Header = () => {
           onClick={() => setOpen(false)}
           className="flex items-center cursor-pointer"
         >
-          {!open ? (
-            <Image
-              src="/ammache.png"
-              alt="Ammache"
-              width={140}
-              height={40}
-              priority
-            />
-          ) : (
-            <Image
-              src="/logo-ammache.png"
-              alt="Ammache"
-              width={140}
-              height={40}
-            />
-          )}
+          <Image
+            src="/ammache.png"
+            alt="Ammache"
+            width={140}
+            height={40}
+            priority
+          />
         </Link>
 
         {/* BURGER */}
@@ -70,7 +61,7 @@ const Header = () => {
       {/* OVERLAY */}
       <div
         className={cn(
-          'fixed inset-0 z-[100] bg-black text-white transition-all duration-500 flex flex-col',
+          'fixed inset-0 z-[100] bg-black/75 backdrop-blur-md text-white transition-all duration-500 flex flex-col',
           open ? 'opacity-100 visible' : 'opacity-0 invisible'
         )}
       >
@@ -80,7 +71,7 @@ const Header = () => {
           {/* LOGO */}
           <Link href="/" onClick={() => setOpen(false)}>
             <Image
-              src="/logo-ammache.png"
+              src="/ammache.png"
               alt="Ammache"
               width={140}
               height={40}
@@ -164,7 +155,7 @@ const Header = () => {
                 {/* LEFT */}
                 <div>
                   <Image
-                    src="/logo-ammache.png"
+                    src="/ammache.png"
                     alt="Ammache"
                     width={120}
                     height={30}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import SplashScreen from "@/components/splash-screen"
 
 const aktivGrotesk = localFont({
   src: [
@@ -45,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${aktivGrotesk.variable} ${helveticaNeue.variable}`}>
       <body className="antialiased">
+         <SplashScreen />
         {children}
         <Toaster richColors position="top-right" />
       </body>

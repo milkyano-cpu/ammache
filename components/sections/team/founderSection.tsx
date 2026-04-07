@@ -49,12 +49,12 @@ const FounderSection = () => {
             <div className="max-w-[500px] text-left">
 
                   {/* SHAPE (POSISI DI KANAN TEXT) */}
-               <div className="hidden md:block absolute right-[-300px] top-1/2 -translate-y-1/2 pointer-events-none">
+                <div className="hidden md:block absolute right-[-500px] top-1/2 -translate-y-1/2 pointer-events-none">
                     <Image
                     src="/logo-contact.png"
                     alt="shape"
-                    width={850}
-                    height={850}
+                    width={1000}
+                    height={1000}
                     />
                 </div>
 

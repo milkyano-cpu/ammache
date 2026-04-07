@@ -1,20 +1,24 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 const teamData = [
   {
+    slug: "amir-ammache",
     name: "Amir Ammache",
     role: "Director",
     image: "/team1.png",
   },
   {
+    slug: "adam-ammache",
     name: "Adam Ammache",
     role: "Project Coordinator",
     image: "/team2.png",
   },
   {
+    slug: "eddie-takavoli",
     name: "Eddie Takavoli",
     role: "Lead Architect",
     image: "/team3.png",
@@ -77,21 +81,13 @@ const TeamSection = () => {
                 />
 
                 {/* ARROW BUTTON */}
-                <button
-                  className="
-                    absolute bottom-1.5 right-1.5
-                    md:bottom-2 md:right-2
-                    w-8 h-8 md:w-9 md:h-9
-                    rounded-full
-                    bg-white flex items-center justify-center
-                    shadow-md
-                    cursor-pointer
-                    transition-all duration-300
-                    hover:scale-110 hover:bg-black hover:text-white
-                  "
-                >
-                  <ArrowRight size={16} />
-                </button>
+              {item.slug && (
+  <Link href={`/team/${item.slug}`}>
+    <button className="absolute bottom-1.5 right-1.5 md:bottom-2 md:right-2 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white flex items-center justify-center shadow-md cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-black hover:text-white">
+      <ArrowRight size={16} />
+    </button>
+  </Link>
+)}
 
               </div>
 
