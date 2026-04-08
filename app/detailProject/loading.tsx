@@ -5,7 +5,7 @@ export default function Loading() {
       <img
         src="/logo-loading.png"
         alt="Loading..."
-        className="w-10 h-10 animate-spin"
+        className="w-[80px] md:w-[100px] h-auto splash-fade"
       />
 
     </div>
