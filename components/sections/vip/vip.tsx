@@ -50,9 +50,13 @@ const VipHero = () => {
         </p>
 
         {/* TITLE */}
-        <h1 className="typo-display mb-6">
-          AMMACHE VIP
-        </h1>
+          <Image
+            src="/ammache-vip.png"
+            alt="Ammache VIP"
+            width={400}
+            height={120}
+            className="mb-6 w-[260px] md:w-[400px] h-auto"
+          />
 
         {/* DESCRIPTION */}
         <p className="typo-body text-white/80 max-w-[700px]">
