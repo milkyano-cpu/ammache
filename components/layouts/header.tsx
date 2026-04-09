@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from "react"
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import {
   Menu,
@@ -33,6 +33,7 @@ const Header = () => {
   const [isReady, setIsReady] = useState(false)
   const [hideHeader, setHideHeader] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
   const newsletter = useNewsletterSubscribe()
 
   useEffect(() => {
@@ -96,6 +97,15 @@ const Header = () => {
 
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const handleNavigate = (href: string) => {
+    setOpen(false)
+    router.push(href)
+
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100)
+  }
 
   return (
     <>
@@ -170,7 +180,8 @@ const Header = () => {
         <div className="flex-1 flex items-center justify-center text-center pb-0 md:pb-10">
           <div className="flex flex-col gap-4">
             {navLinks.map((item, i) => {
-              const isActive = pathname === item.href
+              const isActive =
+                  pathname === item.href || pathname.startsWith(item.href + "/")
 
               return (
                 <Link

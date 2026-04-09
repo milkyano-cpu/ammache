@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
+import Link from "next/link"
 import Image from "next/image"
 import {
   MapPin,
@@ -49,10 +50,22 @@ const ContactHero = () => {
       <div className="absolute inset-0 flex items-center">
       <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
-          <p className="typo-body-lg mb-4 text-white">
-              <span className="opacity-80">Home / </span>
-              <span className="font-bold text-white">Contact Us</span>
-          </p>
+      <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
+
+        <Link
+          href="/"
+          className="text-white/70 hover:underline transition"
+        >
+          Home
+        </Link>
+
+        <span className="text-white/40">/</span>
+
+        <span className="text-white font-semibold">
+          Contact Us
+        </span>
+
+      </p>
           <h1 className="typo-h1 max-w-[790px]">
           Lets build something great.
           </h1>
@@ -184,7 +197,7 @@ const ContactSection = () => {
             height={1000}
             className="
               scale-[1.5] translate-x-60 translate-y-5
-              md:scale-[2.8] md:translate-x-105 md:translate-y-0
+              md:scale-[2.9] md:translate-x-105 md:translate-y-0
             "
           />
         </div>

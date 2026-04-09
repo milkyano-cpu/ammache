@@ -558,4 +558,31 @@
   .splash-wrapper-exit {
     animation: splashBgExit 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
+
+
+  @keyframes splashFade {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    30% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    70% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+  }
+
+  .splash-fade {
+    animation: splashFade 1.8s ease-in-out infinite;
+  }
 }

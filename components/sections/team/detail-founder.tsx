@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 /* ================= STAT ================= */
 const Stat = ({
@@ -52,9 +53,31 @@ const Hero = () => {
   return (
     <section className="w-full bg-black text-white py-25 md:py-30">
       <div className="max-w-[1200px] mx-auto px-6">
-        <p className="text-sm mb-4 opacity-80">
-          Home / Team / <span className="font-semibold">Founder</span>
-        </p>
+      <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
+
+        <Link
+          href="/"
+          className="text-white/70 hover:underline transition"
+        >
+          Home
+        </Link>
+
+        <span className="text-white/40">/</span>
+
+        <Link
+          href="/team"
+          className="text-white/70 hover:underline transition"
+        >
+          Team
+        </Link>
+
+        <span className="text-white/40">/</span>
+
+        <span className="text-white font-semibold">
+          Founder
+        </span>
+
+      </p>
 
         <h1 className="text-4xl md:text-5xl font-bold">Founder</h1>
       </div>

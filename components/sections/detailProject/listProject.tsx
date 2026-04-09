@@ -2,8 +2,15 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import { useState, useEffect } from "react"
 import type { CategoryWithProjects } from "@/app/detailProject/detail-project-client"
+
+const reverseCategoryMap: Record<string, string> = {
+  residential: "Residential Projects",
+  commercial: "Commercial and Industrial Projects",
+  retail: "Retail Projects",
+}
 
 /* ================= COUNT ANIMATION ================= */
 const AnimatedCount = ({ value }: { value: number }) => {
@@ -26,7 +33,9 @@ const AnimatedCount = ({ value }: { value: number }) => {
   }, [value])
 
   return <>{count}</>
+
 }
+
 
 /* ================= COMPONENT ================= */
 const DetailProjectsSection = ({
@@ -48,6 +57,14 @@ const DetailProjectsSection = ({
 
   const activeCategory = categories.find((cat) => cat.name === activeTab)
   const projects = activeCategory?.projects ?? []
+  const searchParams = useSearchParams()
+  const categoryParam = searchParams.get("category")
+
+  useEffect(() => {
+    if (categoryParam && reverseCategoryMap[categoryParam]) {
+      setActiveTab(reverseCategoryMap[categoryParam])
+    }
+  }, [categoryParam])
 
   return (
     <section id="about" className="bg-white md:bg-[#f5f5f5] py-10 md:py-24">
