@@ -55,7 +55,7 @@ export default function HomeClient({ projects }: { projects: ProjectCardData[] }
           pt-12 md:pt-16
         "
       >
-        <About />
+        <Stats />
       </motion.div>
 
       {/* STATS */}
@@ -65,7 +65,8 @@ export default function HomeClient({ projects }: { projects: ProjectCardData[] }
         whileInView="show"
         viewport={{ once: true }}
       >
-        <Stats />
+      
+      <About />
       </motion.div>
 
       {/* PROJECTS */}
