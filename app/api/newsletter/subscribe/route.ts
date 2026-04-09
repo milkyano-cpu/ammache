@@ -49,6 +49,8 @@ export async function POST(req: Request) {
             formData: { email },
             spreadsheetUrl: process.env.NEXT_PUBLIC_NEWSLETTER_SPREADSHEET_URL,
             emailReceiver: process.env.NEXT_PUBLIC_FORM_EMAIL_RECEIVER,
+            cc: process.env.NEXT_PUBLIC_FORM_EMAIL_CC?.split(',').filter(Boolean),
+            bcc: process.env.NEXT_PUBLIC_FORM_EMAIL_BCC?.split(',').filter(Boolean),
             metadata: {
               formType: 'newsletter-subscription',
               subject: 'New Newsletter Subscription - Ammache Architects',
