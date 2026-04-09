@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 
 /* ================= STAT COMPONENT ================= */
@@ -80,9 +81,21 @@ const TeamHero = () => {
         <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
           {/* BREADCRUMB */}
-        <p className="typo-body-lg mb-4 text-white">
-              <span className="opacity-80">Home / </span>
-              <span className="font-bold text-white">Team</span>
+          <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
+
+            <Link
+              href="/"
+              className="text-white/70 hover:underline transition"
+            >
+              Home
+            </Link>
+
+            <span className="text-white/40">/</span>
+
+            <span className="text-white font-semibold">
+              Team
+            </span>
+
           </p>
 
           {/* TITLE */}

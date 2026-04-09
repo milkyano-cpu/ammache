@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 
@@ -85,6 +86,12 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
     )
   }
 
+  const categoryMap: Record<string, string> = {
+    "Residential Projects": "residential",
+    "Commercial and Industrial Projects": "commercial",
+    "Retail Projects": "retail",
+  }
+
   return (
     <>
       {/* ================= HERO ================= */}
@@ -103,12 +110,40 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
         <div className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">
           <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
-            <p className="typo-body-lg mb-4 text-white">
-              Home / Projects / {project.categoryName} /{" "}
-              <span className="text-white font-bold">
-                {project.name}
-              </span>
-            </p>
+          <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
+
+            <Link
+              href="/"
+              className="text-white/60 hover:underline transition"
+            >
+              Home
+            </Link>
+
+            <span className="text-white/40">/</span>
+
+            <Link
+              href="/detailProject"
+              className="text-white/60 hover:underline transition"
+            >
+              Projects
+            </Link>
+
+            <span className="text-white/40">/</span>
+
+            <Link
+              href={`/detailProject?category=${categoryMap[project.categoryName]}`}
+              className="text-white/60 hover:underline transition"
+            >
+              {project.categoryName}
+            </Link>
+
+            <span className="text-white/40">/</span>
+
+            <span className="text-white font-semibold">
+              {project.name}
+            </span>
+
+          </p>
 
             <h1 className="typo-h1 max-w-[700px] mb-3">
               {project.name}
@@ -146,12 +181,12 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
 
               <div className="relative w-full h-[500px] md:h-[650px]">
 
-               <Image
-    src={images[currentIndex]}
-    alt={project.name}
-    fill
-    className="object-cover rounded-2xl transition-all duration-500"
-  />
+                <Image
+                  src={images[currentIndex]}
+                  alt={project.name}
+                  fill
+                  className="object-cover rounded-2xl transition-all duration-500"
+                />
 
 
                 {images.length > 1 && (

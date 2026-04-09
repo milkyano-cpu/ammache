@@ -1,14 +1,29 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import type { CategoryWithProjects } from "@/app/detailProject/detail-project-client"
 
 /* ================= HERO IMAGE MAPPING ================= */
 const heroImages: Record<string, string> = {
-    "Residential Projects": "/detail-project1.png",
-    "Commercial and Industrial Projects": "/detail-project2.png",
-    "Retail Projects": "/detail-project3.png",
+  residential: "/detail-project1.png",
+  commercial: "/detail-project2.png",
+  retail: "/detail-project3.png",
+}
+
+const reverseCategoryMap: Record<string, string> = {
+  residential: "Residential Projects",
+  commercial: "Commercial and Industrial Projects",
+  retail: "Retail Projects",
+}
+
+/* ================= CATEGORY MAP ================= */
+const categoryMap: Record<string, string> = {
+  "Residential Projects": "residential",
+  "Commercial and Industrial Projects": "commercial",
+  "Retail Projects": "retail",
 }
 
 /* ================= STAT COMPONENT ================= */
@@ -45,14 +60,14 @@ const Stat = ({
 
   return (
     <div className="text-center">
-    <p className="typo-stat text-white">
+      <p className="typo-stat text-white">
         {prefix}
         {count}
         {suffix}
-    </p>
-    <p className="typo-caption text-white mt-2">
+      </p>
+      <p className="typo-caption text-white mt-2">
         {label}
-    </p>
+      </p>
     </div>
   )
 }
@@ -65,10 +80,34 @@ const DetailProjectHero = ({
   activeTab: string
   categories: CategoryWithProjects[]
 }) => {
+
+  const searchParams = useSearchParams()
+  const categoryParam = searchParams.get("category")
+
+  const [currentTab, setCurrentTab] = useState(activeTab)
+
+  useEffect(() => {
+    if (categoryParam) {
+      const mapped = reverseCategoryMap[categoryParam]
+
+      if (mapped) {
+        setCurrentTab(mapped)
+      }
+    }
+  }, [categoryParam])
+
+  /* 🔥 FALLBACK CATEGORY */
+  const fallbackTab =
+    categoryMap[categories[0]?.name] || "residential"
+
+  /* 🔥 FINAL HERO SRC */
+  const currentKey =
+    categoryMap[currentTab] || currentTab
+
   const heroSrc =
-    heroImages[activeTab] ??
-    heroImages[categories[0]?.name] ??
-    "/detail-project1.png"
+      heroImages[currentKey] ||
+      heroImages[fallbackTab] ||
+      "/detail-project1.png"
 
   return (
     <section className="relative w-full h-[550px] md:h-[600px] overflow-hidden">
@@ -92,20 +131,27 @@ const DetailProjectHero = ({
       />
 
       {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/80 md:bg-black/80" />
+      <div className="absolute inset-0 bg-black/80 md:bg-black/80" />
 
       {/* CONTENT */}
       <div className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">
         <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
           {/* BREADCRUMB */}
-          <p className="typo-body-lg mb-4 text-white">
-              <span className="opacity-80">Home / </span>
-              <span className="font-bold text-white">Projects</span>
+          <p className="typo-body-lg mb-4 text-white flex gap-1 flex-wrap">
+            <Link href="/" className="opacity-80 hover:underline">
+              Home
+            </Link>
+
+            <span className="opacity-80">/</span>
+
+            <span className="font-bold text-white">
+              Projects
+            </span>
           </p>
 
           {/* TITLE */}
-           <h1 className="typo-h1 max-w-[90%] md:max-w-[700px] mb-3">
+          <h1 className="typo-h1 max-w-[90%] md:max-w-[700px] mb-3">
             Ammache Projects
           </h1>
 
@@ -133,7 +179,7 @@ const DetailProjectHero = ({
             border-tpt-6
             md:flex-wrap md:justify-start md:items-start
             md:gap-14 md:mt-10 md:border-0 md:pt-0
-            ">
+          ">
 
             <Stat
               number={27}
@@ -154,12 +200,12 @@ const DetailProjectHero = ({
             />
 
             <div className="hidden md:block">
-            <Stat
+              <Stat
                 number={700}
                 prefix="$"
                 suffix="M+"
                 label="Construction value"
-            />
+              />
             </div>
 
           </div>
