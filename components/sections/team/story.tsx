@@ -30,7 +30,7 @@ const StorySection = () => {
         <div className="
           text-gray-800
           text-[14px] md:text-[16px]
-          leading-[1.8]
+          leading-[1.8] 
           space-y-6
         ">
 
