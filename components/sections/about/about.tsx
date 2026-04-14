@@ -13,10 +13,10 @@ export default function About() {
           ">
           <div>
             <h2 className="typo-h2 text-black">
-              Innovative Architecture Built on Experience.
+              We Design How People Live, Not Just Buildings
             </h2>
             <p className="typo-body-sm text-gray-800 mt-2">
-              From concept design to planning, construction, and post-completion support, we deliver.
+              Every space we create is shaped around real human behaviour how people move, feel, connect, and grow.
             </p>
           </div>
 
@@ -25,7 +25,7 @@ export default function About() {
           <Link
             href="/detailProject"
             className="
-              w-[170px]
+              w-[180px]
               px-5 py-2.5
               rounded-full
               border-2 border-gray-400
@@ -37,13 +37,13 @@ export default function About() {
               inline-block
             "
           >
-            View Our Projects
+            See Our Work
           </Link>
 
           <Link
             href="/contact"
             className="
-              w-[170px]
+              w-[180px]
               px-5 py-2.5
               rounded-full
               bg-black text-white
@@ -55,7 +55,7 @@ export default function About() {
               inline-block
             "
           >
-            Enquire
+            Book a Concept Review
           </Link>
           </div>
         </div>
@@ -76,17 +76,33 @@ export default function About() {
               </div>
 
               <h3 className="typo-h2">
-                Experience in Every Detail.
+                33+ Years Designing for 
                 <br />
-                Design in Every Structure.
+                Real Life
               </h3>
 
               <p className="typo-body-sm text-gray-200">
-                Founded in 1998 in Melbourne, Australia, Ammache Architects is a registered architectural firm comprising a carefully selected team of professionals, including registered architects and draftsmen. The studio offers a comprehensive range of architectural services, from initial schematic design through planning, compliance, and post-construction support.
+                After more than three decades in architecture, one thing is clear:
               </p>
 
-              <p className="typo-body-sm text-gray-200">
-                Ammache Architects combines innovative design with a strong understanding of environmental, client, and business requirements. This approach results in buildings defined by beauty, quality, and functionality while remaining sustainable within the competitive property market.
+              <p className="typo-body-sm text-gray-200 mt-4">
+                People don’t experience buildings. <br />
+                They experience how those buildings make them feel.
+              </p>
+
+              <p className="typo-body-sm text-gray-200 mt-6">
+                Our work is built on:
+              </p>
+
+              <ul className="typo-body-sm text-gray-200 list-disc pl-5 space-y-1">
+                <li>Understanding human behaviour</li>
+                <li>Designing for everyday life</li>
+                <li>Creating environments that reduce stress and improve wellbeing</li>
+              </ul>
+
+              <p className="typo-body-sm text-gray-200 mt-6">
+                Because architecture should not just look good, <br />
+                it should work for people.
               </p>
 
               {/* BIGGER BUTTON */}

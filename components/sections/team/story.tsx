@@ -28,7 +28,7 @@ const StorySection = () => {
 
         {/* PARAGRAPHS */}
         <div className="
-          text-gray-700
+          text-gray-800
           text-[14px] md:text-[16px]
           leading-[1.8]
           space-y-6

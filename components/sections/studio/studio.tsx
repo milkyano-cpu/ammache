@@ -29,19 +29,18 @@ export default function Studio() {
 
           {/* TITLE */}
           <h2 className="typo-h2 text-black">
-            A Private Network For The{" "}
+            Built on Collaboration.
             <br className="hidden md:block" />
-            Built World
+            Driven by Purpose.
           </h2>
 
           {/* DESCRIPTION */}
           <p className="typo-body-lg text-gray-900 max-w-md text-justify">
-            Beyond our studio, we’re building a curated network for architects, interior designers, builders, developers, and creative professionals.
+            Beyond the studio, we've spent decades building relationships with the people who shape the built environment architects, developers, builders, and designers who care about more than just construction.
             <br /><br />
-            Through private events, educational sessions, industry insights, and exclusive invitations, we’re creating a space where ambitious people in design and construction can connect, learn, and stay ahead.
+            We share knowledge, challenge ideas, and raise the standard of what architecture can do for people.
             <br /><br />
-            This is our way of contributing to the industry.
-            Not just through the spaces we create, but through the community we build around them.
+            Because the best spaces aren't built alone they're built with the right people around the table.
           </p>
 
         </div>

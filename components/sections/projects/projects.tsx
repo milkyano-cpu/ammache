@@ -33,8 +33,9 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
           </h2>
 
           <p className="typo-body-sm text-gray-800 max-w-xl md:mx-auto">
-            Our encompasses projects with a cumulative construction
-            value exceeding <span className="font-semibold">$700+</span> million.
+            {/* Our encompasses projects with a cumulative construction
+            value exceeding <span className="font-semibold">$700+</span> million. */}
+            Every project here was shaped by one question: how will the people inside actually experience this space?
           </p>
         </div>
 
@@ -115,7 +116,7 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
             inline-block
           "
         >
-          View All Projects
+          See Our Work
         </Link>
         </div>
 

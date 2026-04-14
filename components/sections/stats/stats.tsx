@@ -34,9 +34,9 @@ export default function Stats() {
 
         {/* TITLE */}
         <h2 className="typo-h2 text-gray-900">
-          Designing thoughtful architecture that shapes
+          Designing Architecture That Works for People, 
           <br className="hidden md:block" />
-          spaces and communities.
+          Not Just on Paper.
         </h2>
 
         {/* STATS */}
@@ -47,7 +47,7 @@ export default function Stats() {
               <Counter end={27} />
             </p>
             <p className="typo-caption text-black mt-2">
-              Years of Experience
+              Years Designing for Real Life
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function Stats() {
               <Counter end={900} />+
             </p>
             <p className="typo-caption text-black mt-2">
-              Completed Projects
+              Projects Built Around People
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function Stats() {
               <Counter end={15} />+
             </p>
             <p className="typo-caption text-black mt-2">
-              Awards 
+              Industry Awards & Recognition
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export default function Stats() {
             inline-block
           "
         >
-          View All Projects
+          See Our Work
         </Link>
 
       </div>

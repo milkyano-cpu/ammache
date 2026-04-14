@@ -9,14 +9,14 @@ export default function CTA() {
 
         {/* TITLE */}
         <h2 className="typo-h2 text-black">
-          Have a Project in Mind?
+          Have a Site or Project in Mind?
         </h2>
 
         {/* DESCRIPTION */}
         <p className="typo-body text-gray-800">
-          Tell us about your vision and our team
+          Let's talk about how it can become a
           <br />
-          will get in touch.
+          place people genuinely want to be in.
         </p>
 
         {/* BUTTON */}
