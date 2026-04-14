@@ -14,6 +14,7 @@ import {
 } from "lucide-react"
 import { z } from "zod"
 import { toast } from "sonner"
+import { dataLayer } from "@/lib/gtm/data-layer"
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First Name is required"),
@@ -151,6 +152,12 @@ const ContactSection = () => {
 
       if (res.status === 201) {
         toast.success("Your enquiry has been submitted successfully!")
+        dataLayer.contactFormSubmit({
+          project_type: projectType,
+          project_location: projectLocation,
+          has_phone: phone.trim().length > 0,
+          has_message: message.trim().length > 0,
+        })
         setFirstName("")
         setLastName("")
         setPhone("")

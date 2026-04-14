@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import SplashScreen from "@/components/splash-screen"
+import { GoogleTagManager } from "@next/third-parties/google"
 
 const aktivGrotesk = localFont({
   src: [
@@ -71,6 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${aktivGrotesk.variable} ${helveticaNeue.variable}`}>
       <body className="antialiased">
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} />
          <SplashScreen />
           {children}
         <Toaster richColors position="top-right" />

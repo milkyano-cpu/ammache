@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
+import { dataLayer } from '@/lib/gtm/data-layer'
 
 export function useNewsletterSubscribe() {
   const [email, setEmail] = useState('')
@@ -34,6 +35,7 @@ export function useNewsletterSubscribe() {
       })
 
       if (data.success) {
+        dataLayer.newsletterSubscribe()
         setEmail('')
         setConsent(false)
       }

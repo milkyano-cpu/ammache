@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import { dataLayer } from "@/lib/gtm/data-layer"
 
 interface ProjectDetailContentProps {
   project: any
@@ -59,6 +60,15 @@ const AnimatedStat = ({
 
 export default function ProjectDetailContent({ project, nextProject }: ProjectDetailContentProps) {
   const router = useRouter()
+
+  useEffect(() => {
+    dataLayer.viewProject({
+      project_id: project.id,
+      project_name: project.name,
+      project_category: project.categoryName || "",
+      project_slug: project.slug || "",
+    })
+  }, [project.id])
 
   const specs = project.specifications || []
   const scopes = project.scopeStatus || project.scope_status || []

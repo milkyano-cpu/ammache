@@ -4,6 +4,7 @@ import { useState, useRef } from "react"
 import { Loader2, UploadCloud, X, ChevronDown } from "lucide-react"
 import { z } from "zod"
 import { toast } from "sonner"
+import { dataLayer } from "@/lib/gtm/data-layer"
 
 const careersSchema = z.object({
   firstName: z.string().min(1, "First Name is required"),
@@ -181,6 +182,12 @@ const CareersForm = () => {
 
       if (res.status === 201) {
         toast.success("Your application has been submitted successfully.")
+        dataLayer.careersFormSubmit({
+          position: position,
+          experience: experience,
+          has_portfolio: portfolio.trim().length > 0,
+          has_cv: cvUrl.length > 0,
+        })
         setFirstName("")
         setLastName("")
         setPhone("")

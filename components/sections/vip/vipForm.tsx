@@ -4,6 +4,7 @@ import { useState, useRef } from "react"
 import { Loader2, ChevronDown } from "lucide-react"
 import { z } from "zod"
 import { toast } from "sonner"
+import { dataLayer } from "@/lib/gtm/data-layer"
 
 const vipSchema = z.object({
   firstName: z.string().min(1, "First Name is required"),
@@ -85,6 +86,11 @@ const VipForm = () => {
 
       if (res.status === 201) {
         toast.success("Welcome to Ammache VIP! Your registration has been submitted successfully.")
+        dataLayer.vipFormSubmit({
+          profession: profession,
+          interest: interest,
+          source: source,
+        })
         setFirstName("")
         setLastName("")
         setPhone("")
