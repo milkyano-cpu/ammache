@@ -29,7 +29,7 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
           </div>
 
           <h2 className="typo-h2 text-black">
-            Selected Developments
+            Spaces Designed Around People
           </h2>
 
           <p className="typo-body-sm text-gray-800 max-w-xl md:mx-auto">
