@@ -35,7 +35,7 @@ export default function Studio() {
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="typo-body-lg text-gray-900 max-w-md text-justify">
+          <p className="typo-body-lg text-gray-900 max-w-md text- justify">
             Beyond the studio, we've spent decades building relationships with the people who shape the built environment architects, developers, builders, and designers who care about more than just construction.
             <br /><br />
             We share knowledge, challenge ideas, and raise the standard of what architecture can do for people.
