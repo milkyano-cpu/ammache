@@ -28,9 +28,11 @@ export default function Studio() {
           </div>
 
           {/* TITLE */}
-          <h2 className="typo-h2 text-black">
-            Built on Collaboration.
-            <br className="hidden md:block" />
+          <h2 className="typo-h2 text-black md:px-0">
+            <span className="whitespace-nowrap">
+              Built on Collaboration.
+            </span>
+            <br />
             Driven by Purpose.
           </h2>
 
