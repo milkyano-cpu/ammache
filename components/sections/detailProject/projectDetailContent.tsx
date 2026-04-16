@@ -84,6 +84,8 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
   const images = Array.isArray(project.images) ? project.images : []
   const [currentIndex, setCurrentIndex] = useState(0)
 
+  const [isOpen, setIsOpen] = useState(false) // ✅ tambahan
+
   const nextImage = () => {
     if (images.length === 0) return
     setCurrentIndex((prev) => (prev + 1) % images.length)
@@ -122,19 +124,13 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
 
           <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
 
-            <Link
-              href="/"
-              className="text-white/60 hover:underline transition"
-            >
+            <Link href="/" className="text-white/60 hover:underline transition">
               Home
             </Link>
 
             <span className="text-white/40">/</span>
 
-            <Link
-              href="/detailProject"
-              className="text-white/60 hover:underline transition"
-            >
+            <Link href="/detailProject" className="text-white/60 hover:underline transition">
               Projects
             </Link>
 
@@ -189,35 +185,24 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
             {/* ================= LEFT (SLIDER) ================= */}
             <div>
 
-              <div className="relative w-full h-[500px] md:h-[650px]">
+              <div
+                className="relative w-full h-[500px] md:h-[650px] group cursor-pointer"
+                onClick={() => setIsOpen(true)}
+              >
 
                 <Image
                   src={images[currentIndex]}
                   alt={project.name}
                   fill
-                  className="object-cover rounded-2xl transition-all duration-500"
+                  className="object-cover rounded-2xl transition-all duration-500 group-hover:scale-105 group-hover:brightness-75"
                 />
 
+                {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                  <span className="bg-black/60 text-white text-sm px-4 py-2 rounded-full">
+                    View Image
+                  </span>
+                </div> */}
 
-                {images.length > 1 && (
-                  <>
-                    {/* LEFT */}
-                    <button
-                      onClick={prevImage}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition cursor-pointer"
-                    >
-                      ←
-                    </button>
-
-                    {/* RIGHT */}
-                    <button
-                      onClick={nextImage}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition cursor-pointer"
-                    >
-                      →
-                    </button>
-                  </>
-                )}
               </div>
 
               {/* DOT INDICATOR */}
@@ -288,6 +273,62 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
           </div>
         </div>
       </section>
+
+      {/* ================= MODAL ================= */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
+          onClick={() => setIsOpen(false)}
+        >
+          <div
+            className="relative max-w-6xl w-full px-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={images[currentIndex]}
+              alt="Zoom Image"
+              width={1400}
+              height={900}
+              className="w-full h-auto rounded-xl"
+            />
+
+            {/* CLOSE */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 text-white text-2xl"
+            >
+              ✕
+            </button>
+
+            {/* LEFT */}
+            {images.length > 1 && (
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-12 h-12 rounded-full"
+              >
+                ←
+              </button>
+            )}
+
+            {/* RIGHT */}
+            {images.length > 1 && (
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-12 h-12 rounded-full"
+              >
+                →
+              </button>
+            )}
+
+            {/* COUNTER */}
+            <div className="absolute top-4 left-4 text-white text-sm">
+              {currentIndex + 1} / {images.length}
+            </div>
+
+          </div>
+        </div>
+      )}
+
     </>
   )
 }
