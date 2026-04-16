@@ -197,6 +197,26 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
                   className="object-cover rounded-2xl transition-all duration-500 group-hover:scale-105 group-hover:brightness-75"
                 />
 
+                {images.length > 1 && (
+                  <>
+                    {/* LEFT */}
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition cursor-pointer"
+                    >
+                      ←
+                    </button>
+
+                    {/* RIGHT */}
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition cursor-pointer"
+                    >
+                      →
+                    </button>
+                  </>
+                )}
+        
                 {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
                   <span className="bg-black/60 text-white text-sm px-4 py-2 rounded-full">
                     View Image
