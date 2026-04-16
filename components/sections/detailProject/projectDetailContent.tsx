@@ -199,9 +199,12 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
 
                 {images.length > 1 && (
                   <>
-                    {/* LEFT */}
+                   {/* LEFT */}
                     <button
-                      onClick={prevImage}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        prevImage()
+                      }}
                       className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition cursor-pointer"
                     >
                       ←
@@ -209,7 +212,10 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
 
                     {/* RIGHT */}
                     <button
-                      onClick={nextImage}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        nextImage()
+                      }}
                       className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition cursor-pointer"
                     >
                       →
