@@ -303,7 +303,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
       {/* ================= MODAL ================= */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center cursor-po"
           onClick={() => setIsOpen(false)}
         >
           <div
@@ -321,7 +321,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
             {/* CLOSE */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-white text-2xl"
+              className="absolute top-4 right-4 text-white text-2xl cursor-pointer"
             >
               ✕
             </button>
@@ -330,7 +330,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
             {images.length > 1 && (
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-12 h-12 rounded-full"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-12 h-12 rounded-full cursor-pointer"
               >
                 ←
               </button>
@@ -340,7 +340,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
             {images.length > 1 && (
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-12 h-12 rounded-full"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-12 h-12 rounded-full cursor-pointer"
               >
                 →
               </button>
