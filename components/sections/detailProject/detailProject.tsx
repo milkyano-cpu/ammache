@@ -96,6 +96,10 @@ const DetailProjectHero = ({
     }
   }, [categoryParam])
 
+  useEffect(() => {
+    setCurrentTab(activeTab)
+  }, [activeTab])
+
   /* 🔥 FALLBACK CATEGORY */
   const fallbackTab =
     categoryMap[categories[0]?.name] || "residential"
@@ -151,13 +155,13 @@ const DetailProjectHero = ({
           </p>
 
           {/* TITLE */}
-          <h1 className="typo-h1 max-w-[90%] md:max-w-[700px] mb-3">
-            Ammache Projects
+          <h1 className="typo-h1 max-w-[100%] md:max-w-[950px] mb-3">
+            Spaces Designed Around People
           </h1>
 
           {/* DESCRIPTION */}
           <p className="typo-body text-white/80 max-w-[95%] md:max-w-[700px]">
-            View our extensive portofolio of{" "}
+            {/* View our extensive portofolio of{" "}
             <span className="font-semibold text-white">
               Ammache Architects Projects,
             </span>{" "}
@@ -169,7 +173,8 @@ const DetailProjectHero = ({
             <span className="font-semibold text-white">
               27 years experience
             </span>{" "}
-            and utillise this in delivering the highest quality designs possible.
+            and utillise this in delivering the highest quality designs possible. */}
+            Every project here was shaped by one question: how will the people inside actually experience this space?
           </p>
 
           {/* STATS */}
@@ -182,15 +187,9 @@ const DetailProjectHero = ({
           ">
 
             <Stat
-              number={27}
+              number={33}
               suffix="+"
-              label="Years of Experience"
-            />
-
-            <Stat
-              number={900}
-              suffix="+"
-              label="Completed Projects"
+              label="Years Designing for Real Life"
             />
 
             <Stat
@@ -199,9 +198,15 @@ const DetailProjectHero = ({
               label="Industry Awards & Recognitions"
             />
 
+            <Stat
+              number={900}
+              suffix="+"
+              label="Project Built Around People"
+            />
+
             <div className="hidden md:block">
               <Stat
-                number={700}
+                number={900}
                 prefix="$"
                 suffix="M+"
                 label="Construction value"

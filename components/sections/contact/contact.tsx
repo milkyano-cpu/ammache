@@ -67,8 +67,8 @@ const ContactHero = () => {
         </span>
 
       </p>
-          <h1 className="typo-h1 max-w-[790px]">
-          Lets build something great.
+          <h1 className="typo-h1 max-w-[1000px]">
+          Let's Create Something People Will Love Living In.
           </h1>
 
       </div>
@@ -203,8 +203,8 @@ const ContactSection = () => {
             width={1000}
             height={1000}
             className="
-              scale-[1.5] translate-x-60 translate-y-5
-              md:scale-[2.9] md:translate-x-105 md:translate-y-0
+              scale-[3.0] translate-x-100 translate-y-5
+              md:scale-[3.1] md:translate-x-110 md:translate-y-0
             "
           />
         </div>
@@ -282,7 +282,7 @@ const ContactSection = () => {
         className="mb-5"
         />
 
-        <p className="typo-body-sm text-white/70">
+        <p className="typo-body-sm text-white/80">
         Founded in Melbourne in 1998, Ammache Architects creates thoughtful,
         innovative architecture designed to endure.
         </p>
@@ -322,8 +322,7 @@ const ContactSection = () => {
           <div className="bg-white md:bg-[white] p-6 md:p-10 md:p-14 rounded-[20px] md:rounded-none shadow-sm md:shadow-none">
 
               <p className="typo-body-sm text-gray-600 mb-8">
-                  If you would like to contact Ammache about our services,
-                  please don't hesitate to reach out.
+                  Tell us about your site or project. We'll get back to you with honest thoughts on what it could become.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -460,7 +459,7 @@ const ContactSection = () => {
                     className="w-full mt-6 py-4 rounded-lg bg-black text-white typo-button hover:bg-gray-800 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     {loading && <Loader2 className="animate-spin" size={18} />}
-                    {loading ? "Submitting..." : "Submit Enquiry"}
+                    {loading ? "Submitting..." : "Book a Concept Review"}
                   </button>
 
               </form>

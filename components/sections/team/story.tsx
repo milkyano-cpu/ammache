@@ -21,9 +21,9 @@ const StorySection = () => {
           font-semibold
           mb-6 md:mb-10
         ">
-          Built from a single room.
+          Built from a single belief. That architecture 
           <br />
-          Now shaping Melbourne's skyline.
+          should be felt, not just seen.
         </h3>
 
         {/* PARAGRAPHS */}
@@ -35,19 +35,19 @@ const StorySection = () => {
         ">
 
           <p>
-            Founded in 1998 by <b>Nidal Ammache</b>, <b>Ammache Architects</b> began as a one-man practice in <b>Melbourne</b> with a singular conviction — that <b>architecture should be understood, not just designed.</b> That buildings should respond to the people who inhabit them, the communities that surround them, and the markets that sustain them.
+            Founded in 1998 by <b>Nidal Ammache</b>, <b>Ammache Architects</b> began with a single conviction: that buildings should respond to the people who inhabit them.
           </p>
 
           <p>
-            Over <b>27 years</b>, that conviction has shaped a practice unlike most. <b>Ammache</b> is a registered architectural firm comprising a carefully selected team of professionals, including registered architects and draftsmen, offering a comprehensive range of services from initial schematic design through to planning, compliance, and post-construction.
+            Over <b>33 years</b>, that belief has shaped everything. Today, <b>Ammache</b> s a registered firm of architects, designers, and coordinators who work directly with clients across every stage, from first sketch to final handover.
           </p>
 
           <p>
-            What sets <b>Ammache</b> apart is not just the breadth of its portfolio — spanning residential, commercial, industrial, retail, medical, childcare, and NDIS sectors — but the depth of its relationships. Clients work directly with the principals. Every project is personal.
+            What sets us apart isn't the scale of our portfolio. It's the depth of our relationships. Every project is personal. Every client works directly with the principals.
           </p>
 
           <p>
-            Today, the firm has entered its second generation. Nidal's sons, <b>Amir</b> and <b>Adam</b>, have joined the practice he built. The result is a multigenerational studio that carries the same standards forward — with new energy, new ideas, and an unwavering commitment to the quality that made the firm's reputation.
+            Today, the practice has entered its second generation. <b>Nidal's sons,</b> <b>Amir</b> and <b>Adam</b>, carry the same standards forward with new energy and an unwavering commitment to the quality that built this firm's reputation.
           </p>
 
         </div>

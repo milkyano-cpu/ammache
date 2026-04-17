@@ -105,7 +105,7 @@ const TeamHero = () => {
 
           {/* DESCRIPTION */}
           <p className="typo-body text-white/80 max-w-[95%] md:max-w-[700px]">
-            Ammache is built on a carefully selected team of architects, designers, and professionals dedicated to delivering thoughtful and enduring architecture.
+            Every space we design starts with the people in this room, and the people who will one day live, work, and grow inside the spaces we create.
           </p>
 
           {/* STATS */}
@@ -118,15 +118,15 @@ const TeamHero = () => {
             ">
 
             <Stat
-              number={27}
+              number={33}
               suffix="+"
-              label="Years of Experience"
+              label="Years Designing for Real Life"
             />
 
             <Stat
               number={900}
               suffix="+"
-              label="Completed Projects"
+              label="Projects Built Around People"
             />
 
             <Stat

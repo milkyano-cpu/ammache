@@ -44,7 +44,7 @@ export default function Stats() {
           
           <div>
             <p className="typo-stat text-black">
-              <Counter end={27} />
+              <Counter end={33} />+
             </p>
             <p className="typo-caption text-black mt-2">
               Years Designing for Real Life

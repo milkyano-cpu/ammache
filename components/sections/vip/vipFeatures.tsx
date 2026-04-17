@@ -12,27 +12,31 @@ const features = [
   {
     icon: Home,
     title: "Property Access",
-    desc: "Get first access to new Ammache developments before they are publicly listed. Commercial, residential, mixed-use, and off-market opportunities, shared directly with VIP members as they become available.",
+    desc: (
+      <>
+        Be the first to know about new <strong>Ammache</strong> projects across residential, commercial, and mixed-use. Shared directly with you before they go public.
+      </>
+    ),
   },
   {
     icon: BookOpen,
     title: "Technical Content",
-    desc: "Insights from $700M+ in projects—covering planning, materials, sustainability, and key design decisions behind Ammache’s most complex work.",
+    desc: "Real insights from real projects. How we think about planning, materials, sustainability, and the decisions that shape spaces people actually want to be in.",
   },
   {
     icon: Calendar,
     title: "Events",
-    desc: "Exclusive access to Ammache-hosted events and project launch evenings. Designed for professionals who want to connect, exchange ideas, and be part of Melbourne’s most active architecture community.",
+    desc: "Access to Ammache-hosted events and project launches. For professionals who care about where architecture is heading and want to be part of that conversation.",
   },
   {
     icon: Mail,
     title: "Studio Newsletter",
-    desc: "A curated dispatch from the Ammache studio — project milestones, planning approvals, market intelligence, and behind-the-scenes content delivered directly to your inbox.",
+    desc: "A direct line to the Ammache studio. Project milestones, planning updates, and behind-the-scenes thinking delivered to your inbox.",
   },
   {
     icon: Users,
     title: "Direct Access to the Team",
-    desc: "VIP members communicate directly with the Ammache principals. The same hands-on approach that defines every project extends to every member of the list.",
+    desc: "VIP members communicate directly with the Ammache principals. No middlemen. The same hands-on approach we bring to every project, extended to every member.",
   },
 ]
 
@@ -44,7 +48,7 @@ const VipFeatures = () => {
 
         {/* TITLE */}
         <h2 className="typo-h2 mb-16 max-w-[500px]">
-          Everything included in your membership.
+          What You Get as a Member.
         </h2>
 
         {/* GRID */}

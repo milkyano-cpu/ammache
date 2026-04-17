@@ -34,7 +34,7 @@ export default function CTA() {
               inline-block
             "
           >
-            Enquire
+            Book a Concept Review
           </Link>
         </div>
 

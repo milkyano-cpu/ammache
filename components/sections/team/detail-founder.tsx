@@ -37,7 +37,7 @@ const Stat = ({
   }, [number])
 
   return (
-    <div>
+    <div className="flex flex-col items-center text-center">
       <p className="text-2xl md:text-3xl font-bold text-black">
         {prefix}
         {count}
@@ -126,9 +126,32 @@ const FounderContent = () => {
 
           {/* STATS */}
           <div className="flex gap-12 mb-8">
-            <Stat number={27} suffix="+" label="Years Experience" />
-            <Stat number={700} prefix="$" suffix="M+" label="Delivered" />
-            <Stat number={6} label="Sectors" />
+            <Stat
+              number={33}
+              suffix="+"
+              label={
+                <>
+                  Years Designing <br /> for Real Life
+                </>
+              }
+            />
+
+            <Stat
+              number={900}
+              prefix="$"
+              suffix="M+"
+              label="Project Delivered"
+            />
+
+            <Stat
+              number={15}
+              suffix="+"
+              label={
+                <>
+                  Industry Awards & <br /> Recognition
+                </>
+              }
+            />
           </div>
 
           {/* LINE */}
@@ -137,19 +160,11 @@ const FounderContent = () => {
           {/* DESC */}
           <div className="text-gray-700 space-y-5 text-[15px] leading-relaxed">
             <p>
-              <strong className="text-black">Nidal</strong> possesses over three decades of extensive
-              experience in architectural and building technology, successfully delivering
-              projects to clients. He consistently maintains a hands-on approach, ensuring a
-              high level of responsibility to his clients, while adeptly overcoming a diverse
-              range of project issues.
+              <strong className="text-black">Nidal</strong> has spent over three decades doing one thing: designing spaces that work for the people inside them. His approach has always been hands-on and personal. Every project is treated as if someone he knows will live in it, because often, they do.
             </p>
 
             <p>
-              <strong className="text-black">Nidal’s</strong> negotiation skills are unparalleled,
-              demonstrated by his ability to secure victories such as the successful reversal of a
-              council decision to the utmost satisfaction of a key client. Additionally, he has
-              attained approvals for numerous developments through preliminary discussions prior
-              to the formal submission of plans, ensuring minimal surprises for all stakeholders involved.
+              Over the years, <strong className="text-black">Nidal’s</strong> nhas built a reputation for getting projects approved without friction. Not because he works around the process, but because he understands what councils, clients, and communities actually need. Every stakeholder leaves the table knowing exactly what to expect.
             </p>
           </div>
 

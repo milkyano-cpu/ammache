@@ -125,7 +125,7 @@ export default function DetailTeam({
           </div>
         </div>
       </section>
-    <section className="bg-[#f7f7f7] md:bg-[#f2f2f2] py-16 md:border-t border-gray-200">
+    <section className="bg-[#f7f7f7] md:bg-[#edecec] py-16 md:border-t border-gray-200">
         <div className="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
 
           {/* PREVIOUS */}

@@ -61,7 +61,7 @@ const VipHero = () => {
         {/* DESCRIPTION */}
         <p className="typo-body text-white/80 max-w-[700px]">
           Get first access to new developments, design insights, and exclusive opportunities
-          from a firm with over <span className="font-semibold text-white">$700 million</span> in delivered projects — before they go public.
+          from a firm with over <span className="font-semibold text-white">$900 million</span> in delivered projects. Before they go public.
         </p>
 
       </div>

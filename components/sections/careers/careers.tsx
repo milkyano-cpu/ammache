@@ -37,16 +37,16 @@ const Stat = ({
   }, [number])
 
   return (
-    <div className="text-center">
-    <p className="typo-stat text-white">
-        {prefix}
-        {count}
-        {suffix}
+  <div className="text-center flex-1 min-w-0 px-[2px] md:px-0">
+    <p className="typo-stat text-white scale-[0.65] md:scale-100 origin-center">
+      {prefix}
+      {count}
+      {suffix}
     </p>
-    <p className="typo-caption text-white mt-2">
-        {label}
+    <p className="typo-caption text-white mt-1 scale-[0.7] md:scale-100 origin-center">
+      {label}
     </p>
-    </div>
+  </div>
   )
 }
 
@@ -99,13 +99,13 @@ const CareersHero = () => {
           </p>
 
           {/* TITLE */}
-           <h1 className="typo-h1 max-w-[90%] md:max-w-[700px] mb-3">
-            WINDOWS TO FUTURE.
+           <h1 className="typo-h1 max-w-[90%] md:max-w-[800px] mb-3">
+            Want to Design for People?
           </h1>
 
           {/* DESCRIPTION */}
           <p className="typo-body text-white/80 max-w-[95%] md:max-w-[700px]">
-            We are a second-generation architecture practice with over{" "}
+            {/* We are a second-generation architecture practice with over{" "}
             <span className="font-semibold text-white">
               27 years of experience
             </span>{" "}
@@ -117,34 +117,43 @@ const CareersHero = () => {
             <span className="font-semibold text-white">
               selective about who joins us
             </span>{" "}
-            and that is precisely why you should want to.
+            and that is precisely why you should want to. */}
+            We're always looking for people who care about more than just how a building looks. If you believe architecture should work for the people inside it, we'd like to meet you.
           </p>
 
           {/* STATS */}
           <div className="
             mt-8
-            flex justify-between items-center
-            border-tpt-6
+            flex justify-between items-start
+            px-1 gap-1
+            -ml-6 md:ml-0
             md:flex-wrap md:justify-start md:items-start
             md:gap-14 md:mt-10 md:border-0 md:pt-0
-            ">
+          ">
 
             <Stat
-              number={27}
+              number={33}
               suffix="+"
-              label="Years of Experience"
+              label="Years Designing for Real Life"
             />
 
             <Stat
               number={900}
               suffix="+"
-              label="Completed Projects"
+              label="Projects Built Around People"
             />
 
             <Stat
               number={15}
               suffix="+"
               label="Industry Awards & Recognitions"
+            />
+
+            <Stat
+              number={900}
+              prefix="$"
+              suffix="M+"
+              label="Construction value"
             />
 
           </div>

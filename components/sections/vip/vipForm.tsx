@@ -117,12 +117,11 @@ const VipForm = () => {
   <div className="max-w-[1200px] mx-auto px-5 md:px-6 mb-10 md:mb-16">
 
     <h2 className="typo-h2 mb-4">
-      Join Ammache VIP today.
+      Be the First to Know.
     </h2>
 
     <p className="typo-body text-gray-600 max-w-[700px]">
-      Ammache VIP is open to architects, developers, and designers who want direct access to
-      our projects and thinking. Membership is complimentary and there is no obligation.
+      Ammache VIP is open to architects, developers, and designers who want direct access to our projects and thinking. It is complimentary and there is no obligation.
     </p>
 
   </div>

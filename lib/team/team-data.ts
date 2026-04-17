@@ -9,11 +9,11 @@ export const teamData: Record<string, any> = {
     role: "Director",
     image: "/detail-team1.png",
     description: [
-      "<strong>Amir</strong> brings 10 years of invaluable experience in the Melbourne building industry, encompassing site management, contract administration, and project coordination.",
+      "<strong>Amir</strong> has spent 10 years making sure the spaces Ammache designs actually get built the way they were intended. From site to handover, he keeps every project on track and every stakeholder aligned.",
 
-      "<strong>Amir’s</strong> expertise, coupled with his building and construction diploma and design background, has propelled him toward his goal of overseeing and coordinating projects from conception to completion. The project coordinator aligns with his career trajectory and dedication to supporting his family business.",
+      "His background in building, construction, and design gives him a rare ability to see both the technical and human side of every project. He understands what it takes to deliver not just on time, but to a standard people will actually feel when they walk through the door.",
 
-      "<strong>Amir’s</strong> commitment to professionalism ensures the delivery of exceptional results and enhances the value he brings to every project he undertakes in the building industry.",
+      "For <strong>Amir,</strong> every project is personal. It's not just about completing a build. It's about making sure the end result is something people are proud to live and work in.",
     ],
   },
 
@@ -23,9 +23,9 @@ export const teamData: Record<string, any> = {
     role: "Project Coordinator",
     image: "/detail-team2.png",
     description: [
-      "Introducing <strong>Adam</strong>, our dedicated junior site manager who has recently embarked on his journey in the family business at a young age. Eager to gain experience and understand the intricacies of on-site operations, Adam oversees various trades and actively participates in project management from a hands-on perspective.",
+      "<strong>Adam</strong> joined the family practice with one goal: to understand how great spaces actually get built. From day one, he's been on the ground, working alongside trades and learning every layer of what it takes to deliver a project people will be proud of.",
 
-      "His focus lies in project administration, utilizing our sites as invaluable learning opportunities to expand his knowledge and hone his skills as a future-oriented project manager. With a passion for continuous growth and a commitment to excellence, Adam strives to become the epitome of a proficient project manager, contributing to the success of our endeavors.",
+      "His approach is hands-on and people-first. Every site is a chance to learn, and every project is a chance to raise the standard. Adam brings the same commitment to quality that built this firm's reputation, and he's carrying it into the next generation.",
     ],
   },
 
@@ -35,11 +35,11 @@ export const teamData: Record<string, any> = {
     role: "Lead Architect",
     image: "/detail-team3.png",
     description: [
-      "<strong>Eddie</strong> is a consummate professional who thrives on collaborative partnerships with clients and consultants across diverse architectural styles. His unwavering commitment to meticulous attention to detail permeates every project he undertakes.",
+      "<strong>Eddie</strong> believes that good architecture is never designed in isolation. He works closely with clients, consultants, and the wider team to make sure every decision serves the people who will actually use the space",
 
-      "With a deep-rooted passion for rational, environmentally sensitive, and energy-efficient design, Eddie seamlessly integrates these principles into his leadership of a wide spectrum of projects. From high-profile commercial, residential, industrial, educational, childcare, healthcare, to interior fit-out projects, he consistently delivers outstanding results.",
+      "His design approach is grounded in how people actually live and work. He thinks about natural light, air flow, energy use, and how a space feels at different times of day. Across residential, commercial, healthcare, and education projects, that thinking shows in every outcome.",
 
-      "<strong>Eddie’s</strong> expertise and dedication contribute to the successful realization of each project, fostering spaces that inspire and harmonize with their surroundings.",
+      "For <strong>Eddie</strong>, a project is only successful if the people inside it feel it was designed for them.",
     ],
   },
 }

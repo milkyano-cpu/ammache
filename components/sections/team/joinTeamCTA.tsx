@@ -10,14 +10,14 @@ const JoinTeamCTA = () => {
 
         {/* TITLE */}
         <h2 className="typo-h2 mb-5 md:mb-6">
-          Interested in joining our team?
+          Want to Design for People?
         </h2>
 
         {/* DESC */}
             <p className="typo-body text-gray-700 mb-10 md:mb-12">
-            Let’s bring your beautiful ideas to life together and 
+            We're always looking for people who care about more 
             <br className="hidden md:block" />
-            simplify the way you visualize your next big thing.
+            than just how a building looks.
             </p>
 
         {/* BUTTON */}
@@ -35,7 +35,7 @@ const JoinTeamCTA = () => {
             cursor-pointer
         "
         >
-          Join Our Team
+          View Open Roles
         </Link>
 
       </div>

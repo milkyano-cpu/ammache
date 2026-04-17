@@ -41,20 +41,20 @@ export default function About() {
           </Link>
 
           <Link
-            href="/contact"
-            className="
-              w-[180px]
-              px-5 py-2.5
-              rounded-full
-              bg-black text-white
-              typo-button
-              text-center
-              hover:opacity-80
-              transition
-              cursor-pointer
-              inline-block
-            "
-          >
+              href="/contact"
+              className="
+                w-[220px]
+                px-8 py-3.5
+                rounded-full
+                bg-black text-white
+                typo-button
+                text-center
+                hover:opacity-80
+                transition
+                cursor-pointer
+                inline-block
+              "
+            >
             Book a Concept Review
           </Link>
           </div>

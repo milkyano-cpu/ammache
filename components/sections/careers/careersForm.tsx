@@ -231,7 +231,7 @@ const CareersForm = () => {
         <div className="bg-white rounded-[30px] shadow-[0_30px_80px_rgba(0,0,0,0.08)] p-5 md:p-10">
 
           <p className="typo-body text-gray-600 mb-6 md:mb-8">
-            If you would like to contact Ammache about our services, please don&apos;t hesitate to reach out.
+            Every application is reviewed personally by the Ammache leadership team. We aim to respond within five business days.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -497,7 +497,7 @@ const CareersForm = () => {
               className="w-full mt-8 py-4 bg-black text-white rounded-lg typo-button hover:bg-gray-800 transition cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {loading && <Loader2 className="w-5 h-5 animate-spin" />}
-              {loading ? "Submitting..." : "Submit Enquiry"}
+              {loading ? "Submitting..." : "Send My Application"}
             </button>
 
           </form>

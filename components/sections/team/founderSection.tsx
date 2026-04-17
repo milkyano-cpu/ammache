@@ -69,11 +69,11 @@ const FounderSection = () => {
               </p>
 
               {/* DESC */}
-              <p className="typo-body-sm text-white mb-8">
-                Nidal possesses over three decades of extensive experience in architectural
-                and building technology, successfully delivering projects to clients. He
-                consistently maintains a hands-on approach, ensuring a high level of responsibility
-                to his clients, while adeptly overcoming a diverse range of project issues....
+              <p className="typo-body-sm text-white mb-8 leading-relaxed">
+                Nidal has spent over three decades doing one thing: designing spaces that work for the people inside them.
+                <br />
+                <br />
+                His approach has always been hands-on and personal. Every project is treated as if someone he knows will live in it, because often, they do.
               </p>
 
              {/* BUTTON */}
