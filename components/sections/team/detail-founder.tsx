@@ -14,7 +14,7 @@ const Stat = ({
   number: number
   suffix?: string
   prefix?: string
-  label: string
+  label: React.ReactNode
 }) => {
   const [count, setCount] = useState(0)
 
