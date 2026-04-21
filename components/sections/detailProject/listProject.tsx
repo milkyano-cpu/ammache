@@ -152,14 +152,13 @@ const DetailProjectsSection = ({
 
           {displayedProjects.map((item) => (
             <Link key={item.id} href={`/detailProject/${item.slug}`}>
-              <div className="group relative rounded-2xl overflow-hidden cursor-pointer">
+              <div className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5]">
 
                 <Image
                   src={item.images[0] || "/project1.png"}
                   alt={item.name}
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
 
                 <div className="

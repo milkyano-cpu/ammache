@@ -13,7 +13,6 @@ export interface ProjectCardData {
 
 export default function Projects({ projects }: { projects?: ProjectCardData[] }) {
   const items = projects ?? []
-   console.log(items);
 
   return (
     <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white md:bg-[#f5f5f5]">
@@ -47,15 +46,14 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
               href={`/detailProject/${item.slug}`}
               className="block"
             >
-              <div className="group relative rounded-2xl overflow-hidden cursor-pointer">
+              <div className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5]">
 
                 {/* IMAGE */}
                 <Image
                   src={item.images[0] || "/project1.png"}
                   alt={item.name}
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
 
                 {/* DARK OVERLAY */}
