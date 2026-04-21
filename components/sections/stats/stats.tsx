@@ -3,7 +3,15 @@
 import { useEffect, useState } from "react";
 import Link from "next/link"
 
-function Counter({ end, duration = 2000 }: { end: number; duration?: number }) {
+function Counter({
+  end,
+  duration = 2000,
+  trigger,
+}: {
+  end: number;
+  duration?: number;
+  trigger: number;
+}) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -22,12 +30,33 @@ function Counter({ end, duration = 2000 }: { end: number; duration?: number }) {
     }, 16);
 
     return () => clearInterval(counter);
-  }, [end, duration]);
+  }, [trigger]); 
 
   return <span>{count}</span>;
 }
 
 export default function Stats() {
+  const [trigger, setTrigger] = useState(0);
+
+  useEffect(() => {
+
+    let timeout: NodeJS.Timeout;
+
+    const loop = () => {
+
+      setTrigger((prev) => prev + 1); // 🔥 semua counter jalan barengan
+
+      const delay = 10000 + Math.random() * 10000;
+
+      timeout = setTimeout(loop, delay);
+
+    };
+
+    loop();
+
+    return () => clearTimeout(timeout);
+
+  }, []);
   return (
     <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-white md:bg-[#f5f5f5]  text-center">
       <div className="max-w-5xl mx-auto space-y-10">
@@ -44,7 +73,7 @@ export default function Stats() {
           
           <div>
             <p className="typo-stat text-black">
-              <Counter end={33} />+
+              <Counter end={33} trigger={trigger} />+
             </p>
             <p className="typo-caption text-black mt-2">
               Years Designing for Real Life
@@ -53,7 +82,7 @@ export default function Stats() {
 
           <div>
             <p className="typo-stat text-black">
-              <Counter end={900} />+
+              <Counter end={900} trigger={trigger} />+
             </p>
             <p className="typo-caption text-black mt-2">
               Projects Built Around People
@@ -62,7 +91,7 @@ export default function Stats() {
 
           <div>
             <p className="typo-stat text-black">
-              <Counter end={15} />+
+              <Counter end={15} trigger={trigger} />+
             </p>
             <p className="typo-caption text-black mt-2">
               Industry Awards & Recognition
@@ -75,7 +104,7 @@ export default function Stats() {
         <div className="w-full h-px bg-gray-300" />
 
         {/* BUTTON */}
-        <Link
+        {/* <Link
           href="/detailProject"
           className="
             px-8 py-3
@@ -89,7 +118,7 @@ export default function Stats() {
           "
         >
           See Our Work
-        </Link>
+        </Link> */}
 
       </div>
     </section>

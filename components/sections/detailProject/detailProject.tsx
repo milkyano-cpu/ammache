@@ -32,11 +32,13 @@ const Stat = ({
   suffix = "",
   prefix = "",
   label,
+  trigger,
 }: {
   number: number
   suffix?: string
   prefix?: string
   label: string
+  trigger: number
 }) => {
   const [count, setCount] = useState(0)
 
@@ -47,6 +49,7 @@ const Stat = ({
 
     const counter = setInterval(() => {
       start += increment
+
       if (start >= number) {
         setCount(number)
         clearInterval(counter)
@@ -56,7 +59,7 @@ const Stat = ({
     }, 16)
 
     return () => clearInterval(counter)
-  }, [number])
+  }, [trigger]) 
 
   return (
     <div className="text-center">
@@ -80,6 +83,23 @@ const DetailProjectHero = ({
   activeTab: string
   categories: CategoryWithProjects[]
 }) => {
+
+  const [trigger, setTrigger] = useState(0)
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout
+
+    const loop = () => {
+      setTrigger((prev) => prev + 1)
+
+      const delay = 10000 + Math.random() * 10000
+      timeout = setTimeout(loop, delay)
+    }
+
+    loop()
+
+    return () => clearTimeout(timeout)
+  }, [])
 
   const searchParams = useSearchParams()
   const categoryParam = searchParams.get("category")
@@ -186,32 +206,36 @@ const DetailProjectHero = ({
             md:gap-14 md:mt-10 md:border-0 md:pt-0
           ">
 
-            <Stat
-              number={33}
-              suffix="+"
-              label="Years Designing for Real Life"
-            />
+          <Stat
+            number={33}
+            suffix="+"
+            label="Years Designing for Real Life"
+            trigger={trigger}
+          />
 
-            <Stat
-              number={15}
-              suffix="+"
-              label="Industry Awards & Recognitions"
-            />
+          <Stat
+            number={15}
+            suffix="+"
+            label="Industry Awards & Recognitions"
+            trigger={trigger}
+          />
 
+          <Stat
+            number={900}
+            suffix="+"
+            label="Project Built Around People"
+            trigger={trigger}
+          />
+
+          <div className="hidden md:block">
             <Stat
               number={900}
-              suffix="+"
-              label="Project Built Around People"
+              prefix="$"
+              suffix="M+"
+              label="Construction value"
+              trigger={trigger}
             />
-
-            <div className="hidden md:block">
-              <Stat
-                number={900}
-                prefix="$"
-                suffix="M+"
-                label="Construction value"
-              />
-            </div>
+          </div>
 
           </div>
 

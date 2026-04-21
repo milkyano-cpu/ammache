@@ -99,7 +99,7 @@ const CareersHero = () => {
           </p>
 
           {/* TITLE */}
-           <h1 className="typo-h1 max-w-[90%] md:max-w-[800px] mb-3">
+           <h1 className="typo-h1 max-w-[100%] md:max-w-[1000px] mb-3">
             Want to Design for People?
           </h1>
 
@@ -118,11 +118,11 @@ const CareersHero = () => {
               selective about who joins us
             </span>{" "}
             and that is precisely why you should want to. */}
-            We're always looking for people who care about more than just how a building looks. If you believe architecture should work for the people inside it, we'd like to meet you.
+            {/* We're always looking for people who care about more than just how a building looks. If you believe architecture should work for the people inside it, we'd like to meet you. */}
           </p>
 
           {/* STATS */}
-          <div className="
+          {/* <div className="
             mt-8
             flex justify-between items-start
             px-1 gap-1
@@ -156,7 +156,7 @@ const CareersHero = () => {
               label="Construction value"
             />
 
-          </div>
+          </div> */}
 
         </div>
       </div>

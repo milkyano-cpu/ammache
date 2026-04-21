@@ -10,11 +10,13 @@ const Stat = ({
   suffix = "",
   prefix = "",
   label,
+  trigger,
 }: {
   number: number
   suffix?: string
   prefix?: string
   label: string
+  trigger: number
 }) => {
   const [count, setCount] = useState(0)
 
@@ -25,6 +27,7 @@ const Stat = ({
 
     const counter = setInterval(() => {
       start += increment
+
       if (start >= number) {
         setCount(number)
         clearInterval(counter)
@@ -34,24 +37,39 @@ const Stat = ({
     }, 16)
 
     return () => clearInterval(counter)
-  }, [number])
-
+  }, [trigger]) 
   return (
     <div className="text-center w-1/3 md:w-auto">
-    <p className="typo-stat text-white">
+      <p className="typo-stat text-white">
         {prefix}
         {count}
         {suffix}
-    </p>
-    <p className="typo-caption text-white/80 mt-1">
+      </p>
+      <p className="typo-caption text-white/80 mt-1">
         {label}
-    </p>
+      </p>
     </div>
   )
 }
 
 /* ================= HERO ================= */
 const TeamHero = () => {
+  const [trigger, setTrigger] = useState(0)
+
+    useEffect(() => {
+      let timeout: NodeJS.Timeout
+
+      const loop = () => {
+        setTrigger((prev) => prev + 1)
+
+        const delay = 10000 + Math.random() * 10000
+        timeout = setTimeout(loop, delay)
+      }
+
+      loop()
+
+      return () => clearTimeout(timeout)
+    }, [])
   return (
    <section className="relative w-full h-[550px] md:h-[600px] overflow-hidden">
       
@@ -121,18 +139,21 @@ const TeamHero = () => {
               number={33}
               suffix="+"
               label="Years Designing for Real Life"
+              trigger={trigger}
             />
 
             <Stat
               number={900}
               suffix="+"
               label="Projects Built Around People"
+              trigger={trigger}
             />
 
             <Stat
               number={15}
               suffix="+"
               label="Industry Awards & Recognitions"
+              trigger={trigger}
             />
 
           </div>
