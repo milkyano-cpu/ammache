@@ -3,6 +3,8 @@ import Link from "next/link"
 import { FolderKanban, Eye, FileX, Star, Tags, Mail } from "lucide-react"
 import DashboardCharts from "./dashboard-charts"
 
+export const dynamic = "force-dynamic"
+
 export default async function AdminDashboard() {
   const [
     totalProjects,

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { revalidatePath } from "next/cache"
 import { prisma } from "@/lib/prisma"
 
 export async function PUT(req: Request) {
@@ -23,6 +24,8 @@ export async function PUT(req: Request) {
       ),
     ])
 
+    revalidatePath("/")
+    revalidatePath("/admin/homepage-projects")
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ error: "Failed to update homepage projects" }, { status: 500 })
