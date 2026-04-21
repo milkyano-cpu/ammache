@@ -22,6 +22,7 @@ export interface CreateProjectInput {
   projectType: ProjectType
   categoryId: number
   published: boolean
+  isHomepage?: boolean
   metaTitle?: string
   metaDescription?: string
 }
@@ -37,6 +38,7 @@ export interface UpdateProjectInput {
   projectType?: ProjectType
   categoryId?: number
   published?: boolean
+  isHomepage?: boolean
   metaTitle?: string | null
   metaDescription?: string | null
 }

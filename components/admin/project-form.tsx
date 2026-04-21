@@ -46,6 +46,7 @@ interface ProjectFormProps {
     scopeStatus: Specification[]
     categoryId: number
     published: boolean
+    isHomepage?: boolean
     projectType?: ProjectType
     metaTitle?: string | null
     metaDescription?: string | null
@@ -85,6 +86,7 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
     initialData?.categoryId?.toString() || ""
   )
   const [published, setPublished] = useState(initialData?.published || false)
+  const [isHomepage, setIsHomepage] = useState(initialData?.isHomepage || false)
   const [metaTitle, setMetaTitle] = useState(initialData?.metaTitle || "")
   const [metaDescription, setMetaDescription] = useState(initialData?.metaDescription || "")
 
@@ -120,6 +122,7 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
         projectType,
         categoryId: Number(categoryId),
         published,
+        isHomepage,
         metaTitle: metaTitle.trim() || undefined,
         metaDescription: metaDescription.trim() || undefined,
       }
@@ -244,15 +247,28 @@ export function ProjectForm({ mode, categories, initialData }: ProjectFormProps)
 
           </div>
 
-          <div className="flex items-center gap-2 pt-2">
-            <Checkbox
-              id="published"
-              checked={published}
-              onCheckedChange={(checked) => setPublished(checked === true)}
-            />
-            <Label htmlFor="published" className="cursor-pointer">
-              Published
-            </Label>
+          <div className="flex flex-wrap items-center gap-6 pt-2">
+            <div className="flex items-center gap-2">
+              <Checkbox
+                id="published"
+                checked={published}
+                onCheckedChange={(checked) => setPublished(checked === true)}
+              />
+              <Label htmlFor="published" className="cursor-pointer">
+                Published
+              </Label>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Checkbox
+                id="isHomepage"
+                checked={isHomepage}
+                onCheckedChange={(checked) => setIsHomepage(checked === true)}
+              />
+              <Label htmlFor="isHomepage" className="cursor-pointer">
+                Featured on Homepage
+              </Label>
+            </div>
           </div>
         </TabsContent>
 

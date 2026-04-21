@@ -44,6 +44,8 @@ model Project {
   projectType      ProjectType  @default(OTHER) @map("project_type")
   metaTitle        String?      @map("meta_title")
   metaDescription  String?      @map("meta_description") @db.Text
+  isHomepage       Boolean      @default(false) @map("is_homepage")
+  homepageOrder    Int?         @map("homepage_order")
 
   categoryId       Int          @map("category_id")
   category         Category     @relation(fields: [categoryId], references: [id])
@@ -55,6 +57,7 @@ model Project {
   @@index([published])
   @@index([categoryId])
   @@index([projectType])
+  @@index([isHomepage])
   @@map("projects")
 }
 

@@ -15,6 +15,7 @@ export const createProjectSchema = z.object({
   projectType: z.enum(["AMMACHE", "COLLABORATION", "COMMISSION", "OTHER"]).default("OTHER"),
   categoryId: z.number({ error: "Category is required" }).int().positive(),
   published: z.boolean().default(false),
+  isHomepage: z.boolean().default(false),
   metaTitle: z.string().max(60, "Meta title max 60 characters").optional().or(z.literal("")),
   metaDescription: z.string().max(160, "Meta description max 160 characters").optional().or(z.literal("")),
 })
@@ -30,6 +31,7 @@ export const updateProjectSchema = z.object({
   projectType: z.enum(["AMMACHE", "COLLABORATION", "COMMISSION", "OTHER"]).optional(),
   categoryId: z.number().int().positive().optional(),
   published: z.boolean().optional(),
+  isHomepage: z.boolean().optional(),
   metaTitle: z.string().max(60).optional().nullable().or(z.literal("")),
   metaDescription: z.string().max(160).optional().nullable().or(z.literal("")),
 })

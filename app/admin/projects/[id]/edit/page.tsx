@@ -44,6 +44,7 @@ export default async function EditProjectPage({ params }: Props) {
           projectType: project.projectType,
           categoryId: project.categoryId,
           published: project.published,
+          isHomepage: project.isHomepage,
           metaTitle: project.metaTitle,
           metaDescription: project.metaDescription,
         }}

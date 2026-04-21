@@ -11,7 +11,14 @@
       "mcp__plugin_figma_figma__get_metadata",
       "mcp__claude_ai_Figma__get_metadata",
       "mcp__claude_ai_Figma__get_design_context",
-      "mcp__claude_ai_Figma__whoami"
+      "mcp__claude_ai_Figma__whoami",
+      "Bash(npx prisma *)",
+      "Bash(mkdir -p /c/Users/Rani/milkyano/ammache/app/api/projects/homepage)",
+      "Bash(mkdir -p /c/Users/Rani/milkyano/ammache/app/admin/homepage-projects)",
+      "Bash(npx tsc *)",
+      "Bash(mkdir -p /c/Users/Rani/milkyano/ammache/app/api/newsletter/[id])",
+      "Bash(mkdir -p /c/Users/Rani/milkyano/ammache/app/admin/newsletter)",
+      "Bash(npm run *)"
     ]
   }
 }

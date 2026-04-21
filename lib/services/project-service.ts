@@ -132,6 +132,7 @@ export async function createProject(
       projectType: data.projectType || "OTHER",
       categoryId: data.categoryId,
       published: data.published,
+      isHomepage: data.isHomepage ?? false,
       metaTitle: data.metaTitle || null,
       metaDescription: data.metaDescription || null,
     },

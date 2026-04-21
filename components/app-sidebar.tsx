@@ -9,7 +9,8 @@ import {
   LayoutDashboard,
   Tags,
   FolderKanban,
-  Users,
+  Home,
+  Mail,
 } from "lucide-react"
 
 import {
@@ -39,6 +40,18 @@ const menuItems = [
     url: "/admin/projects",
     icon: FolderKanban,
     desc: "Manage projects",
+  },
+  {
+    title: "Homepage",
+    url: "/admin/homepage-projects",
+    icon: Home,
+    desc: "Featured projects",
+  },
+  {
+    title: "Newsletter",
+    url: "/admin/newsletter",
+    icon: Mail,
+    desc: "Manage subscribers",
   },
 ]
 
