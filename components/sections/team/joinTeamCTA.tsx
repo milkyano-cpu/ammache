@@ -6,18 +6,18 @@ const JoinTeamCTA = () => {
   return (
     <section className="bg-white md:bg-[#f5f5f5] py-20 md:py-30">
 
-      <div className="max-w-[600px] md:max-w-[800px] mx-auto px-5 md:px-6 text-center">
+      <div className="max-w-[600px] md:max-w-[850px] mx-auto px-5 md:px-6 text-center">
 
         {/* TITLE */}
         <h2 className="typo-h2 mb-5 md:mb-6">
-          Want to Design for People?
+          Help us design spaces people actually live in.
         </h2>
 
         {/* DESC */}
             <p className="typo-body text-gray-700 mb-10 md:mb-12">
-            We're always looking for people who care about more 
+            If you care about more than just how things look,
             <br className="hidden md:block" />
-            than just how a building looks.
+            you’ll fit right in.
             </p>
 
         {/* BUTTON */}
@@ -35,7 +35,7 @@ const JoinTeamCTA = () => {
             cursor-pointer
         "
         >
-          View Open Roles
+          Explore Opportunities
         </Link>
 
       </div>

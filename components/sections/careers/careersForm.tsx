@@ -15,10 +15,11 @@ const careersSchema = z.object({
 
 const POSITION_OPTIONS = [
   "Architectural Designer",
-  "Architectural Draftsperson",
+  "Retail Fit-Out Designer ",
   "Project Coordinator",
-  "3D Visualiser / BIM Coordinator",
-  "Speculative — Open Application",
+  "3D Visualizer (or 3D Artist)",
+  "Commercial Designer",
+  "Fit-Out Specialist",
 ]
 
 const EXPERIENCE_OPTIONS = [

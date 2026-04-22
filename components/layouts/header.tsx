@@ -126,7 +126,7 @@ const Header = () => {
           className="flex items-center cursor-pointer"
         >
           <Image
-            src={scrolled ? "/ammache-black.png" : "/ammache.png"}
+            src={scrolled ? "/logo-ammache-black.png" : "/logo-ammache.png"}
             alt="Ammache"
             width={140}
             height={40}
@@ -159,7 +159,7 @@ const Header = () => {
           {/* LOGO */}
           <Link href="/" onClick={() => setOpen(false)}>
             <Image
-              src="/ammache.png"
+              src="/logo-ammache.png"
               alt="Ammache"
               width={140}
               height={40}
@@ -266,7 +266,7 @@ const Header = () => {
                 {/* LEFT */}
                 <div>
                   <Image
-                    src="/ammache.png"
+                    src="/logo-ammache.png"
                     alt="Ammache"
                     width={120}
                     height={30}

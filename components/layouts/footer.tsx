@@ -81,7 +81,7 @@ const Footer = () => {
             {/* LOGO + DESC */}
             <div className="text-center">
               <Image
-                src="/ammache.png"
+                src="/logo-ammache.png"
                 alt="Ammache"
                 width={140}
                 height={40}
@@ -130,7 +130,7 @@ const Footer = () => {
             {/* LEFT */}
             <div>
               <Image
-                src="/ammache.png"
+                src="/logo-ammache.png"
                 alt="Ammache"
                 width={120}
                 height={30}

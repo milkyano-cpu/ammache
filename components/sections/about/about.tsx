@@ -76,9 +76,9 @@ export default function About() {
               </div>
 
               <h3 className="typo-h2">
-                33+ Years Designing for 
-                <br />
-                Real Life
+                33+ years crafting spaces
+                <br className="hidden md:block" />
+                That Work In The Real World
               </h3>
 
               <p className="typo-body-sm text-gray-200">
