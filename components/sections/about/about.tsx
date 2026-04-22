@@ -76,7 +76,7 @@ export default function About() {
               </div>
 
               <h3 className="typo-h2">
-                33+ years crafting spaces
+                33+ Years Crafting Spaces
                 <br className="hidden md:block" />
                 That Work In The Real World
               </h3>

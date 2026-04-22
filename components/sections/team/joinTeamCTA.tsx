@@ -10,7 +10,7 @@ const JoinTeamCTA = () => {
 
         {/* TITLE */}
         <h2 className="typo-h2 mb-5 md:mb-6">
-          Help us design spaces people actually live in.
+          Help Us Design Spaces People Actually Live In.
         </h2>
 
         {/* DESC */}

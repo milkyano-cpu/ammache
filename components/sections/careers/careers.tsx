@@ -100,7 +100,7 @@ const CareersHero = () => {
 
           {/* TITLE */}
            <h1 className="typo-h1 max-w-[100%] md:max-w-[1000px] mb-3">
-            Help us design spaces people actually live in.
+            Help Us Design Spaces People Actually Live In.
           </h1>
 
           {/* DESCRIPTION */}
