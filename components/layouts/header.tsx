@@ -125,13 +125,27 @@ const Header = () => {
           onClick={() => setOpen(false)}
           className="flex items-center cursor-pointer"
         >
+        <>
+          {/* DESKTOP LOGO */}
           <Image
             src={scrolled ? "/logo-ammache-black.png" : "/logo-ammache.png"}
             alt="Ammache"
             width={140}
             height={40}
             priority
+            className="hidden md:block"
           />
+
+          {/* MOBILE LOGO */}
+          <Image
+            src={scrolled ? "/logo-mobile-black.png" : "/logo-mobile.png"}
+            alt="Ammache"
+            width={110}
+            height={32}
+            priority
+            className="block md:hidden"
+          />
+        </>
         </Link>
 
         {/* BURGER */}
@@ -158,13 +172,27 @@ const Header = () => {
 
           {/* LOGO */}
           <Link href="/" onClick={() => setOpen(false)}>
-            <Image
-              src="/logo-ammache.png"
-              alt="Ammache"
-              width={140}
-              height={40}
-              className="cursor-pointer"
-            />
+            <>
+          {/* DESKTOP LOGO */}
+          <Image
+            src={scrolled ? "/logo-ammache-black.png" : "/logo-ammache.png"}
+            alt="Ammache"
+            width={140}
+            height={40}
+            priority
+            className="hidden md:block"
+          />
+
+          {/* MOBILE LOGO */}
+          <Image
+            src={scrolled ? "/logo-mobile-black.png" : "/logo-mobile.png"}
+            alt="Ammache"
+            width={110}
+            height={32}
+            priority
+            className="block md:hidden"
+          />
+        </>
           </Link>
 
           {/* CLOSE */}
