@@ -15,47 +15,21 @@ interface ProjectDetailContentProps {
   } | null
 }
 
-/* ================= ANIMATED STAT ================= */
-const AnimatedStat = ({
-  value,
-  label,
-}: {
-  value: string
-  label: string
-}) => {
-  const [display, setDisplay] = useState(value)
-
-  useEffect(() => {
-    const num = parseInt(value.replace(/[^0-9]/g, ""))
-    if (isNaN(num)) return
-
-    let start = 0
-    const duration = 1000
-    const increment = num / (duration / 16)
-
-    const counter = setInterval(() => {
-      start += increment
-      if (start >= num) {
-        setDisplay(value)
-        clearInterval(counter)
-      } else {
-        setDisplay(Math.floor(start).toLocaleString())
-      }
-    }, 16)
-
-    return () => clearInterval(counter)
-  }, [value])
-
-  return (
-    <div className="text-center">
-      <p className="text-xl md:text-5xl font-bold text-white">
-        {display}
-      </p>
-      <p className="text-[10px] md:text-base text-white/70 mt-1 md:mt-2">
-        {label}
-      </p>
-    </div>
+function getSpecValue(specs: any, key: string) {
+  if (!specs) return null
+  let parsed = specs
+  if (typeof specs === "string") {
+    try {
+      parsed = JSON.parse(specs)
+    } catch {
+      return null
+    }
+  }
+  if (!Array.isArray(parsed)) return null
+  const found = parsed.find(
+    (s) => s.key?.trim().toLowerCase() === key.toLowerCase()
   )
+  return found?.value || null
 }
 
 export default function ProjectDetailContent({ project, nextProject }: ProjectDetailContentProps) {
@@ -76,15 +50,11 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
   const getSpec = (key: string) =>
     specs.find((s: any) => s.key === key)?.value || "-"
 
-  const constructionCost = getSpec("Construction Cost")
-  const storeys = getSpec("Storeys")
-  const area = getSpec("Net Lettable Area")
-
   /* ================= IMAGE SLIDER ================= */
   const images = Array.isArray(project.images) ? project.images : []
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const [isOpen, setIsOpen] = useState(false) // ✅ tambahan
+  const [isOpen, setIsOpen] = useState(false) 
 
   const nextImage = () => {
     if (images.length === 0) return
@@ -104,6 +74,16 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
     "Retail Projects": "retail",
   }
 
+  const projectNameSpec = getSpecValue(project.specifications, "Project")
+
+  const areaSpec =
+    getSpecValue(project.specifications, "Set Area") ||
+    getSpecValue(project.specifications, "Area")
+
+  const frontageSpec = 
+  getSpecValue(project.specifications, "Net Lettable Area") ||
+  getSpecValue(project.specifications, "Frontage")
+
   return (
     <>
       {/* ================= HERO ================= */}
@@ -114,15 +94,21 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
           alt={project.name}
           fill
           priority
-          className="object-cover hidden md:block"
+          className="object-cover"
         />
 
         <div className="absolute inset-0 bg-black/80" />
 
-        <div className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">
-          <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-white">
 
-          <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
+          <p className="
+            typo-body-lg
+            mb-4 
+            flex flex-wrap justify-center gap-1
+            max-w-[300px] md:max-w-none
+            mx-auto
+            leading-relaxed
+          ">
 
             <Link href="/" className="text-white/60 hover:underline transition">
               Home
@@ -140,7 +126,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
               href={`/detailProject?category=${categoryMap[project.categoryName]}`}
               className="text-white/60 hover:underline transition"
             >
-              {project.categoryName}
+              {getSpecValue(project.specifications, "Project") || project.categoryName}
             </Link>
 
             <span className="text-white/40">/</span>
@@ -151,22 +137,19 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
 
           </p>
 
-            <h1 className="typo-h1 max-w-[700px] mb-3">
+            <h1 className="
+              typo-h1 
+              mb-3 
+              md:whitespace-nowrap 
+              max-w-[100%] md:max-w-none
+            ">
               {project.name}
             </h1>
 
             <p className="typo-caption uppercase text-white/70 mb-2">
-              {project.categoryName}
+              {getSpecValue(project.specifications, "Project") || project.categoryName}
             </p>
-
-            <div className="mt-8 flex flex-wrap gap-10 md:gap-14">
-              <AnimatedStat value={constructionCost} label="Construction Cost" />
-              <AnimatedStat value={storeys} label="Storeys" />
-              <AnimatedStat value={area} label="Net Lettable Area" />
-            </div>
-
           </div>
-        </div>
       </section>
 
       {/* ================= CONTENT ================= */}
@@ -176,17 +159,70 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
       >
         <div className="max-w-[1200px] mx-auto px-6">
 
+          {/* ================= QUICK STATS ================= */}
+          <div className="bg-white md:bg-[#f5f5f5] rounded-2xl py-10 px-6 md:px-10 mb-16">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+
+              {/* PROJECT */}
+              <div className="flex flex-col items-center">
+                <Image
+                  src="/project-icon.png"
+                  alt="Project"
+                  width={40}
+                  height={40}
+                  className="mb-4"
+                />
+                <p className="text-sm font-semibold tracking-wide">PROJECT</p>
+                <p className="text-xs text-gray-600 mt-2">
+                  {projectNameSpec || "-"}
+                </p>
+              </div>
+
+              {/* AREA */}
+              <div className="flex flex-col items-center">
+                <Image
+                  src="/area-icon.png"
+                  alt="Area"
+                  width={40}
+                  height={40}
+                  className="mb-4"
+                />
+                <p className="text-sm font-semibold tracking-wide">AREA</p>
+                <p className="text-xs text-gray-600 mt-2">
+                  {areaSpec || "-"}
+                </p>
+              </div>
+
+              {/* FRONTAGE */}
+              <div className="flex flex-col items-center">
+                <Image
+                  src="/frontage-icon.png"
+                  alt="Frontage"
+                  width={40}
+                  height={40}
+                  className="mb-4"
+                />
+                <p className="text-sm font-semibold tracking-wide">FRONTAGE</p>
+                <p className="text-xs text-gray-600 mt-2">
+                  {frontageSpec || "-"}
+                </p>
+              </div>
+
+            </div>
+          </div>
+
           <h2 className="typo-h5 mb-10 font-bold">
             PROJECT OVERVIEW
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="grid md:grid-cols-[2fr_1fr] gap-16 items-start">
 
             {/* ================= LEFT (SLIDER) ================= */}
             <div>
 
               <div
-                className="relative w-full h-[500px] md:h-[650px] group cursor-pointer"
+                className="relative w-full h-[500px] md:h-[700px] group cursor-pointer"
                 onClick={() => setIsOpen(true)}
               >
 
@@ -259,19 +295,6 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
 
                 <div className="space-y-4 mb-10">
                   {specs.map((s: any, i: number) => (
-                    <div key={i} className="flex justify-between border-b-2 pb-4 text-sm">
-                      <span>{s.key}</span>
-                      <span className="font-medium text-right">{s.value}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <h2 className="typo-h4 font-bold border-b-2 pb-4 mb-6">
-                  SCOPE & STATUS
-                </h2>
-
-                <div className="space-y-4">
-                  {scopes.map((s: any, i: number) => (
                     <div key={i} className="flex justify-between border-b-2 pb-4 text-sm">
                       <span>{s.key}</span>
                       <span className="font-medium text-right">{s.value}</span>

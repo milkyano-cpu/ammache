@@ -17,6 +17,7 @@ export interface CategoryWithProjects {
     images: string[]
     shortDescription: string | null
     categoryName: string
+    specifications?: { key: string; value: string }[]
   }[]
 }
 

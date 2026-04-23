@@ -8,11 +8,21 @@ export interface ProjectCardData {
   slug: string  
   name: string
   images: string[]
+  specifications?: { key: string; value: string }[]
   category: { name: string }
 }
 
 export default function Projects({ projects }: { projects?: ProjectCardData[] }) {
   const items = projects ?? []
+
+  function getSpecValue(
+    specs: { key: string; value: string }[] | undefined,
+    key: string
+  ) {
+    if (!specs) return null
+    const found = specs.find((s) => s.key === key)
+    return found?.value || null
+  }
 
   return (
     <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white md:bg-[#f5f5f5]">
@@ -77,7 +87,7 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
                   </p>
 
                   <p className="typo-caption text-white/70">
-                    {item.category.name}
+                  {getSpecValue(item.specifications, "Project") || item.category.name}
                   </p>
                 </div>
 

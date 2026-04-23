@@ -35,6 +35,23 @@ const AnimatedCount = ({ value }: { value: number }) => {
   return <>{count}</>
 }
 
+function getSpecValue(specs: any, key: string) {
+  if (!specs) return null
+  let parsed = specs
+  if (typeof specs === "string") {
+    try {
+      parsed = JSON.parse(specs)
+    } catch {
+      return null
+    }
+  }
+  if (!Array.isArray(parsed)) return null
+  const found = parsed.find(
+    (s) => s.key?.trim().toLowerCase() === key.toLowerCase()
+  )
+  return found?.value || null
+}
+
 /* ================= COMPONENT ================= */
 const DetailProjectsSection = ({
   activeTab,
@@ -178,7 +195,7 @@ const DetailProjectsSection = ({
 
                   <p className="typo-h6 text-white">{item.name}</p>
                   <p className="typo-fine text-white/80 mt-1">
-                    {item.categoryName}
+                    {getSpecValue(item.specifications, "Project") || item.categoryName}
                   </p>
                 </div>
 

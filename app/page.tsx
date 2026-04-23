@@ -32,6 +32,7 @@ export default async function Home() {
     name: p.name,
     images: p.images,
     category: { name: p.category.name },
+    specifications: (p.specifications as { key: string; value: string }[]) || [], 
   }))
 
   return <HomeClient projects={serialized} />
