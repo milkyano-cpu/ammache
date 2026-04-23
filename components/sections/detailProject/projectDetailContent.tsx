@@ -126,7 +126,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
               href={`/detailProject?category=${categoryMap[project.categoryName]}`}
               className="text-white/60 hover:underline transition"
             >
-              {getSpecValue(project.specifications, "Project") || project.categoryName}
+              {project.categoryName}
             </Link>
 
             <span className="text-white/40">/</span>
