@@ -40,7 +40,7 @@ export default function Studio() {
           {/* LEFT ARROW */}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/60"
+            className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/60 cursor-pointer"
           >
             ←
           </button>
@@ -48,7 +48,7 @@ export default function Studio() {
           {/* RIGHT ARROW */}
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/60"
+            className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/60 cursor-pointer"
           >
             →
           </button>
