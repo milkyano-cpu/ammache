@@ -36,7 +36,7 @@ const Footer = () => {
               </p>
 
               <form onSubmit={mobile.handleSubmit}>
-                <div className="flex items-center bg-black rounded-full overflow-hidden">
+                <div className="flex items-center bg-gray-200 rounded-full overflow-hidden">
                   <input
                     type="email"
                     placeholder="Email"
@@ -48,7 +48,7 @@ const Footer = () => {
                   <button
                     type="submit"
                     disabled={mobile.loading}
-                    className="bg-black text-black px-4 py-2 m-1 rounded-full typo-fine disabled:opacity-50 flex items-center gap-2"
+                    className="bg-white text-black px-4 py-2 m-1 rounded-full typo-fine disabled:opacity-50 flex items-center gap-2"
                   >
                     {mobile.loading && <Loader2 size={14} className="animate-spin" />}
                     Join the list
