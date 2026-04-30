@@ -95,7 +95,7 @@ const DetailProjectsSection = ({
   }, [activeTab])
 
   return (
-    <section id="about" className="bg-white md:bg-[#f5f5f5] py-10 md:py-24">
+    <section id="about" className="bg-white md:bg-white py-10 md:py-24">
 
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 

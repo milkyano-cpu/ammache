@@ -9,9 +9,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-helvetica-neue);
-  --font-heading: var(--font-aktiv-grotesk);
-  --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -79,9 +76,6 @@
 
 :root {
   /* Runtime font variables (needed by typo-* classes and base styles) */
-  --font-heading: var(--font-aktiv-grotesk);
-  --font-sans: var(--font-helvetica-neue);
-
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -158,10 +152,10 @@
     @apply bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
   }
   html {
-    @apply font-sans;
+    font-family: var(--font-sans);
   }
 
   .scrollbar-hide::-webkit-scrollbar {
@@ -194,7 +188,7 @@
      Usage: Hero banners, full-screen titles
      Example: "AMMACHE" on the hero section */
   .typo-display {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: var(--text-h1);
     font-weight: 300;
     line-height: var(--leading-display);
@@ -211,7 +205,7 @@
      Usage: Primary page titles
      Example: Main page hero text */
   .typo-h1 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: var(--text-h2);
     font-weight: 600;
     line-height: var(--leading-heading);
@@ -226,7 +220,7 @@
      Usage: Section titles
      Example: "Innovative Architecture Built on Experience." */
   .typo-h2 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: var(--text-h3);
     font-weight: 600;
     line-height: var(--leading-heading);
@@ -241,7 +235,7 @@
      Usage: Card titles, block headings
      Example: "Experience in Every Detail." */
   .typo-h3 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: var(--text-h4);
     font-weight: 600;
     line-height: var(--leading-heading);
@@ -256,7 +250,7 @@
      Usage: Sub-section headings, sidebar titles
      Example: "Join Ammache Exclusive VIP" */
   .typo-h4 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: var(--text-h5);
     font-weight: 700;
     line-height: var(--leading-heading);
@@ -270,7 +264,7 @@
   /* ── Heading 5 ──
      Usage: Small headings, card subtitles */
   .typo-h5 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: var(--text-h6);
     font-weight: 500;
     line-height: var(--leading-heading);
@@ -284,7 +278,7 @@
   /* ── Heading 6 ──
      Usage: Label headings, smallest heading tier */
   .typo-h6 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: var(--text-body);
     font-weight: 500;
     line-height: var(--leading-heading);
@@ -299,7 +293,7 @@
      Usage: Full-screen navigation menu items
      Example: "Main", "Team", "Projects" in overlay menu */
   .typo-nav {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: var(--text-h3);
 
     font-weight: 500;
@@ -403,7 +397,7 @@
      Usage: Large numerical displays
      Example: "27", "900+", "15+" in stats section */
   .typo-stat {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: var(--text-h2);
     font-weight: 600;
     line-height: 1;

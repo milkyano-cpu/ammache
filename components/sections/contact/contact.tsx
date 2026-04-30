@@ -179,7 +179,7 @@ const ContactSection = () => {
   }
 
   return (
-     <section className="bg-white md:bg-[#f5f5f5] py-12 md:py-20">
+     <section className="bg-white md:bg-white py-12 md:py-20">
 
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-10">
 
@@ -275,7 +275,7 @@ const ContactSection = () => {
     <div className="relative z-10 max-w-[420px] mx-auto w-full mt-16 md:mt-24">
 
         <Image
-        src="/logo-ammache.png"
+        src="/logo-ammache.svg"
         alt="logo"
         width={140}
         height={40}
@@ -319,7 +319,7 @@ const ContactSection = () => {
     </div>
 
         {/* ================= RIGHT ================= */}
-          <div className="bg-white md:bg-[white] p-6 md:p-10 md:p-14 rounded-[20px] md:rounded-none shadow-sm md:shadow-none">
+          <div className="bg-white p-6 md:p-10 md:p-14 rounded-[20px] border border-gray-200">
 
               <p className="typo-body-sm text-gray-600 mb-8">
                   Tell us about your site or project. We'll get back to you with honest thoughts on what it could become.
@@ -475,7 +475,7 @@ const ContactSection = () => {
 
 const ContactMapSection = () => {
   return (
-    <section className="bg-white md:bg-[#f5f5f5] py-20 md:py-28">
+    <section className="bg-white md:bg-white py-20 md:py-28">
 
       <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
 
@@ -547,7 +547,7 @@ export default function ContactPage() {
           relative 
           z-20 
           -mt-10 md:-mt-12
-          bg-white md:bg-[#f5f5f5]
+          bg-white md:bg-white 
           rounded-t-[20px] md:rounded-t-[30px]
           overflow-hidden
         "

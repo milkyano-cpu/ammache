@@ -2,7 +2,7 @@
 
 const StorySection = () => {
   return (
-    <section className="bg-white md:bg-[#f5f5f5] py-10 md:py-20">
+    <section className="bg-white md:bg-white py-10 md:py-20">
       <div className="max-w-[1200px] mx-auto px-6">
 
         {/* TITLE */}
@@ -15,7 +15,7 @@ const StorySection = () => {
 
         {/* HEADLINE */}
         <h3 className="
-          font-[var(--font-heading)]
+          font-[var(--font-sans)]
           text-[28px] md:text-[42px]
           leading-[1.2]
           font-semibold

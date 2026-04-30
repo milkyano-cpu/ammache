@@ -88,7 +88,7 @@ const Hero = () => {
 /* ================= CONTENT ================= */
 const FounderContent = () => {
   return (
-    <section id="about"  className="bg-white md:bg-[#f5f5f5] py-20">
+    <section id="about"  className="bg-white md:bg-white py-20">
       <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
         
         {/* IMAGE */}
@@ -177,7 +177,7 @@ const FounderContent = () => {
 /* ================= QUOTE ================= */
 const FounderQuote = () => {
   return (
-    <section className="bg-white md:bg-[#f5f5f5] pt-5 pb-0">
+    <section className="bg-white md:bg-white pt-5 pb-0">
       <div className="max-w-[1100px] mx-auto px-6 relative">
 
         {/* QUOTE ICON */}
@@ -216,7 +216,7 @@ const FounderQuote = () => {
 /* ================= AWARDS ================= */
 const FounderAwards = () => {
   return (
-    <section className="bg-white md:bg-[#f5f5f5] pt-20 pb-0">
+    <section className="bg-white md:bg-white pt-20 pb-0">
       <div className="max-w-[1000px] mx-auto px-6">
 
         {/* TOP */}
@@ -306,7 +306,7 @@ export default function DetailFounder() {
             relative 
             z-20 
             -mt-14 md:-mt-16
-            bg-white md:bg-[#f5f5f5]
+            bg-white md:bg-white 
             rounded-t-[24px] md:rounded-t-[32px]
             pt-16 md:pt-20
           "

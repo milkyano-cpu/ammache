@@ -215,7 +215,7 @@ const CareersForm = () => {
   }
 
   return (
-    <section id="about" className="bg-white md:bg-[#f5f5f5] py-16 md:py-32">
+    <section id="about" className="bg-white md:bg-white py-16 md:py-32">
 
       {/* HEADER */}
       <div className="max-w-[1200px] mx-auto px-6 mb-6 md:mb-16">

@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const JoinTeamCTA = () => {
   return (
-    <section className="bg-white md:bg-[#f5f5f5] py-20 md:py-30">
+    <section className="bg-white md:bg-white py-20 md:py-30">
 
       <div className="max-w-[600px] md:max-w-[850px] mx-auto px-5 md:px-6 text-center">
 

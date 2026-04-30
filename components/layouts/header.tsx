@@ -128,7 +128,7 @@ const Header = () => {
         <>
           {/* DESKTOP LOGO */}
           <Image
-            src={scrolled ? "/logo-ammache-black.png" : "/logo-ammache.png"}
+            src={scrolled ? "/logo-ammache-black.svg" : "/logo-ammache.svg"}
             alt="Ammache"
             width={140}
             height={40}
@@ -138,7 +138,7 @@ const Header = () => {
 
           {/* MOBILE LOGO */}
           <Image
-            src={scrolled ? "/logo-mobile-black.png" : "/logo-mobile.png"}
+            src={scrolled ? "/logo-mobile-black.svg" : "/logo-mobile.svg"}
             alt="Ammache"
             width={110}
             height={32}
@@ -175,7 +175,7 @@ const Header = () => {
             <>
           {/* DESKTOP LOGO */}
           <Image
-            src={scrolled ? "/logo-ammache-black.png" : "/logo-ammache.png"}
+            src={scrolled ? "/logo-ammache-black.svg" : "/logo-ammache.svg"}
             alt="Ammache"
             width={140}
             height={40}
@@ -185,7 +185,7 @@ const Header = () => {
 
           {/* MOBILE LOGO */}
           <Image
-            src={scrolled ? "/logo-mobile-black.png" : "/logo-mobile.png"}
+            src={scrolled ? "/logo-mobile-black.svg" : "/logo-mobile.svg"}
             alt="Ammache"
             width={110}
             height={32}
@@ -294,7 +294,7 @@ const Header = () => {
                 {/* LEFT */}
                 <div>
                   <Image
-                    src="/logo-ammache.png"
+                    src="/logo-ammache.svg"
                     alt="Ammache"
                     width={120}
                     height={30}

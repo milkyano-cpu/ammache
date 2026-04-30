@@ -155,12 +155,12 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
       {/* ================= CONTENT ================= */}
       <section
         id="about"
-        className="relative z-20 -mt-14 md:-mt-16 bg-white md:bg-[#f5f5f5] rounded-t-[25px] md:rounded-t-[32px] pt-16 md:pt-20 pb-20"
+        className="relative z-20 -mt-14 md:-mt-16 bg-white md:bg-white rounded-t-[25px] md:rounded-t-[32px] pt-16 md:pt-20 pb-20"
       >
         <div className="max-w-[1200px] mx-auto px-6">
 
           {/* ================= QUICK STATS ================= */}
-          <div className="bg-white md:bg-[#f5f5f5] rounded-2xl py-10 px-6 md:px-10 mb-16">
+          <div className="bg-white md:bg-white rounded-2xl py-10 px-6 md:px-10 mb-16">
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
 

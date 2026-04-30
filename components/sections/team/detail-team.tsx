@@ -73,7 +73,7 @@ export default function DetailTeam({
               relative 
               z-20
               -mt-14 md:-mt-16
-              bg-white md:bg-[#f5f5f5]
+              bg-white md:bg-white 
               rounded-t-[24px] md:rounded-t-[32px]
               pt-16 md:pt-20
               pb-20

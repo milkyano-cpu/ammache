@@ -42,7 +42,7 @@ const features = [
 
 const VipFeatures = () => {
   return (
-    <section className="bg-white md:bg-[#f5f5f5] py-24 md:py-32">
+    <section className="bg-white md:bg-white py-24 md:py-32">
 
       <div className="max-w-[1200px] mx-auto px-6">
 

@@ -41,7 +41,7 @@ export default function DetailProjectClient({
           relative 
           z-20 
           -mt-10 md:-mt-12
-          bg-white md:bg-[#f5f5f5]
+          bg-white md:bg-white 
           rounded-t-[20px] md:rounded-t-[30px]
           pt-12 md:pt-16
         "

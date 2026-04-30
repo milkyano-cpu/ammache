@@ -34,6 +34,11 @@ const helveticaNeue = localFont({
   variable: "--font-helvetica-neue",
 });
 
+const dmSans = localFont({
+  src: "../public/font/DMSans-VariableFont_opsz,wght.ttf",
+  variable: "--font-sans",
+});
+
 export const metadata: Metadata = {
   title: "Ammache Architects | Innovative Architecture Melbourne",
   description:
@@ -70,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${aktivGrotesk.variable} ${helveticaNeue.variable}`}>
+    <html lang="en" className={`${dmSans.variable}`}>
       <body className="antialiased">
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} />
          <SplashScreen />

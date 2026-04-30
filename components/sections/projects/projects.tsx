@@ -25,7 +25,7 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
   }
 
   return (
-    <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white md:bg-[#f5f5f5]">
+    <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white md:bg-white ">
       <div className="max-w-7xl mx-auto space-y-16">
 
         {/* TITLE */}
