@@ -6,7 +6,7 @@ const JoinTeamCTA = () => {
   return (
     <section className="bg-white md:bg-white py-20 md:py-30">
 
-      <div className="max-w-[600px] md:max-w-[850px] mx-auto px-5 md:px-6 text-center">
+      <div className="max-w-150 md:max-w-212.5 mx-auto px-5 md:px-6 text-center">
 
         {/* TITLE */}
         <h2 className="typo-h2 mb-5 md:mb-6">
