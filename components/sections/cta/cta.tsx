@@ -14,7 +14,7 @@ export default function CTA() {
 
         {/* DESCRIPTION */}
         <p className="typo-body text-gray-800">
-          Let's talk about how it can become a
+          Let&#39;s talk about how it can become a
           <br />
           place people genuinely want to be in.
         </p>
