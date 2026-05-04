@@ -9,14 +9,24 @@ type Props = {
   params: Promise<{ slug: string }>
 }
 
+export const dynamic = "force-dynamic"
+
 export default async function ProjectDetail({ params }: Props) {
   const { slug } = await params
 
+  console.log("SLUG:", slug)
+
+  if (!slug) {
+    console.log("❌ SLUG KOSONG")
+    return notFound()
+  }
+
   const project = await getProjectBySlug(slug)
+
+  console.log("PROJECT:", project)
 
   if (!project || !project.published) return notFound()
 
-  // ✅ INI DIA TEMPATNYA
   const nextProject = await getNextProject(
     project.id,
     project.categoryId
@@ -26,7 +36,6 @@ export default async function ProjectDetail({ params }: Props) {
     <main className="bg-[#F7F9FC] min-h-screen">
       <Header />
 
-      {/* ✅ kirim ke component */}
       <ProjectDetailContent 
         project={project}
         nextProject={nextProject}

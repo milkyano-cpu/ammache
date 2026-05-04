@@ -60,19 +60,24 @@ export default function About() {
           </div>
         </div>
 
-        {/* BLACK CARD */}
-        <div className="bg-black rounded-3xl overflow-hidden">
+        {/* WHITE CARD */}
+        <div className="
+          bg-white 
+          rounded-3xl 
+          overflow-hidden 
+          shadow-[0_0_30px_rgba(0,0,0,0.08)]
+        ">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-10 items-center p-6 md:p-16">
 
             {/* LEFT CONTENT */}
-            <div className="text-white space-y-5 md:space-y-6 relative order-2 md:order-1">
+            <div className="text-black space-y-5 md:space-y-6 relative order-2 md:order-1">
 
               {/* ABOUT US + LINE */}
               <div className="flex items-center gap-3">
-                <p className="typo-overline text-white">
+                <p className="typo-overline text-black">
                   ABOUT US
                 </p>
-                <div className="w-10 h-[1px] bg-white opacity-60"></div>
+                <div className="w-10 h-[1px] bg-black opacity-60"></div>
               </div>
 
               <h3 className="typo-h2">
@@ -81,26 +86,26 @@ export default function About() {
                 That Work In The Real World
               </h3>
 
-              <p className="typo-body-sm text-gray-200">
+              <p className="typo-body-sm text-black">
                 After more than three decades in architecture, one thing is clear:
               </p>
 
-              <p className="typo-body-sm text-gray-200 mt-4">
+              <p className="typo-body-sm text-black mt-4">
                 People don’t experience buildings. <br />
                 They experience how those buildings make them feel.
               </p>
 
-              <p className="typo-body-sm text-gray-200 mt-6">
+              <p className="typo-body-sm text-black mt-6">
                 Our work is built on:
               </p>
 
-              <ul className="typo-body-sm text-gray-200 list-disc pl-5 space-y-1">
+              <ul className="typo-body-sm text-black list-disc pl-5 space-y-1">
                 <li>Understanding human behaviour</li>
                 <li>Designing for everyday life</li>
                 <li>Creating environments that reduce stress and improve wellbeing</li>
               </ul>
 
-              <p className="typo-body-sm text-gray-200 mt-6">
+              <p className="typo-body-sm text-black mt-6">
                 Because architecture should not just look good, <br />
                 it should work for people.
               </p>
@@ -111,10 +116,10 @@ export default function About() {
                 className="
                   mt-4
                   px-8 py-3.5
-                  border border-white
+                  border border-black
                   rounded-full
                   typo-button
-                  hover:bg-white hover:text-black
+                  hover:bg-black hover:text-white
                   transition
                   cursor-pointer
                   inline-block

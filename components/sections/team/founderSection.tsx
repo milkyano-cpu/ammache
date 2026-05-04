@@ -16,10 +16,19 @@ const FounderSection = () => {
         </h2>
 
         {/* CARD */}
-        <div className="relative bg-black text-white rounded-[30px] overflow-hidden p-6 md:p-10">
+        <div className="
+            relative 
+            bg-white 
+            text-black 
+            rounded-[30px] 
+            overflow-hidden 
+            p-6 md:p-10
+            shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+            ring-1 ring-black/5
+          ">
 
           {/* ===== GRADIENT (BIAR TEXT KEBACA) ===== */}
-          <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/60 to-transparent" />
+          {/* <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/60 to-transparent" /> */}
 
           {/* ===== CONTENT ===== */}
           <div className="
@@ -64,12 +73,12 @@ const FounderSection = () => {
               </h3>
 
               {/* ROLE */}
-              <p className="typo-body-lg text-white mb-6">
+              <p className="typo-body-lg text-black mb-6">
                 Founder
               </p>
 
               {/* DESC */}
-              <p className="typo-body-sm text-white mb-8 leading-relaxed">
+              <p className="typo-body-sm text-black mb-8 leading-relaxed">
                 Nidal has spent over three decades doing one thing: designing spaces that work for the people inside them.
                 <br />
                 <br />
@@ -81,10 +90,10 @@ const FounderSection = () => {
               <button className="
                 px-6 py-3
                 rounded-full
-                border border-white/40
+                border border-black
                 typo-button
-                hover:bg-white
-                hover:text-black
+                hover:bg-black
+                hover:text-white
                 transition-all
                 duration-300
                 cursor-pointer
