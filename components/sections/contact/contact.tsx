@@ -26,7 +26,7 @@ const contactSchema = z.object({
 
 const ContactHero = () => {
   return (
-    <section id="about" className="relative w-full h-[450px] sm:h-[480px] md:h-[600px] overflow-hidden">
+    <section id="about" className="relative w-full h-112.5 sm:h-120 md:h-150 overflow-hidden">
         <Image
          src="/contact-hero.png"
               alt="Hero"
@@ -49,7 +49,7 @@ const ContactHero = () => {
 
       {/* CONTENT */}
       <div className="absolute inset-0 flex items-center">
-      <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
+      <div className="max-w-[90%] md:max-w-300 mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
       <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
 
@@ -67,8 +67,8 @@ const ContactHero = () => {
         </span>
 
       </p>
-          <h1 className="typo-h1 max-w-[1000px]">
-          Let's Create Something People Will Love Living In.
+          <h1 className="typo-h1 max-w-250">
+          Let&#39;s Create Something People Will Love Living In.
           </h1>
 
       </div>
@@ -82,7 +82,7 @@ const ContactSection = () => {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [phone, setPhone] = useState("")
-  const [phoneCountry, setPhoneCountry] = useState("US")
+  const [phoneCountry, setPhoneCountry] = useState("AU")
   const [email, setEmail] = useState("")
   const [projectType, setProjectType] = useState("")
   const [projectLocation, setProjectLocation] = useState("")
@@ -161,7 +161,7 @@ const ContactSection = () => {
         setFirstName("")
         setLastName("")
         setPhone("")
-        setPhoneCountry("US")
+        setPhoneCountry("AU")
         setEmail("")
         setProjectType("")
         setProjectLocation("")
@@ -181,7 +181,7 @@ const ContactSection = () => {
   return (
      <section className="bg-white md:bg-white py-12 md:py-20">
 
-      <div className="w-full max-w-[1400px] mx-auto px-4 md:px-10">
+      <div className="w-full max-w-350 mx-auto px-4 md:px-10">
 
         {/* GRID LANGSUNG TANPA CARD */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 rounded-[20px] overflow-hidden">
@@ -192,7 +192,7 @@ const ContactSection = () => {
           p-6 md:px-16 md:py-16
           flex flex-col justify-between
           rounded-[20px] md:rounded-l-[20px]
-          min-h-[500px] md:min-h-[650px]
+          min-h-125 md:min-h-162.5
           overflow-hidden
         ">
 
@@ -212,7 +212,7 @@ const ContactSection = () => {
     {/* CONTENT WRAPPER (BIAR KE TENGAH) */}
       <div className="
           relative z-10
-          max-w-[420px]
+          max-w-105
           w-full
           space-y-5 md:space-y-12
           mx-auto md:mx-0
@@ -260,7 +260,7 @@ const ContactSection = () => {
           className="group flex gap-4 items-center"
         >
           <Mail size={22} className="group-hover:translate-x-1 transition" />
-          <p className="typo-body-sm break-words group-hover:translate-x-1 transition">
+          <p className="typo-body-sm wrap-break-word group-hover:translate-x-1 transition">
             enquiries@ammachearchitects.com.au
           </p>
         </a>
@@ -272,7 +272,7 @@ const ContactSection = () => {
     </div>
 
     {/* BOTTOM */}
-    <div className="relative z-10 max-w-[420px] mx-auto w-full mt-16 md:mt-24">
+    <div className="relative z-10 max-w-105 mx-auto w-full mt-16 md:mt-24">
 
         <Image
         src="/logo-ammache.svg"
@@ -319,10 +319,10 @@ const ContactSection = () => {
     </div>
 
         {/* ================= RIGHT ================= */}
-          <div className="bg-white p-6 md:p-10 md:p-14 rounded-[20px] border border-gray-200">
+          <div className="bg-white p-6 md:p-10 rounded-[20px] border border-gray-200">
 
               <p className="typo-body-sm text-gray-600 mb-8">
-                  Tell us about your site or project. We'll get back to you with honest thoughts on what it could become.
+                  Tell us about your site or project. We&#39;ll get back to you with honest thoughts on what it could become.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -375,7 +375,7 @@ const ContactSection = () => {
 
                       <input
                       type="text"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+61 4XX XXX XXX"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className="flex-1 px-4 py-3.5 outline-none placeholder:text-gray-400"
@@ -477,10 +477,10 @@ const ContactMapSection = () => {
   return (
     <section className="bg-white md:bg-white py-20 md:py-28">
 
-      <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div className="max-w-300 mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
 
         {/* ================= LEFT ================= */}
-        <div className="max-w-[420px] mx-auto md:mx-0 text-center md:text-left">
+        <div className="max-w-105 mx-auto md:mx-0 text-center md:text-left">
 
           {/* FIND */}
           <p className="typo-overline text-black mb-6">
@@ -500,7 +500,7 @@ const ContactMapSection = () => {
           {/* BUTTON */}
           <div className="flex justify-center md:justify-start">
             <a
-              href="https://www.google.com/maps?q=11+Meaden+St,+Southbank+VIC+3006"
+              href="https://www.google.com/maps/place/Ammache+Architects+Melbourne/@-37.8285323,144.9541625,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad66aae90425cb5:0xb4efe264d0ad907!8m2!3d-37.8285323!4d144.9541625!16s%2Fg%2F1tgcy610?hl=en&entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -520,17 +520,16 @@ const ContactMapSection = () => {
         </div>
 
         {/* ================= MAP ================= */}
-        <div className="w-full h-[250px] md:h-[520px] rounded-[20px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+          <div className="w-full h-62.5 md:h-130 rounded-[20px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+              <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.356792922645!2d144.9541625!3d-37.8285323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad66aae90425cb5%3A0xb4efe264d0ad907!2sAmmache%20Architects%20Melbourne!5e0!3m2!1sen!2sid!4v1777907905729!5m2!1sen!2sid"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  className="border-0"
+              />
 
-          <iframe
-            src="https://www.google.com/maps?q=11+Meaden+St,+Southbank+VIC+3006&output=embed"
-            width="100%"
-            height="100%"
-            loading="lazy"
-            className="border-0"
-          />
-
-        </div>
+          </div>
 
       </div>
 
@@ -539,11 +538,11 @@ const ContactMapSection = () => {
 }
 
 export default function ContactPage() {
-  return (
-    <>
-      <ContactHero />
-        <div
-        className="
+    return (
+        <>
+            <ContactHero/>
+            <div
+                className="
           relative 
           z-20 
           -mt-10 md:-mt-12
@@ -551,10 +550,10 @@ export default function ContactPage() {
           rounded-t-[20px] md:rounded-t-[30px]
           overflow-hidden
         "
-      >
-      <ContactSection />
-      <ContactMapSection />
-      </div>
-    </>
-  )
+            >
+                <ContactSection/>
+                <ContactMapSection/>
+            </div>
+        </>
+    )
 }

@@ -16,7 +16,7 @@ const VipForm = () => {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [phone, setPhone] = useState("")
-  const [phoneCountry, setPhoneCountry] = useState("US")
+  const [phoneCountry, setPhoneCountry] = useState("AU")
   const [email, setEmail] = useState("")
   const [profession, setProfession] = useState("")
   const [interest, setInterest] = useState("")
@@ -94,7 +94,7 @@ const VipForm = () => {
         setFirstName("")
         setLastName("")
         setPhone("")
-        setPhoneCountry("US")
+        setPhoneCountry("AU")
         setEmail("")
         setProfession("")
         setInterest("")
@@ -176,7 +176,7 @@ const VipForm = () => {
                 </select>
 
                 <input
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+61 4XX XXX XXX"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="flex-1 px-4 md:px-6 py-3.5 md:py-4 typo-body"

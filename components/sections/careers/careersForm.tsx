@@ -40,7 +40,7 @@ const CareersForm = () => {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [phone, setPhone] = useState("")
-  const [phoneCountry, setPhoneCountry] = useState("US")
+  const [phoneCountry, setPhoneCountry] = useState("AU")
   const [email, setEmail] = useState("")
   const [position, setPosition] = useState("")
   const [experience, setExperience] = useState("")
@@ -192,7 +192,7 @@ const CareersForm = () => {
         setFirstName("")
         setLastName("")
         setPhone("")
-        setPhoneCountry("US")
+        setPhoneCountry("AU")
         setEmail("")
         setPosition("")
         setExperience("")
@@ -300,7 +300,7 @@ const CareersForm = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="flex-1 px-6 py-4 typo-body focus:outline-none"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+61 4XX XXX XXX"
                 />
               </div>
             </div>
