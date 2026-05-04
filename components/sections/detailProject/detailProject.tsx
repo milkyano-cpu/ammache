@@ -5,25 +5,13 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import type { CategoryWithProjects } from "@/app/detailProject/detail-project-client"
+import { categoryMap, reverseCategoryMap } from "@/lib/constants/category-mapping"
 
 /* ================= HERO IMAGE MAPPING ================= */
 const heroImages: Record<string, string> = {
   residential: "/detail-project1.png",
   commercial: "/detail-project2.png",
   retail: "/detail-project3.png",
-}
-
-const reverseCategoryMap: Record<string, string> = {
-  residential: "Residential Projects",
-  commercial: "Commercial and Industrial Projects",
-  retail: "Retail Projects",
-}
-
-/* ================= CATEGORY MAP ================= */
-const categoryMap: Record<string, string> = {
-  "Residential Projects": "residential",
-  "Commercial and Industrial Projects": "commercial",
-  "Retail Projects": "retail",
 }
 
 /* ================= STAT COMPONENT ================= */
@@ -77,10 +65,8 @@ const Stat = ({
 
 /* ================= HERO ================= */
 const DetailProjectHero = ({
-  activeTab,
   categories,
 }: {
-  activeTab: string
   categories: CategoryWithProjects[]
 }) => {
 
@@ -102,23 +88,9 @@ const DetailProjectHero = ({
   }, [])
 
   const searchParams = useSearchParams()
-  const categoryParam = searchParams.get("category")
+  const categoryParam = searchParams.get("category") ?? ""
 
-  const [currentTab, setCurrentTab] = useState(activeTab)
-
-  useEffect(() => {
-    if (categoryParam) {
-      const mapped = reverseCategoryMap[categoryParam]
-
-      if (mapped) {
-        setCurrentTab(mapped)
-      }
-    }
-  }, [categoryParam])
-
-  useEffect(() => {
-    setCurrentTab(activeTab)
-  }, [activeTab])
+  const currentTab = reverseCategoryMap[categoryParam] ?? categories[0]?.name ?? ""
 
   /* 🔥 FALLBACK CATEGORY */
   const fallbackTab =

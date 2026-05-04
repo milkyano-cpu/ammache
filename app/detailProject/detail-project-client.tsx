@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import Header from "@/components/layouts/header"
 import ProjectHero from "@/components/sections/detailProject/detailProject"
 import ListProject from "@/components/sections/detailProject/listProject"
@@ -8,53 +7,45 @@ import CTA from "@/components/sections/cta/cta"
 import Footer from "@/components/layouts/footer"
 
 export interface CategoryWithProjects {
-  id: number
-  name: string
-  projects: {
     id: number
-    slug: string
     name: string
-    images: string[]
-    shortDescription: string | null
-    categoryName: string
-    specifications?: { key: string; value: string }[]
-  }[]
+    projects: {
+        id: number
+        slug: string
+        name: string
+        images: string[]
+        shortDescription: string | null
+        categoryName: string
+        specifications?: { key: string; value: string }[]
+    }[]
 }
 
 export default function DetailProjectClient({
-  categories,
+    categories,
 }: {
-  categories: CategoryWithProjects[]
+    categories: CategoryWithProjects[]
 }) {
-  const [activeTab, setActiveTab] = useState(
-    categories[0]?.name ?? "Residential Projects"
-  )
+    return (
+        <main>
+            <Header />
 
-  return (
-    <main>
-      <Header />
+            <ProjectHero categories={categories} />
 
-      <ProjectHero activeTab={activeTab} categories={categories} />
-
-      <div
-        className="
-          relative 
-          z-20 
+            <div
+                className="
+          relative
+          z-20
           -mt-10 md:-mt-12
-          bg-white md:bg-white 
+          bg-white md:bg-white
           rounded-t-[20px] md:rounded-t-[30px]
           pt-12 md:pt-16
         "
-      >
-      <ListProject
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        categories={categories}
-      />
+            >
+                <ListProject categories={categories} />
 
-      <CTA />
-      </div>
-      <Footer />
-    </main>
-  )
+                <CTA />
+            </div>
+            <Footer />
+        </main>
+    )
 }
