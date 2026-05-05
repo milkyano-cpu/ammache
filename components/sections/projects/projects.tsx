@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export interface ProjectCardData {
   id: number
-  slug: string  
+  slug: string
   name: string
   images: string[]
   specifications?: { key: string; value: string }[]
@@ -15,10 +15,7 @@ export interface ProjectCardData {
 export default function Projects({ projects }: { projects?: ProjectCardData[] }) {
   const items = projects ?? []
 
-  function getSpecValue(
-    specs: { key: string; value: string }[] | undefined,
-    key: string
-  ) {
+  function getSpecValue(specs: { key: string; value: string }[] | undefined, key: string) {
     if (!specs) return null
     const found = specs.find((s) => s.key === key)
     return found?.value || null
@@ -34,7 +31,7 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
             <p className="typo-overline text-gray-800">
               OUR PROJECTS
             </p>
-            <div className="w-10 h-[1px] bg-gray-400" />
+            <div className="w-10 h-px bg-gray-400" />
           </div>
 
           <h2 className="typo-h2 text-black">
@@ -54,9 +51,8 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
             <Link
               key={item.id}
               href={`/detailProject/${item.slug}`}
-              className="block"
-            >
-              <div className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5]">
+              className="block">
+              <div className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-4/5">
 
                 {/* IMAGE */}
                 <Image
@@ -69,26 +65,25 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
                 {/* DARK OVERLAY */}
                 <div className="
                   absolute inset-0
-                  bg-black/47 backdrop-blur-sm
-                  opacity-0 group-hover:opacity-100
+                  bg-black/20
+                  group-hover:bg-black/70 group-hover:backdrop-blur-sm
+                  opacity-100
                   transition duration-300
-                  flex flex-col items-center justify-center text-center px-4 gap-1
-                ">
+                  flex flex-col items-center">
                   <Image
                     src="/logo-hover.png"
                     alt="Logo"
                     width={50}
                     height={50}
-                    className="mb-3 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition duration-300"
+                    className="mb-3 xl:mt-16 mt-10 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition duration-300"
                   />
 
-                  <p className="typo-h6 text-white">
-                    {item.name}
-                  </p>
-
-                  <p className="typo-caption text-white/70">
-                  {getSpecValue(item.specifications, "Project") || item.category.name}
-                  </p>
+                  <div className="absolute text-white bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex flex-col text-center gap-2 px-4">
+                    <p className="typo-h5 text-sm! md:text-xl!">{item.name}</p>
+                    <p className="typo-caption uppercase text-xs! md:text-sm!">
+                      {getSpecValue(item.specifications, "Project") || item.category.name}
+                    </p>
+                  </div>
                 </div>
 
                 {/* VIEW DEVELOPMENT */}
@@ -97,7 +92,7 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
                   text-white typo-caption
                   opacity-0 group-hover:opacity-100
                   transition duration-300
-                ">
+                  pb-4">
                   <span className="inline-flex items-center">
                     <span>View Development</span>
                     <span className="ml-2">❯</span>

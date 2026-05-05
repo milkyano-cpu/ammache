@@ -2,21 +2,11 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from "react"
-import { usePathname, useRouter } from 'next/navigation'
-import { cn } from '@/lib/utils'
-import {
-  Menu,
-  X,
-  MapPin,
-  Phone,
-  Mail,
-  Instagram,
-  Linkedin,
-  Facebook,
-  Loader2
-} from 'lucide-react'
-import { useNewsletterSubscribe } from '@/hooks/use-newsletter-subscribe'
+import {useEffect, useState} from "react"
+import {usePathname} from 'next/navigation'
+import {cn} from '@/lib/utils'
+import {Facebook, Instagram, Linkedin, Loader2, Mail, MapPin, Menu, Phone, X} from 'lucide-react'
+import {useNewsletterSubscribe} from '@/hooks/use-newsletter-subscribe'
 
 const navLinks = [
   { href: '/', label: 'Main' },
@@ -33,7 +23,6 @@ const Header = () => {
   const [isReady, setIsReady] = useState(false)
   const [hideHeader, setHideHeader] = useState(false)
   const pathname = usePathname()
-  const router = useRouter()
   const newsletter = useNewsletterSubscribe()
 
   useEffect(() => {
@@ -79,7 +68,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [isReady])
 
-  // 🔥 3. DETECT FOOTER (HIDE HEADER)
   useEffect(() => {
     const handleScroll = () => {
       const footer = document.getElementById("footer")
@@ -97,15 +85,6 @@ const Header = () => {
 
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  const handleNavigate = (href: string) => {
-    setOpen(false)
-    router.push(href)
-
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 100)
-  }
 
   return (
     <>
@@ -163,10 +142,8 @@ const Header = () => {
       {/* OVERLAY */}
       <div
         className={cn(
-          'fixed inset-0 z-[100] bg-black/75 backdrop-blur-md text-white transition-all duration-500 flex flex-col',
-          open ? 'opacity-100 visible' : 'opacity-0 invisible'
-        )}
-      >
+          'fixed inset-0 z-100 bg-black/75 h-dvh backdrop-blur-md text-white transition-all duration-500 flex flex-col',
+          open ? 'opacity-100 visible' : 'opacity-0 invisible')}>
         {/* TOP BAR */}
         <div className="flex items-center justify-between px-8 py-6">
 
@@ -198,8 +175,7 @@ const Header = () => {
           {/* CLOSE */}
           <button
             onClick={() => setOpen(false)}
-            className="cursor-pointer hover:opacity-70 transition"
-          >
+            className="cursor-pointer hover:opacity-70 transition">
             <X size={28} />
           </button>
         </div>
@@ -237,11 +213,11 @@ const Header = () => {
           <div className="md:hidden px-6">
 
             <p className="typo-h5 text-white mb-2">
-              Join Ammache's Exclusive VIP
+              {"Join Ammache's Exclusive VIP"}
             </p>
 
             <p className="typo-body-sm text-white mb-6">
-              First access to new projects before they go public. This isn't a newsletter, it's a seat at the table.
+                {"First access to new projects before they go public. This isn't a newsletter, it's a seat at the table."}
             </p>
 
             {/* INPUT */}
@@ -289,7 +265,7 @@ const Header = () => {
           {/* DESKTOP VERSION */}
           <div className="hidden md:block">
             <div className="px-6 md:px-12 xl:px-24">
-              <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-24">
+              <div className="max-w-350 mx-auto grid md:grid-cols-2 gap-24">
 
                 {/* LEFT */}
                 <div>
@@ -312,8 +288,7 @@ const Header = () => {
                     href="https://maps.google.com/?q=11+Meaden+St+Southbank+VIC+3006"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 transition-all duration-300 hover:text-white"
-                  >
+                    className="group flex items-center gap-3 transition-all duration-300 hover:text-white">
                     <MapPin size={16} className="group-hover:translate-x-1 transition" />
                     <span className="group-hover:translate-x-1 transition">
                       11 Meaden St, Southbank VIC 3006
@@ -322,8 +297,7 @@ const Header = () => {
 
                   <a
                     href="tel:0399571818"
-                    className="group flex items-center gap-3 transition-all duration-300 hover:text-white"
-                  >
+                    className="group flex items-center gap-3 transition-all duration-300 hover:text-white">
                     <Phone size={16} className="group-hover:translate-x-1 transition" />
                     <span className="group-hover:translate-x-1 transition">
                       03 9957 1818
@@ -332,8 +306,7 @@ const Header = () => {
 
                   <a
                     href="mailto:enquiries@ammachearchitects.com.au"
-                    className="group flex items-center gap-3 transition-all duration-300 hover:text-white"
-                  >
+                    className="group flex items-center gap-3 transition-all duration-300 hover:text-white">
                     <Mail size={16} className="group-hover:translate-x-1 transition" />
                     <span className="group-hover:translate-x-1 transition">
                       enquiries@ammachearchitects.com.au
@@ -381,7 +354,7 @@ const Header = () => {
                   </p>
 
                   <p className="typo-body-sm text-white mb-6 max-w-sm">
-                    First access to new projects before they go public. This isn't a newsletter, it's a seat at the table.
+                    {"First access to new projects before they go public. This isn't a newsletter, it's a seat at the table."}
                   </p>
 
                   <form onSubmit={newsletter.handleSubmit}>
@@ -405,13 +378,13 @@ const Header = () => {
                     </div>
                   </form>
 
-                  <div className="flex items-start gap-2 mt-5 typo-fine text-white">
+                  <div className="flex items-center gap-2 mt-5 typo-fine text-white ">
                     <input
                       type="checkbox"
                       checked={newsletter.consent}
                       onChange={(e) => newsletter.setConsent(e.target.checked)}
                       disabled={newsletter.loading}
-                      className="mt-1 cursor-pointer"
+                      className="flex items-center cursor-pointer"
                     />
                     <span>
                       I agree to receive updates from Ammache. Unsubscribe anytime.

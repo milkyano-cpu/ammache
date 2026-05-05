@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about" className="w-full py-20 px-6 md:px-12 lg:px-20 bg-white md:bg-white ">
       <div className="max-w-7xl mx-auto space-y-12">
-        
+
         {/* TOP TITLE */}
           <div className="
             flex flex-col items-center text-center md:text-left md:items-start md:flex-row md:justify-between gap-6 pb-10
@@ -25,7 +25,7 @@ export default function About() {
           <Link
             href="/detailProject"
             className="
-              w-[180px]
+              w-45
               px-5 py-2.5
               rounded-full
               border-2 border-gray-400
@@ -43,7 +43,7 @@ export default function About() {
           <Link
               href="/contact"
               className="
-                w-[220px]
+                w-55
                 px-8 py-3.5
                 rounded-full
                 bg-black text-white
@@ -62,11 +62,18 @@ export default function About() {
 
         {/* WHITE CARD */}
         <div className="
-          bg-white 
-          rounded-3xl 
-          overflow-hidden 
+          bg-white
+          rounded-3xl
+          overflow-hidden
           shadow-[0_0_30px_rgba(0,0,0,0.08)]
-        ">
+          relative">
+
+          <img
+            src="/background-card-1.png"
+            alt="background-card-1"
+            className="absolute"
+          />
+
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-10 items-center p-6 md:p-16">
 
             {/* LEFT CONTENT */}
@@ -77,7 +84,7 @@ export default function About() {
                 <p className="typo-overline text-black">
                   ABOUT US
                 </p>
-                <div className="w-10 h-[1px] bg-black opacity-60"></div>
+                <div className="w-10 h-px bg-black opacity-60"></div>
               </div>
 
               <h3 className="typo-h2">
