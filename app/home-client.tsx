@@ -11,6 +11,7 @@ import type { ProjectCardData } from "@/components/sections/projects/projects";
 import Studio from "@/components/sections/studio/studio";
 import CTA from "@/components/sections/cta/cta";
 import Footer from "@/components/layouts/footer"
+import Review from "@/components/sections/review/review";
 
 export default function HomeClient({ projects }: { projects: ProjectCardData[] }) {
 
@@ -47,12 +48,12 @@ export default function HomeClient({ projects }: { projects: ProjectCardData[] }
         whileInView="show"
         viewport={{ once: true }}
         className="
-          relative 
-          z-20 
+          relative
+          z-20
           -mt-[10vh] md:mt-0
           bg-white md:bg-white
           rounded-t-[20px] md:rounded-t-[30px]
-          pt-12 md:pt-16 
+          pt-12 md:pt-16
         "
       >
         <Stats />
@@ -65,7 +66,7 @@ export default function HomeClient({ projects }: { projects: ProjectCardData[] }
         whileInView="show"
         viewport={{ once: true }}
       >
-      
+
       <About />
       </motion.div>
 
@@ -87,6 +88,15 @@ export default function HomeClient({ projects }: { projects: ProjectCardData[] }
         viewport={{ once: true }}
       >
         <Studio />
+      </motion.div>
+
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        <Review />
       </motion.div>
 
       {/* CTA */}
