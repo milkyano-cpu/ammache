@@ -28,24 +28,15 @@ const ContactHero = () => {
   return (
     <section id="about" className="relative w-full h-112.5 sm:h-120 md:h-150 overflow-hidden">
         <Image
-         src="/contact-hero.png"
-              alt="Hero"
-              fill
-              priority
-              className="object-cover hidden md:block"
-            />
-      
-            {/* MOBILE IMAGE */}
-            <Image
-            src="/contact-hero-mobile.png"
-            alt="Hero Mobile"
-            fill
-            priority
-            className="object-cover object-[center_top] scale-105 block md:hidden"
-          />
+          src="/contact-hero-v2.png"
+          alt="Hero"
+          fill
+          priority
+          className="object-cover object-[center_top] scale-105 md:object-center md:scale-100"
+        />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/70 md:bg-black/50" />
+      <div className="absolute inset-0 bg-black/30 md:bg-black/20" />
 
       {/* CONTENT */}
       <div className="absolute inset-0 flex items-center">
@@ -188,7 +179,7 @@ const ContactSection = () => {
 
           {/* ================= LEFT ================= */}
         <div className="
-          relative bg-black text-white
+          relative bg-white text-black
           p-6 md:px-16 md:py-16
           flex flex-col justify-between
           rounded-[20px] md:rounded-l-[20px]
@@ -198,14 +189,10 @@ const ContactSection = () => {
 
         <div className="absolute inset-0 z-0 flex items-end justify-end pointer-events-none">
             <Image
-            src="/logo-contact.png"
+            src="/background-contact.png"
             alt="background shape"
-            width={1000}
-            height={1000}
-            className="
-              scale-[3.0] translate-x-100 translate-y-5
-              md:scale-[3.1] md:translate-x-110 md:translate-y-0
-            "
+            fill
+            className="scale-50 opacity-10"
           />
         </div>
 
@@ -235,7 +222,7 @@ const ContactSection = () => {
         </div>
 
         {/* DIVIDER */}
-        <div className="border-b border-white/20 w-full" />
+        <div className="border-b border-black w-full" />
 
         {/* PHONE */}
         <div className="flex gap-4">
@@ -251,7 +238,7 @@ const ContactSection = () => {
         </div>
 
         {/* DIVIDER */}
-        <div className="border-b border-white/20 w-full" />
+        <div className="border-b border-black w-full" />
 
         {/* EMAIL */}
         <div className="flex gap-4">
@@ -267,7 +254,7 @@ const ContactSection = () => {
         </div>
 
         {/* DIVIDER (TOTAL 3 SESUAI DESIGN) */}
-        <div className="border-b border-white/20 w-full" />
+        <div className="border-b border-black w-full" />
 
     </div>
 
@@ -543,10 +530,10 @@ export default function ContactPage() {
             <ContactHero/>
             <div
                 className="
-          relative 
-          z-20 
+          relative
+          z-20
           -mt-10 md:-mt-12
-          bg-white md:bg-white 
+          bg-white md:bg-white
           rounded-t-[20px] md:rounded-t-[30px]
           overflow-hidden
         "

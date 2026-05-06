@@ -37,7 +37,7 @@ const Stat = ({
     }, 16)
 
     return () => clearInterval(counter)
-  }, [trigger]) 
+  }, [number, trigger])
   return (
     <div className="text-center w-1/3 md:w-auto">
       <p className="typo-stat text-white">
@@ -71,11 +71,11 @@ const TeamHero = () => {
       return () => clearTimeout(timeout)
     }, [])
   return (
-   <section className="relative w-full h-[550px] md:h-[600px] overflow-hidden">
-      
+   <section className="relative w-full h-137.5 md:h-150 overflow-hidden">
+
       {/* DESKTOP IMAGE */}
       <Image
-        src="/hero-image.png"
+        src="/team-hero-image.png"
         alt="Hero"
         fill
         priority
@@ -84,7 +84,7 @@ const TeamHero = () => {
 
       {/* MOBILE IMAGE */}
       <Image
-        src="/hero-image-mobile.png"
+        src="/team-hero-image-mobile.png"
         alt="Hero Mobile"
         fill
         priority
@@ -92,11 +92,11 @@ const TeamHero = () => {
       />
 
       {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/55 md:bg-black/55" />
+        <div className="absolute inset-0 bg-black/40 md:bg-black/40" />
 
       {/* CONTENT */}
       <div id="about" className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">
-        <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
+        <div className="max-w-[90%] md:max-w-300 mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
           {/* BREADCRUMB */}
           <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
@@ -117,12 +117,12 @@ const TeamHero = () => {
           </p>
 
           {/* TITLE */}
-           <h1 className="typo-h1 max-w-[90%] md:max-w-[700px] mb-3">
+           <h1 className="typo-h1 max-w-[90%] md:max-w-175 mb-3">
             The Team Behind Ammache
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="typo-body text-white/80 max-w-[95%] md:max-w-[700px]">
+          <p className="typo-body text-white/80 max-w-[95%] md:max-w-175">
             Every space we design starts with the people in this room, and the people who will one day live, work, and grow inside the spaces we create.
           </p>
 
@@ -138,7 +138,7 @@ const TeamHero = () => {
             <Stat
               number={33}
               suffix="+"
-              label="Years Designing for Real Life"
+              label="Years Designing Spaces for Real World"
               trigger={trigger}
             />
 

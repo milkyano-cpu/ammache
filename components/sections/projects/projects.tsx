@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link"
+import {getSpecValue} from "@/lib/utils/spec-utils";
 
 export interface ProjectCardData {
   id: number
@@ -79,9 +80,13 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
                   />
 
                   <div className="absolute text-white bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex flex-col text-center gap-2 px-4">
-                    <div className="flex justify-center items-center">
-                      <span className="group-hover:opacity-100 opacity-0 w-fit px-4 typo-body-sm border transition duration-500 border-white rounded-md h-8 flex justify-center items-center">{getSpecValue(item.specifications, "Progress")}</span>
-                    </div>
+                    {
+                      getSpecValue(item.specifications, "Progress") && (
+                        <span className="group-hover:opacity-100 opacity-0 w-fit px-4 typo-body-sm border transition duration-500 border-white rounded-md h-8 flex justify-center items-center">
+                          {getSpecValue(item.specifications, "Progress")}
+                        </span>
+                      )
+                    }
                     <p className="typo-h5 text-sm! md:text-xl!">{item.name}</p>
                     <p className="typo-caption uppercase text-xs! md:text-sm!">
                       {getSpecValue(item.specifications, "Project") || item.category.name}

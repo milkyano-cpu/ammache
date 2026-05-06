@@ -11,7 +11,6 @@ import {AnimatedCount} from "@/components/ui/animated-count"
 const LIMIT = 12
 
 const DetailProjectsSection = ({categories}: { categories: CategoryWithProjects[] }) => {
-
     const [open, setOpen] = useState(false)
     const {activeTab, showAll, setActiveTab, toggleShowAll} = useProjectTab(categories)
 
@@ -26,7 +25,7 @@ const DetailProjectsSection = ({categories}: { categories: CategoryWithProjects[
     return (
         <section id="about" className="bg-white md:bg-white py-10 md:py-24">
 
-            <div className="max-w-300 mx-auto px-4 md:px-6">
+            <div className="w-full py-24 px-6 md:px- lg:px-20 bg-white md:bg-white">
 
                 {/* ================= TABS ================= */}
                 <div className="hidden md:flex justify-center gap-12 text-lg mb-10 border-b border-gray-300 pb-4">
@@ -85,50 +84,72 @@ const DetailProjectsSection = ({categories}: { categories: CategoryWithProjects[
                 </div>
 
                 {/* ================= GRID ================= */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                    {
-                        displayedProjects.map((item) => (
-                            <Link key={item.id} href={`/detailProject/${item.slug}`}>
-                                <div className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-4/5">
-                                    <Image
-                                        src={item.images[0] || "/project1.png"}
-                                        alt={item.name}
-                                        fill
-                                        className="object-cover transition duration-500 group-hover:scale-105"
-                                    />
-                                    <div className="
-                                          absolute inset-0
-                                          bg-black/45 backdrop-blur-sm
-                                          opacity-0 group-hover:opacity-100
-                                          transition duration-300
-                                          flex flex-col items-center justify-center text-center px-4">
-                                        <Image
-                                            src="/logo-hover.png"
-                                            alt="logo"
-                                            width={50}
-                                            height={50}
-                                            className="mb-4 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition"
-                                        />
-                                        <p className="typo-h6 text-white">{item.name}</p>
-                                        <p className="typo-fine text-white/80 mt-1">
-                                            {getSpecValue(item.specifications, "Project") || item.categoryName}
-                                        </p>
-                                    </div>
-                                    <div className="
-                                             absolute bottom-4 left-1/2 -translate-x-1/2
-                                             text-white typo-caption
-                                             opacity-0 group-hover:opacity-100
-                                             transition duration-300">
-                                      <span className="inline-flex items-center">
-                                        <span>View Development</span>
-                                        <span className="ml-2">❯</span>
-                                      </span>
-                                    </div>
-                                </div>
-                            </Link>
-                        ))
-                    }
-                </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-8">
+                {displayedProjects.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`/detailProject/${item.slug}`}
+                    className="block">
+                    <div className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-4/5">
+
+                      {/* IMAGE */}
+                      <Image
+                        src={item.images[0] || "/project1.png"}
+                        alt={item.name}
+                        fill
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+
+                      {/* DARK OVERLAY */}
+                      <div className="
+                  absolute inset-0
+                  bg-black/20
+                  group-hover:bg-black/70 group-hover:backdrop-blur-sm
+                  opacity-100
+                  transition duration-300
+                  flex flex-col items-center">
+                        <Image
+                          src="/logo-hover.png"
+                          alt="Logo"
+                          width={50}
+                          height={50}
+                          className="mb-3 xl:mt-16 mt-10 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition duration-300"
+                        />
+
+                        <div className="absolute text-white bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex flex-col text-center gap-2 px-4">
+                          <div className="flex justify-center items-center">
+                            {
+                              getSpecValue(item.specifications, "Progress") && (
+                                <span className="group-hover:opacity-100 opacity-0 w-fit px-4 typo-body-sm border transition duration-500 border-white rounded-md h-8 flex justify-center items-center">
+                                  {getSpecValue(item.specifications, "Progress")}
+                                </span>
+                              )
+                            }
+                          </div>
+                          <p className="typo-h5 text-sm! md:text-xl!">{item.name}</p>
+                          <p className="typo-caption uppercase text-xs! md:text-sm!">
+                            {getSpecValue(item.specifications, "Project") || item.categoryName}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* VIEW DEVELOPMENT */}
+                      <div className="
+                  absolute bottom-4 left-1/2 -translate-x-1/2
+                  text-white typo-caption
+                  opacity-0 group-hover:opacity-100
+                  transition duration-300
+                  pb-4">
+                  <span className="inline-flex items-center">
+                    <span>View Development</span>
+                    <span className="ml-2">❯</span>
+                  </span>
+                      </div>
+
+                    </div>
+                  </Link>
+                ))}
+              </div>
 
                 {/* ================= BUTTON ================= */}
                 {projects.length > LIMIT && (

@@ -5,28 +5,18 @@ import Link from "next/link"
 
 const VipHero = () => {
   return (
-     <section className="relative w-full h-[450px] sm:h-[480px] md:h-[600px] overflow-hidden">
+     <section className="relative w-full h-112.5 sm:h-120 md:h-150 overflow-hidden">
 
-      {/* IMAGE */}
       <Image
-        src="/vip-image.png"
+        src="/vip-image-v2.png"
         alt="VIP Hero"
         fill
         priority
-        className="object-cover"
+        className="object-cover object-bottom md:object-center"
       />
 
-    {/* MOBILE IMAGE */}
-    <Image
-        src="/vip-image-mobile.png"
-        alt="Hero Mobile"
-        fill
-        priority
-        className="object-cover object-[center_top] block md:hidden"
-    />
-
       {/* OVERLAY (BIAR GELAP & KONTRAS) */}
-     <div className="absolute inset-0 bg-black/70 md:bg-black/75" />
+     <div className="absolute inset-0 bg-black/20 md:bg-black/25" />
 
       {/* CONTENT */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-white">
@@ -55,7 +45,7 @@ const VipHero = () => {
             alt="Ammache VIP"
             width={400}
             height={120}
-            className="mb-6 w-[260px] md:w-[400px] h-auto"
+            className="mb-6 w-65 md:w-100 h-auto"
           />
 
         {/* DESCRIPTION */}

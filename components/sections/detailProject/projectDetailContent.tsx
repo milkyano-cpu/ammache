@@ -7,7 +7,16 @@ import { useRouter } from "next/navigation"
 import { dataLayer } from "@/lib/gtm/data-layer"
 
 interface ProjectDetailContentProps {
-  project: any
+  project: {
+    id: number;
+    name: string;
+    categoryName: string;
+    slug: string;
+    specifications: { key: string; value: string }[];
+    scopeStatus: { key: string; value: string }[];
+    scope_status: { key: string; value: string }[];
+    images: string[];
+  }
   nextProject?: {
     id: number
     slug: string
@@ -15,7 +24,7 @@ interface ProjectDetailContentProps {
   } | null
 }
 
-function getSpecValue(specs: any, key: string) {
+function getSpecValue(specs: unknown, key: string) {
   if (!specs) return null
   let parsed = specs
   if (typeof specs === "string") {
@@ -42,19 +51,16 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
       project_category: project.categoryName || "",
       project_slug: project.slug || "",
     })
-  }, [project.id])
+  }, [project.categoryName, project.id, project.name, project.slug])
 
   const specs = project.specifications || []
-  const scopes = project.scopeStatus || project.scope_status || []
 
-  const getSpec = (key: string) =>
-    specs.find((s: any) => s.key === key)?.value || "-"
 
   /* ================= IMAGE SLIDER ================= */
   const images = Array.isArray(project.images) ? project.images : []
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const [isOpen, setIsOpen] = useState(false) 
+  const [isOpen, setIsOpen] = useState(false)
 
   const nextImage = () => {
     if (images.length === 0) return
@@ -80,14 +86,14 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
     getSpecValue(project.specifications, "Set Area") ||
     getSpecValue(project.specifications, "Area")
 
-  const frontageSpec = 
+  const frontageSpec =
   getSpecValue(project.specifications, "Net Lettable Area") ||
   getSpecValue(project.specifications, "Frontage")
 
   return (
     <>
       {/* ================= HERO ================= */}
-      <section className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
+      <section className="relative w-full h-130 md:h-150 overflow-hidden">
 
         <Image
           src={images[0]}
@@ -97,26 +103,26 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-black/30" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-white">
 
           <p className="
             typo-body-lg
-            mb-4 
+            mb-4
             flex flex-wrap justify-center gap-1
-            max-w-[300px] md:max-w-none
+            max-w-75 md:max-w-none
             mx-auto
             leading-relaxed
           ">
 
-            <Link href="/" className="text-white/60 hover:underline transition">
+            <Link href="/" className="text-white hover:underline transition">
               Home
             </Link>
 
             <span className="text-white/40">/</span>
 
-            <Link href="/detailProject" className="text-white/60 hover:underline transition">
+            <Link href="/detailProject" className="text-white hover:underline transition">
               Projects
             </Link>
 
@@ -124,7 +130,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
 
             <Link
               href={`/detailProject?category=${categoryMap[project.categoryName]}`}
-              className="text-white/60 hover:underline transition"
+              className="text-white hover:underline transition"
             >
               {project.categoryName}
             </Link>
@@ -138,10 +144,10 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
           </p>
 
             <h1 className="
-              typo-h1 
-              mb-3 
-              md:whitespace-nowrap 
-              max-w-[100%] md:max-w-none
+              typo-h1
+              mb-3
+              md:whitespace-nowrap
+              max-w-full md:max-w-none
             ">
               {project.name}
             </h1>
@@ -157,7 +163,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
         id="about"
         className="relative z-20 -mt-14 md:-mt-16 bg-white md:bg-white rounded-t-[25px] md:rounded-t-[32px] pt-16 md:pt-20 pb-20"
       >
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-300 mx-auto px-6">
 
           {/* ================= QUICK STATS ================= */}
           <div className="bg-white md:bg-white rounded-2xl py-10 px-6 md:px-10 mb-16">
@@ -222,7 +228,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
             <div>
 
               <div
-                className="relative w-full h-[500px] md:h-[700px] group cursor-pointer"
+                className="relative w-full h-125 md:h-175 group cursor-pointer"
                 onClick={() => setIsOpen(true)}
               >
 
@@ -258,7 +264,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
                     </button>
                   </>
                 )}
-        
+
                 {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
                   <span className="bg-black/60 text-white text-sm px-4 py-2 rounded-full">
                     View Image
@@ -270,7 +276,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
               {/* DOT INDICATOR */}
               {images.length > 1 && (
                 <div className="flex justify-center gap-2 mt-4">
-                  {images.map((_: any, i: number) => (
+                  {images.map((_: unknown, i: number) => (
                     <div
                       key={i}
                       className={`h-2 rounded-full transition-all ${
@@ -294,7 +300,7 @@ export default function ProjectDetailContent({ project, nextProject }: ProjectDe
                 </h2>
 
                 <div className="space-y-4 mb-10">
-                  {specs.map((s: any, i: number) => (
+                  {specs.map((s: {key: string, value: string}, i: number) => (
                     <div key={i} className="flex justify-between border-b-2 pb-4 text-sm">
                       <span>{s.key}</span>
                       <span className="font-medium text-right">{s.value}</span>

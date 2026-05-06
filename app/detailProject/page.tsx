@@ -23,7 +23,7 @@ export default async function DetailProjectPage() {
       images: p.images,
       shortDescription: p.shortDescription,
       categoryName: cat.name,
-      specifications: (p.specifications as any) || []
+      specifications: (p.specifications as unknown as { key: string; value: string }[]) || []
     })),
   }))
 

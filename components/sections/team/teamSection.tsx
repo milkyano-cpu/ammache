@@ -44,20 +44,20 @@ const TeamSection = () => {
   return (
     <section className="bg-white md:bg-white py-20 md:py-28">
 
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-300 mx-auto px-6">
 
         {/* TITLE */}
        <h2 className="typo-h3 mb-10 md:mb-16 relative inline-block">
           Meet Our Team
-          <span className="block w-20 h-[2px] bg-gray-400 mt-2"></span>
+          <span className="block w-20 h-0.5 bg-gray-400 mt-2"></span>
         </h2>
 
         {/* GRID */}
        <div className="
-          grid 
-          grid-cols-2 
-          md:grid-cols-3 
-          gap-y-10 md:gap-y-14 
+          grid
+          grid-cols-2
+          md:grid-cols-3
+          gap-y-10 md:gap-y-14
           gap-x-4 md:gap-x-8
         ">
 
@@ -66,9 +66,9 @@ const TeamSection = () => {
 
               {/* IMAGE WRAPPER */}
               <div className="
-                  relative 
-                  w-[140px] h-[140px] 
-                  md:w-[170px] md:h-[170px] 
+                  relative
+                  w-[140px] h-[140px]
+                  md:w-[170px] md:h-[170px]
                   mx-auto
                 ">
 

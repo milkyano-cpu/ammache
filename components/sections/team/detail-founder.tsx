@@ -51,29 +51,29 @@ const Stat = ({
 /* ================= HERO ================= */
 const Hero = () => {
   return (
-    <section className="w-full bg-black text-white py-25 md:py-30">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="w-full bg-linear-to-b from-white to-[#E6E6E6] text-black py-25 md:py-30">
+      <div className="max-w-300 mx-auto px-6">
       <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
 
         <Link
           href="/"
-          className="text-white/70 hover:underline transition"
+          className="text-black/70 hover:underline transition"
         >
           Home
         </Link>
 
-        <span className="text-white/40">/</span>
+        <span className="text-black/40">/</span>
 
         <Link
           href="/team"
-          className="text-white/70 hover:underline transition"
+          className="text-black/70 hover:underline transition"
         >
           Team
         </Link>
 
-        <span className="text-white/40">/</span>
+        <span className="text-black/40">/</span>
 
-        <span className="text-white font-semibold">
+        <span className="text-black font-semibold">
           Founder
         </span>
 
@@ -90,7 +90,7 @@ const FounderContent = () => {
   return (
     <section id="about"  className="bg-white md:bg-white py-20">
       <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
-        
+
         {/* IMAGE */}
           <div>
             <div className="relative w-full flex justify-center">
@@ -107,7 +107,7 @@ const FounderContent = () => {
 
         {/* TEXT */}
         <div className="pt-4">
-          
+
           {/* LABEL */}
           <div className="flex items-center gap-4 mb-4">
             <span className="text-xs tracking-[0.2em] text-black font-bold">
@@ -303,10 +303,10 @@ export default function DetailFounder() {
       <Hero />
       <div
           className="
-            relative 
-            z-20 
+            relative
+            z-20
             -mt-14 md:-mt-16
-            bg-white md:bg-white 
+            bg-white md:bg-white
             rounded-t-[24px] md:rounded-t-[32px]
             pt-16 md:pt-20
           "

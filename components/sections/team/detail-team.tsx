@@ -33,29 +33,29 @@ export default function DetailTeam({
   return (
     <>
       {/* HERO */}
-      <section className="w-full bg-black text-white py-25 md:py-30">
-        <div className="max-w-[1200px] mx-auto px-6">
+      <section className="w-full bg-linear-to-b from-white to-[#E6E6E6] text-black py-25 md:py-30">
+        <div className="max-w-300 mx-auto px-6">
         <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
 
         <Link
           href="/"
-          className="text-white/60 hover:text-white hover:underline transition"
+          className="text-black/60 hover:text-black hover:underline transition"
         >
           Home
         </Link>
 
-        <span className="text-white/40">/</span>
+        <span className="text-black/40">/</span>
 
         <Link
           href="/team"
-          className="text-white/60 hover:text-white hover:underline transition"
+          className="text-black/60 hover:text-black hover:underline transition"
         >
           Team
         </Link>
 
-        <span className="text-white/40">/</span>
+        <span className="text-black/40">/</span>
 
-        <span className="text-white font-semibold">
+        <span className="text-black font-semibold">
           {data.role}
         </span>
 
@@ -68,19 +68,19 @@ export default function DetailTeam({
       </section>
 
       {/* CONTENT */}
-      <section id="about" 
+      <section id="about"
             className="
-              relative 
+              relative
               z-20
               -mt-14 md:-mt-16
-              bg-white md:bg-white 
+              bg-white md:bg-white
               rounded-t-[24px] md:rounded-t-[32px]
               pt-16 md:pt-20
               pb-20
             "
           >
         <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
-          
+
           {/* IMAGE */}
           <div className="flex justify-center">
             <Image

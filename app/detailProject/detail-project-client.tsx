@@ -20,32 +20,22 @@ export interface CategoryWithProjects {
     }[]
 }
 
-export default function DetailProjectClient({
-    categories,
-}: {
-    categories: CategoryWithProjects[]
-}) {
-    return (
-        <main>
-            <Header />
-
-            <ProjectHero categories={categories} />
-
-            <div
-                className="
-          relative
-          z-20
-          -mt-10 md:-mt-12
-          bg-white md:bg-white
-          rounded-t-[20px] md:rounded-t-[30px]
-          pt-12 md:pt-16
-        "
-            >
-                <ListProject categories={categories} />
-
-                <CTA />
-            </div>
-            <Footer />
-        </main>
-    )
+export default function DetailProjectClient({categories}: { categories: CategoryWithProjects[] }) {
+  return (
+    <main>
+      <Header />
+      <ProjectHero categories={categories} />
+      <div className="
+        relative
+        z-20
+        -mt-10 md:-mt-12
+        bg-white md:bg-white
+        rounded-t-[20px] md:rounded-t-[30px]
+        pt-12 md:pt-16">
+          <ListProject categories={categories} />
+          <CTA />
+      </div>
+      <Footer />
+    </main>
+  )
 }

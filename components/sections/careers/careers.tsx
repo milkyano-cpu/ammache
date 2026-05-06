@@ -2,59 +2,13 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 
 /* ================= STAT COMPONENT ================= */
-const Stat = ({
-  number,
-  suffix = "",
-  prefix = "",
-  label,
-}: {
-  number: number
-  suffix?: string
-  prefix?: string
-  label: string
-}) => {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    let start = 0
-    const duration = 1200
-    const increment = number / (duration / 16)
-
-    const counter = setInterval(() => {
-      start += increment
-      if (start >= number) {
-        setCount(number)
-        clearInterval(counter)
-      } else {
-        setCount(Math.floor(start))
-      }
-    }, 16)
-
-    return () => clearInterval(counter)
-  }, [number])
-
-  return (
-  <div className="text-center flex-1 min-w-0 px-[2px] md:px-0">
-    <p className="typo-stat text-white scale-[0.65] md:scale-100 origin-center">
-      {prefix}
-      {count}
-      {suffix}
-    </p>
-    <p className="typo-caption text-white mt-1 scale-[0.7] md:scale-100 origin-center">
-      {label}
-    </p>
-  </div>
-  )
-}
-
 /* ================= HERO ================= */
 const CareersHero = () => {
   return (
-    <section className="relative w-full h-[550px] md:h-[600px] overflow-hidden">
-      
+    <section className="relative w-full h-137.5 md:h-150 overflow-hidden">
+
       {/* DESKTOP IMAGE */}
       <Image
         src="/careers.png"
@@ -74,11 +28,11 @@ const CareersHero = () => {
       />
 
       {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/80 md:bg-black/80" />
+        <div className="absolute inset-0 bg-black/20 md:bg-black/20" />
 
       {/* CONTENT */}
       <div className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">
-        <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
+        <div className="max-w-[90%] md:max-w-300 mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
           {/* BREADCRUMB */}
           <p className="typo-body-lg mb-4 flex gap-1 flex-wrap">
@@ -99,12 +53,12 @@ const CareersHero = () => {
           </p>
 
           {/* TITLE */}
-           <h1 className="typo-h1 max-w-[100%] md:max-w-[1000px] mb-3">
+           <h1 className="typo-h1 max-w-full md:max-w-250 mb-3">
             Help Us Design Spaces People Actually Live In.
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="typo-body text-white/80 max-w-[95%] md:max-w-[700px]">
+          <p className="typo-body text-white/80 max-w-[95%] md:max-w-175">
             {/* We are a second-generation architecture practice with over{" "}
             <span className="font-semibold text-white">
               27 years of experience

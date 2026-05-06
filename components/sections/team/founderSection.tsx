@@ -7,21 +7,21 @@ const FounderSection = () => {
   return (
     <section className="bg-white md:bg-white py-16 md:py-28">
 
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-300 mx-auto px-6">
 
         {/* TITLE */}
         <h2 className="typo-h3 mb-10 relative inline-block">
           Founders
-          <span className="block w-16 h-[2px] bg-gray-400 mt-2"></span>
+          <span className="block w-16 h-0.5 bg-gray-400 mt-2"></span>
         </h2>
 
         {/* CARD */}
         <div className="
-            relative 
-            bg-white 
-            text-black 
-            rounded-[30px] 
-            overflow-hidden 
+            relative
+            bg-white
+            text-black
+            rounded-[30px]
+            overflow-hidden
             p-6 md:p-10
             shadow-[0_20px_60px_rgba(0,0,0,0.08)]
             ring-1 ring-black/5
@@ -32,9 +32,9 @@ const FounderSection = () => {
 
           {/* ===== CONTENT ===== */}
           <div className="
-            relative z-10 
-            grid md:grid-cols-2 
-            gap-8 md:gap-14 
+            relative z-10
+            grid md:grid-cols-2
+            gap-8 md:gap-14
             items-center
             max-md:grid-cols-1
             max-md:gap-6
@@ -55,10 +55,10 @@ const FounderSection = () => {
             </div>
 
             {/* TEXT */}
-            <div className="max-w-[500px] text-left">
+            <div className="max-w-125 text-left">
 
                   {/* SHAPE (POSISI DI KANAN TEXT) */}
-                <div className="hidden md:block absolute right-[-500px] top-1/2 -translate-y-1/2 pointer-events-none">
+                <div className="hidden md:block absolute -right-125 top-1/2 -translate-y-1/2 pointer-events-none">
                     <Image
                     src="/logo-contact.png"
                     alt="shape"

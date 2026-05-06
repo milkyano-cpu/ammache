@@ -9,9 +9,9 @@ import { categoryMap, reverseCategoryMap } from "@/lib/constants/category-mappin
 
 /* ================= HERO IMAGE MAPPING ================= */
 const heroImages: Record<string, string> = {
-  residential: "/detail-project1.png",
+  residential: "/detail-project1-v2.png",
   commercial: "/detail-project2.png",
-  retail: "/detail-project3.png",
+  fitout: "/detail-project3.png",
 }
 
 /* ================= STAT COMPONENT ================= */
@@ -47,7 +47,7 @@ const Stat = ({
     }, 16)
 
     return () => clearInterval(counter)
-  }, [trigger]) 
+  }, [number, trigger])
 
   return (
     <div className="text-center">
@@ -103,17 +103,16 @@ const DetailProjectHero = ({
   const heroSrc =
       heroImages[currentKey] ||
       heroImages[fallbackTab] ||
-      "/detail-project1.png"
+      "/detail-project1-v2.png"
 
   return (
-    <section className="relative w-full h-[550px] md:h-[600px] overflow-hidden">
+    <section className="relative w-full h-137.5 md:h-150 overflow-hidden">
 
       {/* DESKTOP IMAGE */}
       <Image
         src={heroSrc}
         alt="Hero"
         fill
-        priority
         className="object-cover hidden md:block"
       />
 
@@ -122,16 +121,15 @@ const DetailProjectHero = ({
         src={heroSrc}
         alt="Hero Mobile"
         fill
-        priority
         className="object-cover object-[center_top] block md:hidden"
       />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/80 md:bg-black/80" />
+      <div className="absolute inset-0 bg-black/20 md:bg-black/20" />
 
       {/* CONTENT */}
       <div className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">
-        <div className="max-w-[90%] md:max-w-[1200px] mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
+        <div className="max-w-[90%] md:max-w-300 mx-auto md:ml-30 w-full px-4 md:px-6 text-white">
 
           {/* BREADCRUMB */}
           <p className="typo-body-lg mb-4 text-white flex gap-1 flex-wrap">
@@ -147,25 +145,12 @@ const DetailProjectHero = ({
           </p>
 
           {/* TITLE */}
-          <h1 className="typo-h1 max-w-[100%] md:max-w-[950px] mb-3">
+          <h1 className="typo-h1 max-w-full md:max-w-237.5 mb-3">
             Spaces Designed Around People
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="typo-body text-white/80 max-w-[95%] md:max-w-[700px]">
-            {/* View our extensive portofolio of{" "}
-            <span className="font-semibold text-white">
-              Ammache Architects Projects,
-            </span>{" "}
-            curated bellow. We are a leading firm in{" "}
-            <span className="font-semibold text-white">
-              Melbourne Architecture
-            </span>
-            . We Have{" "}
-            <span className="font-semibold text-white">
-              27 years experience
-            </span>{" "}
-            and utillise this in delivering the highest quality designs possible. */}
+          <p className="typo-body text-white/80 max-w-[95%] md:max-w-175">
             Every project here was shaped by one question: how will the people inside actually experience this space?
           </p>
 
