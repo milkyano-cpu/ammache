@@ -28,6 +28,7 @@ export default function Review() {
                 <div className="lg:col-span-3">
                     <Slider
                         items={reviews}
+                        showArrows={false}
                         visibleCount={visibleCountMap[breakpoint]}
                         renderItem={(review, i) => <ReviewCard key={i} {...review} />}
                     />

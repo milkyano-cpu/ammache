@@ -13,10 +13,10 @@ export default function About() {
           ">
           <div>
             <h2 className="typo-h2 text-black">
-              We Design How People Live, Not Just Buildings
+              Spaces That Shape The Future Of Living.
             </h2>
             <p className="typo-body-sm text-gray-800 mt-2">
-              Every space we create is shaped around real human behaviour how people move, feel, connect, and grow.
+              For over three decades, Ammache has shaped refined residential and mixed-use developments across Melbourne through architecture grounded in human behaviour, timeless design, and enduring value.
             </p>
           </div>
 
@@ -68,102 +68,82 @@ export default function About() {
           shadow-[0_0_30px_rgba(0,0,0,0.08)]
           relative">
 
-          <img
+          <Image
             src="/background-card-1.png"
             alt="background-card-1"
-            className="absolute"
+            className="absolute z-0"
+            fill
           />
 
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-10 items-center p-6 md:p-16">
+          <div className="relative z-10 flex flex-col gap-12 lg:flex-row lg:py-8 lg:ps-12 lg:pe-4 mx-4">
 
             {/* LEFT CONTENT */}
-            <div className="text-black space-y-5 md:space-y-6 relative order-2 md:order-1">
+            <div className="flex flex-col lg:w-3/5">
 
-              {/* ABOUT US + LINE */}
-              <div className="flex items-center gap-3">
-                <p className="typo-overline text-black">
-                  ABOUT US
+              <div className="space-y-5 md:space-y-4 py-8">
+
+                {/* IMAGE — mobile + tablet only, above ABOUT US */}
+                <div className="block lg:hidden relative w-full aspect-5/7 rounded-2xl overflow-hidden mb-4">
+                  <Image src="/home-about-us.png" alt="About Image" fill className="object-cover" />
+                </div>
+
+                {/* ABOUT US + LINE */}
+                <div className="flex items-center gap-3">
+                  <p className="typo-overline text-black">
+                    ABOUT US
+                  </p>
+                  <div className="w-10 h-px bg-black opacity-60"></div>
+                </div>
+
+                <h3 className="typo-h2">
+                  33+ Years Crafting Spaces
+                  <br className="hidden md:block" />
+                  That Work In The Real World
+                </h3>
+
+                <p className="typo-body-sm text-black">
+                  Founded through a shared passion for architecture and shaped across generations, Ammache has spent more than three decades creating spaces that feel considered, timeless, and deeply connected to the people who use them.
                 </p>
-                <div className="w-10 h-px bg-black opacity-60"></div>
+
+                <p className="typo-body-sm text-black mt-4">
+                  Our philosophy is grounded in one belief — great architecture should elevate everyday living while standing the test of time.
+                </p>
+
+                <p className="typo-body-sm text-black mt-6">
+                  Through thoughtful design, collaboration, and enduring craftsmanship, we continue to shape projects that contribute meaningfully to Melbourne’s evolving urban landscape.
+                </p>
+
               </div>
 
-              <h3 className="typo-h2">
-                33+ Years Crafting Spaces
-                <br className="hidden md:block" />
-                That Work In The Real World
-              </h3>
-
-              <p className="typo-body-sm text-black">
-                After more than three decades in architecture, one thing is clear:
-              </p>
-
-              <p className="typo-body-sm text-black mt-4">
-                People don’t experience buildings. <br />
-                They experience how those buildings make them feel.
-              </p>
-
-              <p className="typo-body-sm text-black mt-6">
-                Our work is built on:
-              </p>
-
-              <ul className="typo-body-sm text-black list-disc pl-5 space-y-1">
-                <li>Understanding human behaviour</li>
-                <li>Designing for everyday life</li>
-                <li>Creating environments that reduce stress and improve wellbeing</li>
-              </ul>
-
-              <p className="typo-body-sm text-black mt-6">
-                Because architecture should not just look good, <br />
-                it should work for people.
-              </p>
-
-              {/* BIGGER BUTTON */}
-              <Link
-                href="/team"
-                className="
-                  mt-4
+              <div className="mt-auto  pb-8">
+                <Link
+                  href="/team"
+                  className="
                   px-8 py-3.5
                   border border-black
                   rounded-full
                   typo-button
-                  hover:bg-black hover:text-white
+                  bg-black text-white
                   transition
                   cursor-pointer
-                  inline-block
-                "
-              >
-                Read Our Story
-              </Link>
-
-              {/* SHAPE */}
-              <div className="absolute inset-0 opacity-10 bg-[linear-gradient(120deg,#ffffff22_25%,transparent_25%)] pointer-events-none" />
+                  inline-block">
+                  Read Our Story
+                </Link>
+              </div>
             </div>
 
-              {/* IMAGE */}
-              <div className="w-full flex justify-center order-1 md:order-2">
-                <div className="relative w-full max-w-md">
-
-                  {/* DESKTOP */}
-                  <Image
-                    src="/about-image.png"
-                    alt="About Image"
-                    width={500}
-                    height={600}
-                    className="hidden md:block rounded-2xl object-contain w-full h-auto"
-                  />
-
-                  {/* MOBILE */}
-                  <Image
-                    src="/about-image-mobile.png"
-                    alt="About Image Mobile"
-                    width={500}
-                    height={600}
-                    className="block md:hidden rounded-2xl object-cover w-full h-auto"
-                  />
-
-                </div>
+            {/* RIGHT IMAGE — desktop only */}
+            <div className="hidden lg:flex justify-end">
+              <div className="relative w-full rounded-2xl overflow-hidden">
+                <Image
+                  src="/home-about-us.png"
+                  alt="About Image"
+                  height={500}
+                  width={500}
+                  className="object-cover rounded-2xl"
+                />
               </div>
-
+            </div>
           </div>
         </div>
 

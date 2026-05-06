@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link"
+import {useEffect, useState} from "react";
 
 function Counter({
   end,
@@ -30,7 +29,7 @@ function Counter({
     }, 16);
 
     return () => clearInterval(counter);
-  }, [trigger]); 
+  }, [duration, end, trigger]);
 
   return <span>{count}</span>;
 }
@@ -63,20 +62,19 @@ export default function Stats() {
 
         {/* TITLE */}
         <h2 className="typo-h2 text-gray-900">
-          Designing Architecture That Works for People, 
-          <br className="hidden md:block" />
-          Not Just on Paper.
+          Architecture Built Around How People Actually Live.
         </h2>
 
         {/* STATS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          
+
           <div>
             <p className="typo-stat text-black">
               <Counter end={33} trigger={trigger} />+
             </p>
             <p className="typo-caption text-black mt-2">
-              Years Designing for Real Life
+              Years Designing Spaces
+              <span><br/>for Real World</span>
             </p>
           </div>
 
@@ -85,7 +83,8 @@ export default function Stats() {
               <Counter end={900} trigger={trigger} />+
             </p>
             <p className="typo-caption text-black mt-2">
-              Projects Built Around People
+              Projects Built
+              <span><br/>Around People</span>
             </p>
           </div>
 
@@ -94,7 +93,8 @@ export default function Stats() {
               <Counter end={15} trigger={trigger} />+
             </p>
             <p className="typo-caption text-black mt-2">
-              Industry Awards & Recognition
+              Industry Awards &
+              <span><br/>Recognition</span>
             </p>
           </div>
 
@@ -102,24 +102,6 @@ export default function Stats() {
 
         {/* DIVIDER */}
         <div className="w-full h-px bg-gray-300" />
-
-        {/* BUTTON */}
-        {/* <Link
-          href="/detailProject"
-          className="
-            px-8 py-3
-            rounded-full
-            border-2 border-gray-300
-            typo-button
-            hover:bg-black hover:text-white
-            transition
-            cursor-pointer
-            inline-block
-          "
-        >
-          See Our Work
-        </Link> */}
-
       </div>
     </section>
   );
