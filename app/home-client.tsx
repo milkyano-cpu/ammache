@@ -12,6 +12,7 @@ import Studio from "@/components/sections/studio/studio";
 import CTA from "@/components/sections/cta/cta";
 import Footer from "@/components/layouts/footer"
 import Review from "@/components/sections/review/review";
+import SocialMedia from "@/components/sections/social-media/social-media";
 
 export default function HomeClient({ projects }: { projects: ProjectCardData[] }) {
 
@@ -97,6 +98,15 @@ export default function HomeClient({ projects }: { projects: ProjectCardData[] }
         viewport={{ once: true }}
       >
         <Review />
+      </motion.div>
+
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        <SocialMedia />
       </motion.div>
 
       {/* CTA */}

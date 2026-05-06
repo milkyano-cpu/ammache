@@ -14,7 +14,6 @@ export default function Review() {
     return (
         <div className="w-full py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white md:bg-white">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start">
-
                 <div className="flex flex-col gap-2">
                     <h2 className="typo-h2">Hear from<br className="hidden md:block"/>our clients</h2>
                     <span className="typo-body-sm text-gray-600">Spaces designed for people, shared through real client stories.</span>
