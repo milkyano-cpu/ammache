@@ -22,8 +22,8 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
   }
 
   return (
-    <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white md:bg-white ">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="w-full py-24 px-6 md:px- lg:px-20 bg-white md:bg-white">
+      <div className="max-w-8xl mx-auto space-y-16 px-8">
 
         {/* TITLE */}
         <div className="text-left md:text-center space-y-4 pb-0 md:pb-10">
@@ -46,7 +46,7 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-8">
           {items.map((item) => (
             <Link
               key={item.id}
@@ -79,6 +79,9 @@ export default function Projects({ projects }: { projects?: ProjectCardData[] })
                   />
 
                   <div className="absolute text-white bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex flex-col text-center gap-2 px-4">
+                    <div className="flex justify-center items-center">
+                      <span className="group-hover:opacity-100 opacity-0 w-fit px-4 typo-body-sm border transition duration-500 border-white rounded-md h-8 flex justify-center items-center">{getSpecValue(item.specifications, "Progress")}</span>
+                    </div>
                     <p className="typo-h5 text-sm! md:text-xl!">{item.name}</p>
                     <p className="typo-caption uppercase text-xs! md:text-sm!">
                       {getSpecValue(item.specifications, "Project") || item.category.name}

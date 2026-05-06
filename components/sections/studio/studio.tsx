@@ -17,6 +17,7 @@ export default function Studio() {
 
         <Slider
           items={studioImages}
+          animate
           renderItem={(src, i) => (
             <div
               key={i}

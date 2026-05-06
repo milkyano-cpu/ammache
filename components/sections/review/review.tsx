@@ -29,7 +29,9 @@ export default function Review() {
                     <Slider
                         items={reviews}
                         showArrows={false}
+                        animate
                         visibleCount={visibleCountMap[breakpoint]}
+                        interval={8000}
                         renderItem={(review, i) => <ReviewCard key={i} {...review} />}
                     />
                 </div>

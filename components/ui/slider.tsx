@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { useSlider } from "@/hooks/use-slider"
 
 interface SliderProps<T> {
@@ -9,24 +10,66 @@ interface SliderProps<T> {
     defaultIndex?: number
     visibleCount?: number
     showArrows?: boolean
+    animate?: boolean
+    interval?: number
 }
 
-export function Slider<T>({ items, renderItem, defaultIndex = 0, visibleCount = 1, showArrows = true }: SliderProps<T>) {
+const slideVariants = {
+    enter: (direction: number) => ({
+        x: direction >= 0 ? 60 : -60,
+        opacity: 0,
+    }),
+    center: {
+        x: 0,
+        opacity: 1,
+    },
+    exit: (direction: number) => ({
+        x: direction >= 0 ? -60 : 60,
+        opacity: 0,
+    }),
+}
+
+export function Slider<T>({
+    items,
+    renderItem,
+    defaultIndex = 0,
+    visibleCount = 1,
+    showArrows = true,
+    animate = false,
+    interval,
+}: SliderProps<T>) {
     const pageCount = Math.ceil(items.length / visibleCount)
-    const { current, prev, next, goTo } = useSlider(pageCount, defaultIndex)
+    const { current, direction, prev, next, goTo } = useSlider(pageCount, defaultIndex, interval)
 
     const startIndex = current * visibleCount
     const visibleItems = items.slice(startIndex, startIndex + visibleCount)
 
+    const content = (
+        <div
+            className="grid gap-4"
+            style={{ gridTemplateColumns: `repeat(${visibleCount}, 1fr)` }}>
+            {visibleItems.map((item, i) => renderItem(item, startIndex + i))}
+        </div>
+    )
+
     return (
         <div className="w-full">
 
-            <div className="relative">
-                <div
-                    className="grid gap-4"
-                    style={{ gridTemplateColumns: `repeat(${visibleCount}, 1fr)` }}>
-                    {visibleItems.map((item, i) => renderItem(item, startIndex + i))}
-                </div>
+            <div className="relative overflow-hidden">
+                {animate ? (
+                    <AnimatePresence mode="wait" custom={direction}>
+                        <motion.div
+                            key={current}
+                            custom={direction}
+                            variants={slideVariants}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            transition={{ duration: 0.3, ease: "easeInOut" }}>
+                            {content}
+                        </motion.div>
+                    </AnimatePresence>
+                ) : content}
 
                 {showArrows && (
                     <>
