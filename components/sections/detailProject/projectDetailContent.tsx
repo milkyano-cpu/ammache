@@ -12,9 +12,8 @@ interface ProjectDetailContentProps {
     name: string;
     categoryName: string;
     slug: string;
-    specifications: { key: string; value: string }[];
-    scopeStatus: { key: string; value: string }[];
-    scope_status: { key: string; value: string }[];
+    specifications: any;
+    scopeStatus: any;
     images: string[];
   }
   nextProject?: {
