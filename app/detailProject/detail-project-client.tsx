@@ -28,7 +28,7 @@ export default function DetailProjectClient({categories}: { categories: Category
       <div className="
         relative
         z-20
-        -mt-10 md:-mt-12
+        -mt-10 md:-mt-8
         bg-white md:bg-white
         rounded-t-[20px] md:rounded-t-[30px]
         pt-12 md:pt-16">

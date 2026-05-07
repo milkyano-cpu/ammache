@@ -123,6 +123,7 @@ export default function About() {
                   border border-black
                   rounded-full
                   typo-button
+                  hover:bg-white hover:text-black 
                   bg-black text-white
                   transition
                   cursor-pointer

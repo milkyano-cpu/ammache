@@ -17,7 +17,7 @@ const navLinks = [
   { href: '/vip', label: 'Ammache VIP' },
 ]
 
-const Header = () => {
+const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isReady, setIsReady] = useState(false)
@@ -107,7 +107,9 @@ const Header = () => {
         <>
           {/* DESKTOP LOGO */}
           <Image
-            src={scrolled ? "/logo-ammache-black.svg" : "/logo-ammache.svg"}
+            src={(forceDark || scrolled)
+            ? "/logo-ammache-black.svg"
+            : "/logo-ammache.svg"}
             alt="Ammache"
             width={140}
             height={40}
@@ -117,7 +119,9 @@ const Header = () => {
 
           {/* MOBILE LOGO */}
           <Image
-            src={scrolled ? "/logo-mobile-black.svg" : "/logo-mobile.svg"}
+            src={(forceDark || scrolled)
+            ? "/logo-mobile-black.svg"
+            : "/logo-mobile.svg"}
             alt="Ammache"
             width={110}
             height={32}
@@ -132,7 +136,9 @@ const Header = () => {
           onClick={() => setOpen(true)}
           className={cn(
             "cursor-pointer hover:opacity-70 transition",
-            scrolled ? "text-black" : "text-white"
+            (forceDark || scrolled)
+              ? "text-black"
+              : "text-white"
           )}
         >
           <Menu size={26} />
@@ -318,7 +324,7 @@ const Header = () => {
                 <div className="flex items-center gap-4 mt-8">
 
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/ammachearchitects/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-700 text-white hover:text-white hover:border-white transition-all duration-300"
@@ -336,7 +342,7 @@ const Header = () => {
                   </a>
 
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/ammache-architects-pty-ltd/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-700 text-white hover:text-white hover:border-white transition-all duration-300"

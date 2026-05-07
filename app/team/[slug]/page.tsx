@@ -28,7 +28,7 @@ export default async function TeamDetailPage({ params }: Props) {
 
   return (
     <main className="bg-[#F7F9FC] min-h-screen">
-      <Header />
+      <Header forceDark />
 
       {data.type === "founder" ? (
         <DetailFounder />

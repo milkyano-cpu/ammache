@@ -182,7 +182,7 @@ const Footer = () => {
               {/* SOCIAL */}
               <div className="flex items-center gap-4 mt-8">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/ammachearchitects/"
                   target="_blank"
                   className="w-9 h-9 flex items-center justify-center rounded-full border border-black text-black hover:opacity-60 transition"
                 >
@@ -198,7 +198,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/ammache-architects-pty-ltd/"
                   target="_blank"
                   className="w-9 h-9 flex items-center justify-center rounded-full border border-black text-black hover:opacity-60 transition"
                 >

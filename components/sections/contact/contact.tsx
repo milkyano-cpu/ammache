@@ -175,24 +175,47 @@ const ContactSection = () => {
       <div className="w-full max-w-350 mx-auto px-4 md:px-10">
 
         {/* GRID LANGSUNG TANPA CARD */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 rounded-[20px] overflow-hidden">
+        <div
+          className="
+            grid grid-cols-1 md:grid-cols-2
+            gap-6 md:gap-0
+
+            md:rounded-[24px]
+            md:overflow-hidden
+            md:bg-white
+
+            md:shadow-[0_25px_80px_rgba(0,0,0,0.12)]
+          "
+        >
 
           {/* ================= LEFT ================= */}
-        <div className="
-          relative bg-white text-black
-          p-6 md:px-16 md:py-16
-          flex flex-col justify-between
-          rounded-[20px] md:rounded-l-[20px]
-          min-h-125 md:min-h-162.5
-          overflow-hidden
-        ">
+          <div
+            className="
+              relative bg-white text-black
+              p-6 md:px-16 md:py-16
+              flex flex-col justify-between
 
-        <div className="absolute inset-0 z-0 flex items-end justify-end pointer-events-none">
-            <Image
+              rounded-[24px] md:rounded-none
+
+              shadow-[0_20px_60px_rgba(0,0,0,0.14)]
+              md:shadow-none
+
+              min-h-125 md:min-h-162.5
+              overflow-hidden
+            "
+          >
+        <div className="hidden md:flex absolute inset-0 z-0 items-center justify-center pointer-events-none">
+          <Image
             src="/background-contact.png"
             alt="background shape"
             fill
-            className="scale-50 opacity-10"
+              className="
+              object-contain
+              scale-150
+              opacity-10
+              translate-y-80
+              -translate-x-25
+            "
           />
         </div>
 
@@ -262,14 +285,14 @@ const ContactSection = () => {
     <div className="relative z-10 max-w-105 mx-auto w-full mt-16 md:mt-24">
 
         <Image
-        src="/logo-ammache.svg"
+        src="/logo-ammache-black.svg"
         alt="logo"
         width={140}
         height={40}
         className="mb-5"
         />
 
-        <p className="typo-body-sm text-white/80">
+        <p className="typo-body-sm text-black">
         Founded in Melbourne in 1998, Ammache Architects creates thoughtful,
         innovative architecture designed to endure.
         </p>
@@ -277,7 +300,7 @@ const ContactSection = () => {
         <div className="flex gap-4 mt-6">
 
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/ammachearchitects/"
             target="_blank"
             className="hover:opacity-70 transition"
           >
@@ -285,7 +308,7 @@ const ContactSection = () => {
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/ammache-architects-pty-ltd/"
             target="_blank"
             className="hover:opacity-70 transition"
           >
@@ -306,7 +329,7 @@ const ContactSection = () => {
     </div>
 
         {/* ================= RIGHT ================= */}
-          <div className="bg-white p-6 md:p-10 rounded-[20px] border border-gray-200">
+          <div className="bg-white p-6 md:p-10">
 
               <p className="typo-body-sm text-gray-600 mb-8">
                   Tell us about your site or project. We&#39;ll get back to you with honest thoughts on what it could become.
@@ -507,7 +530,13 @@ const ContactMapSection = () => {
         </div>
 
         {/* ================= MAP ================= */}
-          <div className="w-full h-62.5 md:h-130 rounded-[20px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+          <div className="
+              w-full
+              h-80 md:h-130
+              rounded-[20px]
+              overflow-hidden
+              shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+            ">
               <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.356792922645!2d144.9541625!3d-37.8285323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad66aae90425cb5%3A0xb4efe264d0ad907!2sAmmache%20Architects%20Melbourne!5e0!3m2!1sen!2sid!4v1777907905729!5m2!1sen!2sid"
                   width="100%"

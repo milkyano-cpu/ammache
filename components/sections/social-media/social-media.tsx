@@ -28,6 +28,8 @@ function SocialMedia() {
             <div className="my-8 lg:my-0">
               <a
                 href="https://www.instagram.com/ammachearchitects/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex gap-4 w-fit h-12 justify-center items-center px-6 cursor-pointer border border-black rounded-full bg-white hover:bg-black font-bold hover:text-white transition">
                 <Instagram size={24} />
                 <span>Follow</span>
@@ -37,22 +39,31 @@ function SocialMedia() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-6 gap-4 mt-4">
             {socialMediaImages.map((item, i) => (
-              <a
-                key={i}
-                href="https://www.instagram.com/ammachearchitects/"
-                className="relative aspect-4/5">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="rounded-md object-cover" />
-              </a>
+            <a
+              key={i}
+              href="https://www.instagram.com/ammachearchitects/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative aspect-4/5 overflow-hidden rounded-md group">
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                className="
+                  object-cover
+                  transition-transform duration-500 ease-in-out
+                  group-hover:scale-110
+                "
+              />
+            </a>
             ))}
           </div>
 
           <div className="flex justify-center mt-12">
             <a
               href="https://www.instagram.com/ammachearchitects/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-3 rounded-full border-2 border-gray-300 typo-button hover:bg-black hover:text-white transition cursor-pointer inline-block">
               See More
             </a>
