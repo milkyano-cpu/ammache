@@ -30,7 +30,7 @@ export default function Review() {
                         showArrows={false}
                         animate
                         visibleCount={visibleCountMap[breakpoint]}
-                        interval={8000}
+                        interval={5000}
                         renderItem={(review, i) => <ReviewCard key={i} {...review} />}
                     />
                 </div>

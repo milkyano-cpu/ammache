@@ -92,7 +92,7 @@ const TeamHero = () => {
       />
 
       {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/40 md:bg-black/40" />
+        <div className="absolute inset-0 bg-black/30 md:bg-black/30" />
 
       {/* CONTENT */}
       <div id="about" className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-0">

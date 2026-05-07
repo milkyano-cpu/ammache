@@ -22,7 +22,7 @@ export default function About() {
         className="
           relative 
           z-20 
-          -mt-10 md:-mt-12
+          -mt-10 md:-mt-6
           bg-white md:bg-white 
           rounded-t-[20px] md:rounded-t-[30px]
           pt-12 md:pt-16

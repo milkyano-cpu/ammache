@@ -9,7 +9,7 @@ import { categoryMap, reverseCategoryMap } from "@/lib/constants/category-mappin
 
 /* ================= HERO IMAGE MAPPING ================= */
 const heroImages: Record<string, string> = {
-  residential: "/detail-project1-v2.png",
+  residential: "/detail-project1.png",
   commercial: "/detail-project2.png",
   fitout: "/detail-project3.png",
 }
@@ -103,7 +103,7 @@ const DetailProjectHero = ({
   const heroSrc =
       heroImages[currentKey] ||
       heroImages[fallbackTab] ||
-      "/detail-project1-v2.png"
+      "/detail-project1.png"
 
   return (
     <section className="relative w-full h-137.5 md:h-150 overflow-hidden">

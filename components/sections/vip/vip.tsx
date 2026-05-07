@@ -8,8 +8,8 @@ const VipHero = () => {
      <section className="relative w-full h-112.5 sm:h-120 md:h-150 overflow-hidden">
 
       <Image
-        src="/vip-image-v2.png"
-        alt="VIP Hero"
+        src="/vip-image.png"
+    alt="VIP Hero"
         fill
         priority
         className="object-cover object-bottom md:object-center"

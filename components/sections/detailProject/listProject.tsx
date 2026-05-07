@@ -102,12 +102,12 @@ const DetailProjectsSection = ({categories}: { categories: CategoryWithProjects[
 
                       {/* DARK OVERLAY */}
                       <div className="
-                  absolute inset-0
-                  bg-black/20
-                  group-hover:bg-black/70 group-hover:backdrop-blur-sm
-                  opacity-100
-                  transition duration-300
-                  flex flex-col items-center">
+                        absolute inset-0
+                        bg-black/20
+                        group-hover:bg-black/70 group-hover:backdrop-blur-sm
+                        opacity-100
+                        transition duration-300
+                        flex flex-col items-center">
                         <Image
                           src="/logo-hover.png"
                           alt="Logo"

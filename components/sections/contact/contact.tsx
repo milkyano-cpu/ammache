@@ -28,7 +28,7 @@ const ContactHero = () => {
   return (
     <section id="about" className="relative w-full h-112.5 sm:h-120 md:h-150 overflow-hidden">
         <Image
-          src="/contact-hero-v2.png"
+          src="/contact-hero.png"
           alt="Hero"
           fill
           priority
