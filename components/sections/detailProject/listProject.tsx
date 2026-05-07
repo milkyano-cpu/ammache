@@ -113,14 +113,31 @@ const DetailProjectsSection = ({categories}: { categories: CategoryWithProjects[
                           alt="Logo"
                           width={50}
                           height={50}
-                          className="mb-3 xl:mt-16 mt-10 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition duration-300"
+                        className="
+                        mb-3 xl:mt-16 mt-10
+                        opacity-0
+                        scale-75
+                        -translate-y-6
+                        group-hover:opacity-100
+                        group-hover:scale-125
+                        group-hover:translate-y-6
+                        transition-all duration-500
+                        "
                         />
 
                         <div className="absolute text-white bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex flex-col text-center gap-2 px-4">
                           <div className="flex justify-center items-center">
                             {
                               getSpecValue(item.specifications, "Progress") && (
-                                <span className="group-hover:opacity-100 opacity-0 w-fit px-4 typo-body-sm border transition duration-500 border-white rounded-md h-8 flex justify-center items-center">
+                                <span className="
+  opacity-0
+  translate-y-6
+  group-hover:opacity-100
+  group-hover:-translate-y-6
+  w-fit px-4 typo-body-sm border border-white
+  rounded-md h-8 flex justify-center items-center
+  transition-all duration-500
+">
                                   {getSpecValue(item.specifications, "Progress")}
                                 </span>
                               )
