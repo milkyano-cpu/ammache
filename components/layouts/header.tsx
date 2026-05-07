@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/careers', label: 'Join Our Team' },
   { href: '/contact', label: 'Contact Us' },
   { href: '/vip', label: 'Ammache VIP' },
+  { href: '/faq', label: 'FAQ' },
 ]
 
 const Header = ({ forceDark = false }: { forceDark?: boolean }) => {

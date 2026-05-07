@@ -44,10 +44,10 @@ const VipFeatures = () => {
   return (
     <section className="bg-white md:bg-white py-24 md:py-32">
 
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-300 mx-auto px-6">
 
         {/* TITLE */}
-        <h2 className="typo-h2 mb-16 max-w-[500px]">
+        <h2 className="typo-h2 mb-16 max-w-125">
           What You Get as a Member.
         </h2>
 
