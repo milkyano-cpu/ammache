@@ -72,7 +72,7 @@ export async function getProjects(options: {
     prisma.project.findMany({
       where,
       include: { category: { select: categorySelect } },
-      orderBy: { createdAt: "desc" },
+      orderBy: [{ order: "asc" }, { createdAt: "desc" }],
       skip: (page - 1) * pageSize,
       take: pageSize,
     }),
@@ -210,7 +210,7 @@ export async function getPublishedProjects(
   const projects = await prisma.project.findMany({
     where,
     include: { category: { select: categorySelect } },
-    orderBy: { createdAt: "desc" },
+    orderBy: [{ order: "asc" }, { createdAt: "desc" }],
   })
 
   return projects as ProjectWithCategory[]
