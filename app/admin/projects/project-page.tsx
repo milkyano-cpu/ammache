@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react"
 import Link from "next/link"
-import { Pencil, Trash2, ChevronLeft, ChevronRight } from "lucide-react"
+import { Pencil, Trash2, ChevronLeft, ChevronRight, GripVertical } from "lucide-react"
 
 type Category = {
   id: number
@@ -92,12 +92,21 @@ export default function ProjectClient({ initialData }: { initialData: Project[] 
           </p>
         </div>
 
-        <Link
-          href="/admin/projects/create"
-          className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 text-center"
-        >
-          + Add New Project
-        </Link>
+        <div className="flex gap-2">
+          <Link
+            href="/admin/projects/order"
+            className="flex items-center gap-2 border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-center"
+          >
+            <GripVertical size={16} />
+            Manage Order
+          </Link>
+          <Link
+            href="/admin/projects/create"
+            className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 text-center"
+          >
+            + Add New Project
+          </Link>
+        </div>
       </div>
 
       {/* SEARCH */}

@@ -8,7 +8,7 @@ export default async function DetailProjectPage() {
     include: {
       projects: {
         where: { published: true },
-        orderBy: { createdAt: "desc" },
+        orderBy: [{ order: "asc" }, { createdAt: "desc" }],
       },
     },
   })
