@@ -11,7 +11,7 @@ export function useProjectTab(categories: CategoryWithProjects[]) {
 
     const categoryParam = searchParams.get("category") ?? ""
     const showAll = searchParams.get("showAll") === "true"
-    const activeTab = reverseCategoryMap[categoryParam] ?? categories[0]?.name ?? ""
+    const activeTab = reverseCategoryMap[categoryParam] ?? "Show All"
 
     function updateParams(updates: Record<string, string | null>) {
         const params = new URLSearchParams(searchParams.toString())
@@ -23,8 +23,20 @@ export function useProjectTab(categories: CategoryWithProjects[]) {
     }
 
     function setActiveTab(label: string) {
+        if (label === "Show All") {
+            updateParams({
+                category: null,
+                showAll: null
+            })
+            return
+        }
+
         const slug = categoryMap[label] ?? null
-        updateParams({category: slug, showAll: null})
+
+        updateParams({
+            category: slug,
+            showAll: null
+        })
     }
 
     function toggleShowAll() {

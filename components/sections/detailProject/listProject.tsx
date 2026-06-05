@@ -14,12 +14,24 @@ const DetailProjectsSection = ({categories}: { categories: CategoryWithProjects[
     const [open, setOpen] = useState(false)
     const {activeTab, showAll, setActiveTab, toggleShowAll} = useProjectTab(categories)
 
-    const tabs = categories.map((cat) => ({
-        label: cat.name,
-        count: cat.projects.length,
-    }))
+    const tabs = [
+        {
+            label: "Show All",
+            count: categories.reduce(
+                (total, cat) => total + cat.projects.length,
+                0
+            ),
+        },
+        ...categories.map((cat) => ({
+            label: cat.name,
+            count: cat.projects.length,
+        })),
+    ]
 
-    const projects = categories.find((cat) => cat.name === activeTab)?.projects ?? []
+    const projects =
+    activeTab === "Show All"
+        ? categories.flatMap((cat) => cat.projects)
+        : categories.find((cat) => cat.name === activeTab)?.projects ?? []
     const displayedProjects = showAll ? projects : projects.slice(0, LIMIT)
 
     return (
