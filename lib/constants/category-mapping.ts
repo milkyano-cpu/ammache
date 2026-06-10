@@ -1,11 +1,17 @@
 export const categoryMap: Record<string, string> = {
-    "Residential Projects": "residential",
-    "Commercial and Industrial Projects": "commercial",
-    "Fitout Projects": "fitout",
+    Childcare: "childcare",
+    Commercial: "commercial",
+    Interior: "interior",
+    Medical: "medical",
+    "Multi-Residential": "multi-residential",
+    Residential: "residential",
 }
 
 export const reverseCategoryMap: Record<string, string> = {
-    residential: "Residential Projects",
-    commercial: "Commercial and Industrial Projects",
-    fitout: "Fitout Projects",
+    childcare: "Childcare",
+    commercial: "Commercial",
+    interior: "Interior",
+    medical: "Medical",
+    "multi-residential": "Multi-Residential",
+    residential: "Residential",
 }
