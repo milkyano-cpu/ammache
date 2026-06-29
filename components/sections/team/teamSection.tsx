@@ -43,6 +43,11 @@ const teamData = [
     role: "Junior Architect",
     image: "/team7.png",
   },
+  {
+    name: "Emily Mateer",
+    role: "Junior Architect",
+    image: "/team8.png",
+  },
 ]
 
 const TeamSection = () => {
