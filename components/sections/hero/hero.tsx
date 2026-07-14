@@ -5,27 +5,14 @@ import Image from 'next/image'
 const Hero = () => {
   return (
       <section className="relative w-full h-[700px] sm:h-[500px] md:h-screen overflow-hidden">
-      
-      {/* ✅ DESKTOP VIDEO */}
-      <video
-        src="/hero-video.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
-      />
-
-
-      {/* ✅ MOBILE VIDEO */}
-      <video
-        src="/hero-video-mobile.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover block md:hidden"
-      />
+        <video
+          src="/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
       {/* OVERLAY */}
         <div className="absolute inset-0 bg-black/10 md:bg-black/10" />
