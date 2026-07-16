@@ -138,4 +138,13 @@ export const faqItems: FaqItem[] = [
             </>
         ),
     },
+    {
+        question: "What services does Ammache Architects offer?",
+        answer: (
+            <>
+                <p>Our studio offers architecture, landscaping, and interior design as an integrated service.</p>
+                <p>From site planning and building design through to outdoor environments and interior fit-out, we cover each stage in-house so the finished project reads as one cohesive whole rather than separate pieces.</p>
+            </>
+        ),
+    },
 ]
