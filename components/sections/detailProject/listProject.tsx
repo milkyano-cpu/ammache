@@ -29,7 +29,7 @@ const DetailProjectsSection = ({categories}: { categories: CategoryWithProjects[
     ]
 
     const projects =
-    activeTab === "Show All"
+    activeTab === "SHOW ALL"
         ? categories.flatMap((cat) => cat.projects)
         : categories.find((cat) => cat.name === activeTab)?.projects ?? []
     const displayedProjects = showAll ? projects : projects.slice(0, LIMIT)
