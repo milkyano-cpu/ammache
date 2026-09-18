@@ -91,6 +91,11 @@ const ContactSection = () => {
       return
     }
 
+    if (!agreed) {
+      toast.error("Please agree to receive communications before submitting.")
+      return
+    }
+
     setLoading(true)
     try {
       if (!initialized.current) {

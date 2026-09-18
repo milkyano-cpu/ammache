@@ -16,7 +16,7 @@ const DetailProjectsSection = ({categories}: { categories: CategoryWithProjects[
 
     const tabs = [
         {
-            label: "Show All",
+            label: "SHOW ALL",
             count: categories.reduce(
                 (total, cat) => total + cat.projects.length,
                 0
