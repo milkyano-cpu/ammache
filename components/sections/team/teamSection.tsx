@@ -29,29 +29,14 @@ const teamData = [
     image: "/team4.png",
   },
   {
-    name: "Lolyta",
+    name: "Lara",
     role: "Architect",
     image: "/team5.png",
   },
   {
-    name: "Lara",
+    name: "Frohar",
     role: "Architect",
     image: "/team6.png",
-  },
-  {
-    name: "Ali",
-    role: "Junior Architect",
-    image: "/team7.png",
-  },
-  {
-    name: "Emily Mateer",
-    role: "Senior Architect",
-    image: "/team8.png",
-  },
-  {
-    name: "Arvellen Ang",
-    role: "Junior Architect",
-    image: "/team9.png",
   },
 ]
 
