@@ -98,6 +98,7 @@ const FounderSection = () => {
 
              {/* BUTTON */}
             <Link href="/team/nidal-ammache">
+            {/* <Link href="/nidal-ammache"> */}
               <button className="
                 px-6 py-3
                 rounded-full
