@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/sonner";
 import SplashScreen from "@/components/splash-screen"
 import { GoogleTagManager } from "@next/third-parties/google"
 
+export const dynamic = 'force-dynamic'
+
 const aktivGrotesk = localFont({
   src: [
     { path: "../public/font/AktivGrotesk/OTF/AktivGrotesk-Hairline.otf", weight: "100" },
