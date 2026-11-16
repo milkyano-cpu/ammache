@@ -1,0 +1,517 @@
+[
+ {
+  "source": "/a-look-inside-the-protein-bar",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/about-us",
+  "destination": "/about",
+  "permanent": true
+ },
+ {
+  "source": "/affordable-architecture",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/ammache-philosophy",
+  "destination": "/about",
+  "permanent": true
+ },
+ {
+  "source": "/architect-designed-homes-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architects-melbourne-residential",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architects-melbourne-sustainable",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architects-north-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architects-prahran",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architects-richmond-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architects-south-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architects-south-yarra",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architectural-design-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architecture-companies-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architecture-firm-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/architecture-firms-in-australia",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/australian-architecture",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/award-winning-residential-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/best-architects-in-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/best-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/best-residential-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/blog",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/bo-racking",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/boutique-hotel-architecture",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/building-a-new-home-vs-buying-an-existing-one-which-is-better",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/burke-rd-camberwell",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/camp-st-dalesford",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/cape-schanck",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/career",
+  "destination": "/careers",
+  "permanent": true
+ },
+ {
+  "source": "/childcare-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/childcare-centers-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/clinton-st-brighton-east",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/coleman-rd-aspendale",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/commercial-archietects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/commercial-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/commercial-architecture",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/commercial-fit-out-architects",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/commercial-projects",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/contact-us",
+  "destination": "/contact",
+  "permanent": true
+ },
+ {
+  "source": "/corio-rd-gelong",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/do-you-need-to-hire-an-architect-for-your-bathroom-renovation",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/eastern-rd-south-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/elgar-rd-towers",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/er",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/er-2",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/filtering-results",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/fitzroy-architects",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/footer",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/hello-world",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/heritage-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/high-density-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/high-rise-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/highett-beauty-salon",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/home-15",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/how-to-achieve-6-star-energy-rating",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/hutton-rd-keysborough",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/icelands-biggest-volcano-timelapse",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/industrial-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/industrial-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/inteligent-transitions-in-ux-design",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/jeffrey-veen-quote",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/josh-woodward-already-there",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/josh-woodward-already-there-remix",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/lagoon-tower-abu-dhabi-uae",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/landing-1",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/landscape-architect-in-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/large-architecture-firms-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/location/melbourne",
+  "destination": "/contact",
+  "permanent": true
+ },
+ {
+  "source": "/luxury-home-builds-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/macedon-crt-lower-templestowe",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/madrids-photographer-marathon",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/medium-density-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/medium-density-residential-projects",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/melbourne-architects",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/melbourne-architecture-firm",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/mill-park-apartments-and-toproof-gardens",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/ndis-architect-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/oscar-wilde",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/palmbeachdv-pattersonlakes",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/philosophy",
+  "destination": "/about",
+  "permanent": true
+ },
+ {
+  "source": "/portugal-2013-road-trip-gallery",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/project-filtering",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/projects",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/projects-templates",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/recent-trends-in-storytelling",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/renovation-architect-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/residential-architect-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/residential-architects-adelaide",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/residential-projects",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/services",
+  "destination": "/about",
+  "permanent": true
+ },
+ {
+  "source": "/small-architecture-firms",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/small-architecture-firms-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/south-rd-brightoneast",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/status/design",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/supernatural-fx-showreel",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/sustainable-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/the-dome-donvale-vic",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/the-heads",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/top-architects-in-australia",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/top-architects-melbourne",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/top-melbourne-architecture-firms",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/unlocking-brain-secrets",
+  "destination": "/",
+  "permanent": true
+ },
+ {
+  "source": "/work-with-ammache",
+  "destination": "/about",
+  "permanent": true
+ }
+]
